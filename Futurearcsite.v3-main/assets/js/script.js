@@ -1,7 +1,3 @@
-// Före:
-// const form = document.querySelector("form");
-
-// Efter:
 const form = document.getElementById("contactForm");
 
 form.addEventListener("submit", async (e) => {

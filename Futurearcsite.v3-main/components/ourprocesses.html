@@ -9,8 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --background-color: #121212;
-      --surface-color: #1E1E1E;
+      --background-color: #000000;
+      --surface-color: #000000;
       --primary-accent-color: #FF6B00;
       --primary-accent-hover: #FF8533;
       --spotlight-color: rgba(255, 107, 0, 0.1);
@@ -28,7 +28,7 @@
       0% {
         background-position: 0 0;
       }
-      100% {
+      100% {  
         background-position: 100px 100px;
       }
     }
@@ -46,35 +46,23 @@
       padding: 100px 24px;
       text-align: center;
       animation: fadeIn 1s ease-out forwards;
-      background: linear-gradient(90deg, #11100f, #000000);
+      background: linear-gradient(90deg, #171615, #000000);
     }
-
 
     .process-section::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(to right, rgba(255, 107, 0, 0.07) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 107, 0, 0.07) 1px, transparent 1px);
-      background-size: 40px 40px;
-      z-index: 0;
-    }
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px; /* Justera höjden på toppen-faden */
+    background: linear-gradient(to bottom, rgba(0,0,0,1), transparent);
+    pointer-events: none; /* Så det inte blockerar klick på innehållet */
+    z-index: 1; /* Under innehållet men ovanför bakgrunden */
+}
 
-    .process-section::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(to right, rgba(255, 107, 0, 0.18) 2px, transparent 2px),
-        linear-gradient(to bottom, rgba(255, 107, 0, 0.18) 2px, transparent 2px);
-      background-size: 80px 80px;
-      opacity: 0.6;
-      animation: moveGrid 15s linear infinite;
-      z-index: 0;
-    }
+
+
 
     @keyframes moveGrid {
       0% {

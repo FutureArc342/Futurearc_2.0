@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kurser – FutureArc</title>
+
+  <!-- Base styles & icons -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="assets/js/include.js"></script>
+
+  <style>
+    /* -----------------------------
+      MASTER-LEVEL THEME (FutureArc)
+    ------------------------------ */
+    :root {
+      --bg-0: #0a0a0a;
+      --bg-1: #0f0f0f;
+      --bg-2: #151515;
+      --card: #1b1b1b;
+      --muted: #a0a0a0;
+      --text: #eaeaea;
+      --border: #2a2a2a;
+      --accent: #f86700;
+      --accent-2: #ff4d00;
+      --accent-grad: linear-gradient(90deg, #f86700, #ff4d00);
+      --radius: 16px;
+      --radius-lg: 22px;
+      --shadow-lg: 0 20px 55px rgba(248, 103, 0, 0.22);
+      --shadow-md: 0 14px 30px rgba(248, 103, 0, 0.18);
+      --shadow-sm: 0 8px 18px rgba(248, 103, 0, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      height: 100%;
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(248,103,0,0.08), transparent),
+                  radial-gradient(900px 500px at 110% 10%, rgba(255,77,0,0.08), transparent),
+                  linear-gradient(90deg, #171615, #000000);
+      color: var(--text);
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Subtle noise overlay for premium texture */
+    body::after {
+      content: "";
+      position: fixed; inset: 0;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 0 0 0 0 0 0 0.05'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity: 0.35;
+      mix-blend-mode: overlay;
+      z-index: 0;
+    }
+
+    /* Global containers */
+    main { position: relative; z-index: 1; }
+
+    .section { max-width: 1200px; margin: 0 auto; padding: 100px 24px; }
+
+    .section-divider { height: 80px; position: relative; }
+    .section-divider::before, .section-divider::after {
+      content: ""; position: absolute; left: 0; right: 0; height: 50%;
+      pointer-events: none;
+      background: radial-gradient(120% 140% at 50% 0%, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0) 100%);
+      filter: blur(12px);
+    }
+    .section-divider::before { top: -30px; }
+    .section-divider::after {
+      bottom: -30px;
+      background: radial-gradient(120% 140% at 50% 100%, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0) 100%);
+      filter: blur(14px);
+    }
+
+    /* ---------------- HERO ---------------- */
+    .courses-hero {
+      position: relative;
+      overflow: clip;
+      text-align: center;
+      padding: 140px 24px 110px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0))
+                  ,var(--bg-1);
+      isolation: isolate;
+    }
+    .courses-hero::before {
+      content: ""; position: absolute; inset: 0; z-index: -1;
+      background-image:
+        radial-gradient(800px 300px at 50% 0%, rgba(248,103,0,0.18), transparent),
+        radial-gradient(400px 220px at 20% 10%, rgba(255,77,0,0.14), transparent),
+        radial-gradient(600px 260px at 80% 15%, rgba(248,103,0,0.12), transparent);
+      filter: saturate(110%);
+    }
+    .kicker {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 8px 14px; border-radius: 999px; font-weight: 600;
+      background: rgba(248,103,0,0.1); border: 1px solid rgba(248,103,0,0.35);
+      color: #fff; box-shadow: var(--shadow-sm);
+    }
+    .kicker i { color: var(--accent); }
+
+    .hero-title {
+      margin: 18px auto 12px;
+      max-width: 1000px;
+      font-size: clamp(2.8rem, 6vw, 4.8rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      background: var(--accent-grad);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 48px rgba(248,103,0,0.28);
+    }
+    .hero-sub {
+      max-width: 760px; margin: 0 auto 28px; color: var(--muted);
+      font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+    }
+
+    .hero-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; border-radius: 12px; padding: 14px 22px; font-weight: 700; text-decoration: none; transition: translate .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease; }
+    .btn i { font-size: 0.95rem; }
+    .btn-primary { background: var(--accent-grad); color: #fff; box-shadow: var(--shadow-md); }
+    .btn-primary:hover { translate: 0 -3px; box-shadow: var(--shadow-lg); }
+    .btn-ghost { border: 1px solid rgba(248,103,0,0.45); color: #fff; background: rgba(248,103,0,0.06); }
+    .btn-ghost:hover { background: rgba(248,103,0,0.12); translate: 0 -3px; }
+
+    .hero-stats { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; max-width: 840px; margin: 30px auto 0; }
+    .stat { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 14px 18px; display: grid; gap: 2px; }
+    .stat .num { font-size: 1.1rem; font-weight: 800; }
+    .stat .lbl { font-size: .9rem; color: var(--muted); }
+
+    /* ---------------- SECTION HEADERS ---------------- */
+    .section-header { text-align: center; margin-bottom: 56px; }
+    .section-header h2 { font-size: clamp(2.1rem, 4.4vw, 3rem); font-weight: 900; letter-spacing: -0.02em; margin-bottom: 10px; }
+    .section-header .muted { color: var(--muted); max-width: 700px; margin: 0 auto; }
+
+    /* ---------------- FILTERS ---------------- */
+    .filters { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin: 20px 0 36px; }
+    .chip { cursor: pointer; user-select: none; padding: 9px 14px; border-radius: 999px; border: 1px solid var(--border); background: rgba(255,255,255,0.03); color: #fff; font-weight: 600; transition: all .25s ease; }
+    .chip:hover { border-color: rgba(248,103,0,0.45); background: rgba(248,103,0,0.08); }
+    .chip.active { background: var(--accent-grad); border-color: transparent; box-shadow: var(--shadow-sm); }
+
+    /* ---------------- GRIDS ---------------- */
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 22px; }
+    .col-4 { grid-column: span 4; }
+    .col-6 { grid-column: span 6; }
+    .col-12 { grid-column: span 12; }
+
+    @media (max-width: 1024px) { .col-4, .col-6 { grid-column: span 6; } }
+    @media (max-width: 640px)  { .col-4, .col-6 { grid-column: span 12; } }
+
+    /* ---------------- COURSE CARD ---------------- */
+    .course-card { position: relative; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s, border-color .35s; }
+    .course-card:hover { transform: translateY(-10px); border-color: rgba(248,103,0,0.45); box-shadow: var(--shadow-md); }
+
+    .course-media { position: relative; overflow: hidden; aspect-ratio: 16/9; }
+    .course-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+    .course-card:hover .course-media img { transform: scale(1.06); }
+
+    .badge { position: absolute; top: 12px; left: 12px; padding: 6px 10px; font-size: .8rem; font-weight: 800; border-radius: 999px; background: rgba(0,0,0,.6); border: 1px solid rgba(255,255,255,.12); backdrop-filter: blur(6px); }
+
+    .course-body { padding: 22px; display: grid; gap: 12px; flex: 1; }
+    .course-meta { display: flex; gap: 10px; align-items: center; font-size: .88rem; color: var(--muted); }
+    .course-meta .pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 999px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); }
+    .course-title { font-size: 1.28rem; font-weight: 800; letter-spacing: -0.01em; }
+    .course-desc { color: var(--muted); }
+
+    .course-cta { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: auto; }
+    .course-cta .btn-card { padding: 10px 14px; border-radius: 10px; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; background: var(--accent-grad); color: #fff; }
+    .course-cta .btn-card:hover { box-shadow: var(--shadow-sm); transform: translateY(-2px); }
+
+    .course-cta .meta { font-size: .92rem; color: var(--muted); display: inline-flex; align-items: center; gap: 10px; }
+    .course-cta .meta i { color: var(--accent); }
+
+    /* ---------------- ARTICLE CARD ---------------- */
+    .article-card { display: flex; gap: 18px; align-items: center; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; transition: border-color .25s ease, background .25s ease, transform .25s ease; }
+    .article-card:hover { border-color: rgba(248,103,0,0.4); background: rgba(248,103,0,0.07); transform: translateY(-4px); }
+
+    .article-img { flex: 0 0 84px; width: 84px; height: 84px; border-radius: 12px; overflow: hidden; }
+    .article-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    .article-body { display: grid; gap: 6px; }
+    .article-title { font-weight: 800; font-size: 1.1rem; }
+    .article-desc { color: var(--muted); font-size: .98rem; }
+
+    .article-arrow { margin-left: auto; font-size: 1.1rem; color: var(--accent); opacity: .9; transition: transform .25s ease; }
+    .article-card:hover .article-arrow { transform: translateX(4px); }
+
+    /* ---------------- REVEAL ANIMATIONS ---------------- */
+    .reveal { opacity: 0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+
+    /* Focus styles & reduced motion */
+    :focus-visible { outline: 2px solid rgba(248,103,0,0.7); outline-offset: 3px; border-radius: 10px; }
+    @media (prefers-reduced-motion: reduce) {
+      .course-card, .article-card, .btn, .course-media img { transition: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+
+<body onload="includeHTML()">
+  <!-- Header injected -->
+  <div include-html="components/header.html"></div>
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <main>
+    <!-- HERO -->
+    <section class="courses-hero">
+      <div class="section">
+        <div class="kicker reveal in" style="transition-delay:.05s"><i class="fa-solid fa-bolt"></i> Kurser, guider & community</div>
+        <h1 class="hero-title reveal" style="transition-delay:.08s">Lyft dina färdigheter – snabbare än någonsin</h1>
+        <p class="hero-sub reveal" style="transition-delay:.12s">Från nybörjare till pro – bygg verkliga projekt, lär dig verktygen företag använder och få stöd av FutureArc-communityn.</p>
+        <div class="hero-cta reveal" style="transition-delay:.16s">
+          <a href="#courses" class="btn btn-primary"><i class="fa-solid fa-play"></i> Utforska kurser</a>
+          <a href="#articles" class="btn btn-ghost"><i class="fa-solid fa-book-open"></i> Guider & tips</a>
+        </div>
+        <div class="hero-stats reveal" style="transition-delay:.2s">
+          <div class="stat"><span class="num">+40</span><span class="lbl">Video-lektioner</span></div>
+          <div class="stat"><span class="num">+120h</span><span class="lbl">Praktiskt innehåll</span></div>
+          <div class="stat"><span class="num">Live</span><span class="lbl">Nya lektioner varje månad</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section">
+      <!-- COURSES HEADER -->
+      <header class="section-header reveal">
+        <h2>Videokurser</h2>
+        <p class="muted">Djupgående kurser ledda av experter inom webbutveckling, AI och modern programmering.</p>
+      </header>
+
+      <!-- FILTERS -->
+      <div class="filters reveal" id="course-filters" role="tablist" aria-label="Filtrera kurser">
+        <button class="chip active" data-filter="all" role="tab" aria-selected="true">Alla</button>
+        <button class="chip" data-filter="Webbutveckling" role="tab">Webbutveckling</button>
+        <button class="chip" data-filter="Datavetenskap" role="tab">Datavetenskap</button>
+        <button class="chip" data-filter="Programmering" role="tab">Programmering</button>
+      </div>
+
+      <!-- COURSES GRID -->
+      <div class="grid" id="courses">
+        <!-- Course: HTML/CSS -->
+        <article class="course-card col-4 reveal" data-category="Webbutveckling">
+          <div class="course-media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2000&auto=format&fit=crop" alt="HTML & CSS grunnläggande kurs omslagsbild" />
+            <span class="badge"><i class="fa-solid fa-sparkles"></i> Ny</span>
+          </div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="pill"><i class="fa-solid fa-code"></i> Webbutveckling</span>
+              <span class="pill"><i class="fa-solid fa-gauge-high"></i> Nybörjare</span>
+              <span class="pill"><i class="fa-regular fa-clock"></i> 6h</span>
+            </div>
+            <h3 class="course-title">Grundkurs i HTML & CSS</h3>
+            <p class="course-desc">Bygg din första responsiva webb från grunden med modern semantik, flex/grid och tillgänglighet.</p>
+            <div class="course-cta">
+              <a href="#" class="btn-card"><i class="fa-solid fa-circle-play"></i> Starta kurs</a>
+              <div class="meta"><i class="fa-solid fa-star"></i> 4.8 • 1 200+ elever</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Course: Python Data -->
+        <article class="course-card col-4 reveal" data-category="Datavetenskap">
+          <div class="course-media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1629654857513-2c4149009a6e?q=80&w=2000&auto=format&fit=crop" alt="Python för dataanalys kurs omslagsbild" />
+            <span class="badge"><i class="fa-solid fa-fire"></i> Populär</span>
+          </div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="pill"><i class="fa-solid fa-database"></i> Datavetenskap</span>
+              <span class="pill"><i class="fa-solid fa-gauge"></i> Medel</span>
+              <span class="pill"><i class="fa-regular fa-clock"></i> 8h</span>
+            </div>
+            <h3 class="course-title">Python för Dataanalys</h3>
+            <p class="course-desc">Pandas, Matplotlib och praktiska case. Från rådata till insikter och dashboards.</p>
+            <div class="course-cta">
+              <a href="#" class="btn-card"><i class="fa-solid fa-circle-play"></i> Starta kurs</a>
+              <div class="meta"><i class="fa-solid fa-chart-line"></i> Projektbaserat upplägg</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Course: Advanced JS -->
+        <article class="course-card col-4 reveal" data-category="Programmering">
+          <div class="course-media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1614741118884-62ac62b31e16?q=80&w=2000&auto=format&fit=crop" alt="Avancerad JavaScript kurs omslagsbild" />
+            <span class="badge"><i class="fa-solid fa-rocket"></i> Avancerad</span>
+          </div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="pill"><i class="fa-brands fa-js"></i> Programmering</span>
+              <span class="pill"><i class="fa-solid fa-gauge-high"></i> Avancerad</span>
+              <span class="pill"><i class="fa-regular fa-clock"></i> 7h</span>
+            </div>
+            <h3 class="course-title">Avancerad JavaScript</h3>
+            <p class="course-desc">ES6+, asynkronitet, generators, immutability, patterns – skriv snabb och robust JS.</p>
+            <div class="course-cta">
+              <a href="#" class="btn-card"><i class="fa-solid fa-circle-play"></i> Starta kurs</a>
+              <div class="meta"><i class="fa-solid fa-code-branch"></i> 6 real-world moduler</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <!-- ARTICLES SECTION -->
+    <section class="section" id="articles">
+      <header class="section-header reveal">
+        <h2>Kunskapsbank & Guider</h2>
+        <p class="muted">Snabba "lär-dig"-inlägg, guider och artiklar för att lösa specifika problem och bredda din kunskap.</p>
+      </header>
+
+      <div class="grid">
+        <a href="#" class="article-card col-6 reveal">
+          <div class="article-img"><img loading="lazy" src="https://plus.unsplash.com/premium_photo-1663089684347-60e55b349f7b?q=80&w=2000&auto=format&fit=crop" alt="REST API guide omslagsbild" /></div>
+          <div class="article-body">
+            <div class="article-title">Förstå REST API:er på 5 minuter</div>
+            <div class="article-desc">Hur RESTful API:er fungerar och hur du kopplar upp dem i dina projekt (med exempel).</div>
+          </div>
+          <i class="fa-solid fa-arrow-right article-arrow" aria-hidden="true"></i>
+        </a>
+
+        <a href="#" class="article-card col-6 reveal">
+          <div class="article-img"><img loading="lazy" src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=2000&auto=format&fit=crop" alt="Cybersäkerhet omslagsbild" /></div>
+          <div class="article-body">
+            <div class="article-title">3 enkla säkerhetstips för utvecklare</div>
+            <div class="article-desc">Grundläggande principer för att skydda dina appar mot vanliga sårbarheter.</div>
+          </div>
+          <i class="fa-solid fa-arrow-right article-arrow" aria-hidden="true"></i>
+        </a>
+
+        <a href="#" class="article-card col-6 reveal">
+          <div class="article-img"><img loading="lazy" src="https://images.unsplash.com/photo-1555952494-efd681c7e3f9?q=80&w=2000&auto=format&fit=crop" alt="Git och GitHub omslagsbild" /></div>
+          <div class="article-body">
+            <div class="article-title">Kom igång med Git & GitHub</div>
+            <div class="article-desc">Versionshantering, branches och pull requests – samarbeta effektivt från dag ett.</div>
+          </div>
+          <i class="fa-solid fa-arrow-right article-arrow" aria-hidden="true"></i>
+        </a>
+
+        <a href="#" class="article-card col-6 reveal">
+          <div class="article-img"><img loading="lazy" src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=2000&auto=format&fit=crop" alt="Testing omslagsbild" /></div>
+          <div class="article-body">
+            <div class="article-title">Snabbstart: Enhetstester i JavaScript</div>
+            <div class="article-desc">Bygg trygg kod med test-strategier och verktyg som Jest och Vitest.</div>
+          </div>
+          <i class="fa-solid fa-arrow-right article-arrow" aria-hidden="true"></i>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <div class="section-divider" aria-hidden="true"></div>
+  <div include-html="components/footer.html"></div>
+
+  <script>
+    // IntersectionObserver for reveal animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in'); 
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Course filtering
+    const chips = document.querySelectorAll('.chip');
+    const cards = document.querySelectorAll('.course-card');
+
+    function setActiveChip(chip){
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      const f = chip.dataset.filter;
+      cards.forEach(card => {
+        const show = (f === 'all') || card.dataset.category === f;
+        card.style.display = show ? '' : 'none';
+      });
+    }
+
+    chips.forEach(chip => chip.addEventListener('click', () => setActiveChip(chip)));
+
+    // Keyboard accessibility for chips (Enter/Space)
+    chips.forEach(chip => {
+      chip.setAttribute('tabindex', '0');
+      chip.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); chip.click(); }
+      });
+    });
+  </script>
+</body>
+</html>

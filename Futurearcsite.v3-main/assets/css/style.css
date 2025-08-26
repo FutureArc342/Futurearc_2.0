@@ -208,6 +208,18 @@ body {
     pointer-events: none;
 }
 
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 500px; /* Justera höjden på fade */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    pointer-events: none; /* Så att det inte stör klick på innehåll */
+    z-index: 2; /* Samma lager som overlay, men under text */
+}
+
 .hero > * {
     position: relative;
     z-index: 2;
@@ -216,6 +228,7 @@ body {
 
 
 .hero h2 {
+    padding-top: 40px;
     text-transform: none;
     font-family: "Lexend", serif; 
     font-size: 3.5rem; /* Ökar storleken på rubriken */
@@ -685,51 +698,104 @@ body {
 
 
 
-/*FAQ fliken för att visa FAQ*/
-.faq-section {
-    padding: 8px 0;  /* Ta bort sidopadding */
-    width: 100%;      /* Full bredd */
-    background: linear-gradient(90deg, #171615, #000000); /* Bakgrundsfärg som täcker hela bredden */
-}
 
-.faq-container {
-    max-width: 800px;  /* Begränsa bredden på innehållet */
-    margin: 30px auto; /* Centrera innehållet */
-    padding: 0 20px;   /* Lägg till padding på sidorna av innehållet */
-}
 
-.faq-section-title {
-    color: #f86700;
-    font-size: 2.9rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    text-align: center;
+/* ===== NY, PROFESSIONELL FAQ-STIL (V2) ===== */
+
+.faq-section-v2 {
+    padding: 40px 24px;
+    padding-bottom: 100px;
+    background: linear-gradient(90deg, #171615, #000000);
     width: 100%;
-    display: block;
-    margin-bottom: 1rem;  /* Lägg till margin under titeln */
 }
 
-.faq-divider {
-    max-width: 800px;
-    margin: 0 auto;
-    height: 3px;
-    background-color: #f86700;
-    margin-bottom: 2rem;  /* Öka margin under divider */
+.faq-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
 }
+
+.faq-headline {
+    font-size: clamp(2.5rem, 5vw, 3rem);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+/* Highlight-effekt för "frågor" */
+
+.faq-headline .highlight-faq {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0px; /* Lägger till lite extra utrymme för linjen */
+}
+
+.faq-headline .highlight-faq::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0; /* Placerar linjen längst ner */
+    width: 100%;
+    height: 3px; /* Gör linjen tunnare och skarpare */
+    
+    /* En skarpare, två-tonad gradient för en modern tech-känsla */
+    background: linear-gradient(90deg, #f86700 0%, #ff8533 100%); 
+    
+    border-radius: 5px; /* Mjukt rundade kanter */
+    filter: none; 
+}
+/*klar*/
+
+.faq-subheadline {
+    color: #a0a0a0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.contact-button-faq {
+    display: inline-flex; /* Använd flexbox för att justera ikon och text */
+    align-items: center;
+    gap: 10px; /* Mellanrum mellan ikon och text */
+    padding: 14px 32px;
+    background-color: #f86700;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    border: 2px solid transparent;
+    box-shadow: 0 5px 15px rgba(248, 103, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.contact-button-faq:hover {
+    background-color: #1a1b1e; /* Byt till mörk bakgrund vid hover */
+    color: #f86700; /* Gör text och ikon orangea */
+    border-color: #f86700; /* Visa en orange ram */
+    transform: translateY(-4px); /* Lyft knappen lite mer */
+    box-shadow: 0 10px 25px rgba(248, 103, 0, 0.3); /* Starkare skugga */
+}
+
+.contact-button-faq i {
+    transition: transform 0.3s ease; /* Mjuk rotation för ikonen */
+}
+
+.contact-button-faq:hover i {
+    transform: rotate(-15deg) scale(1.1); /* Luta och förstora ikonen lite */
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: start; /* <-- LÄGG TILL DENNA RAD */
+}
+
 
 .faq-item {
-    background: #1a1b1e;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    padding: 20px;
-    border: 2px solid #f86700;
-    box-shadow: 0 0 15px rgba(248, 103, 0, 0.3);
-    transition: all 0.3s ease;
-}
-
-.faq-item:hover {
-    box-shadow: 0 0 20px rgba(248, 103, 0, 0.5);
-    border-color: #ff8533;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 0;
 }
 
 .faq-question {
@@ -737,259 +803,73 @@ body {
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    padding: 10px 0;
 }
 
 .faq-question h3 {
-    color: #f4f4f4;
+    color: #e0e0e0;
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
-.faq-toggle {
-    background: none;
-    border: none;
+.faq-question:hover h3 {
     color: #f86700;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: transform 0.3s ease; /* Smooth rotation för plus-ikonen */
 }
 
+.faq-icon {
+    color: #f86700;
+    font-size: 1rem;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
 .faq-answer {
     max-height: 0;
-    opacity: 0;
     overflow: hidden;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Smidigare övergång */
-    padding: 0 15px;
+    opacity: 0; /* Starta helt genomskinlig */
+    padding: 0;   /* Inget utrymme när den är stängd */
+    transition: 
+        max-height 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), /* Mjukare "ease-out" kurva */
+        opacity 0.3s ease-in-out,
+        padding 0.4s ease; /* Animera även paddingen */
 }
 
 .faq-answer p {
-    color: #f4f4f4;
-    margin-top: 15px;
-    line-height: 1.6;
+    color: #a0a0a0;
+    margin: 0;
+    line-height: 1.7;
+    font-size: 1rem;
+    padding: 10px 0; /* Flyttade padding hit för att den ska animeras korrekt */
 }
 
-.faq-item.active .faq-toggle {
-    transform: rotate(45deg); /* Rotera plus till kryss */
+/* Aktiv (öppen) state */
+.faq-item.active .faq-question h3 {
+    color: #f86700;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
 }
 
 .faq-item.active .faq-answer {
-    max-height: 300px; /* Tillräckligt högt för innehållet */
-    opacity: 1;
-    padding: 15px;
+    max-height: 300px;
+    opacity: 1; /* Tona in till full synlighet */
 }
 
-/* Stil för kontaktknappen */
-.contact-button-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.contact-button {
-    display: inline-block;
-    padding: 10px 70px;
-    background-color: #f86700;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 30px;
-    margin-top: 30px;
-    position: relative;
-    overflow: hidden;
-}
-
-.contact-button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.3);
-    z-index: 0;
-    transform: skewX(-45deg);
-    transition: left 0.5s ease;
-}
-
-.contact-button:hover::before {
-    left: 100%;
-}
-
-.contact-button:hover {
-    background-color: #9c4a1a; /* Mörkare orange vid hover */
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(242, 92, 5, 0.5),
-                0 10px 30px rgba(242, 92, 5, 0.3),
-                0 15px 45px rgba(242, 92, 5, 0.2);
-}
-
-/*Modal knappar */
-.learn-more {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #f86700;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-}
-
-.learn-more:hover {
-    background-color: #ff8533; /* Ljusare orange */
-    transform: translateY(-2px); /* Liten uppåtrörelse */
-    box-shadow: 0 5px 15px rgba(248, 103, 0, 0.4); /* Orange skugga */
-}
-
-.learn-more:active {
-    transform: translateY(0); /* Återgår när man klickar */
-}
-
-.section-divider {
-    width: 100%;
-    height: 3px;
-    background: #f25c05;
-    margin: 0;
-    padding: 0;
-    border: none;
-    box-sizing: border-box; /* Säkerställer att bredden inkluderar padding och border */
-    overflow-x: hidden; /* Förhindrar horisontell scrollning */
-}
-
-/* Alternativt kan du använda denna stil för en mer solid look 
-linear-gradient(90deg, transparent, #f86700, transparent);*/
-
-
-/* Hamburger menu och navigation */
-.nav-container {
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-    z-index: 9999;
-}
-
-.hamburger {
-    display: none;
-    background: none;
-    border: 2px solid #f86700;
-    border-radius: 8px;
-    padding: 8px;
-    cursor: pointer;
-    z-index: 10000;
-}
-
-.hamburger-line {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px 0;
-    background-color: #f86700;
-    transition: 0.3s ease;
-}
-
-.nav-links {
-    display: flex;
-    gap: 2rem;
-}
-
-/* Mobil meny */
+/* Responsivitet för FAQ */
 @media (max-width: 768px) {
-    header .container {
-        padding-right: 60px;
-    }
-    
-    .hamburger {
-        display: block;
-        position: absolute;
-        right: -15px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 100%; /* Ändra till full bredd */
-        height: 100vh; /* Ändra till full höjd */
-        background: rgba(58, 57, 56, 0.8); /* Semi-transparent bakgrund */
-        backdrop-filter: blur(10px); /* Lägg till blur-effekt */
-        -webkit-backdrop-filter: blur(10px); /* För Safari-stöd */
-        flex-direction: column;
-        padding-top: 80px; /* Öka padding-top för bättre spacing */
-        transition: 0.3s ease;
-        z-index: 9998;
-    }
-
-    .nav-links.active {
-        right: 0;
-    }
-
-    .nav-links li {
-        margin: 20px 0; /* Öka margin för bättre spacing */
-        text-align: center;
-        position: relative;
-    }
-
-    .nav-overlay.active {
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-        background: rgba(0, 0, 0, 0.7);
-    }
-
-    /* Hamburger animation när den är aktiv */
-    .hamburger.active .hamburger-line:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .hamburger.active .hamburger-line:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active .hamburger-line:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
-    }
-
-    .nav-links a {
-        font-size: 1.5rem;
-        padding: 8px;
-        display: block;
-        transition: all 0.3s ease;
-    }
-
-    .nav-links a:hover {
-        color: #f86700;
-        transform: translateY(10px);
-        text-decoration: none;
-        background: linear-gradient(90deg, transparent, rgba(248, 103, 0, 0.1));
+    .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
     }
 }
 
-/* Overlay */
-.nav-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 9997;
-    opacity: 0;
-    transition: opacity 0.6s ease;
-    
-}
 
-.nav-overlay.active {
-    display: block;
-    opacity: 1;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
+
+
+
+
+
 
 
 
