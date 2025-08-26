@@ -1,4 +1,10 @@
 function initializeNavbar() {
+    // Skip if mobile menu is already handled by include.js
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    if (mobileMenuBtn) {
+        return;
+    }
+
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     

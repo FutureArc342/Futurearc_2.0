@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- Kod för den nya mobilmenyn ---
+    // Skip if mobile menu is already handled by include.js
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    if (mobileMenuBtn) {
+        return;
+    }
+
     const menuToggleBtn = document.querySelector('.mobile-menu-toggle');
     const mobileNav = document.querySelector('.mobile-nav');
     const closeBtn = document.querySelector('.mobile-nav-close');

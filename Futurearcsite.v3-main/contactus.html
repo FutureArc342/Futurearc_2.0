@@ -8,402 +8,825 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 </head>
 <body>
     <div include-html="components/header.html"></div>
-    <hr class="section-divider">
-
-    <div class="contact-container">
-        <div class="contact-form">
-            <h1>Kontakta oss</h1>
-            <p class="subtitle">Fyll i formuläret nedan, eller maila oss direkt på <a href="mailto:info@futurearc.se">info@futurearc.se</a>.</p>
-
-            <form id="contact-form" novalidate>
-                <div class="form-group">
-                    <label for="name">Ditt namn</label>
-                    <input type="text" id="name" name="name" required />
-                </div>
-                <div class="form-group">
-                    <label for="email">Din e-post</label>
-                    <input type="email" id="email" name="email" required />
-                </div>
-                <div class="form-group">
-                    <label for="message">Meddelande</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="#">Skicka meddelande</button> 
-
-                <div id="form-feedback"></div>
-            </form>
-              
-            <div class="follow-us">
-                <div class="social-icons-contact">
-                    <a href="https://www.linkedin.com/company/futurearcmedia" class="social-link-contact" aria-label="LinkedIn" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://x.com/future_arcmedia" class="social-link-contact" aria-label="Twitter" target="_blank">
-                        <i class="fab fa-x-twitter"></i>
-                    </a>
-                    <a href="https://www.instagram.com/futurearcmedia" class="social-link-contact" aria-label="Instagram" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.tiktok.com/@futurearcmedia" class="social-link-contact" aria-label="TikTok" target="_blank">
-                        <i class="fab fa-tiktok"></i>
-                    </a> 
-                </div>
-            </div>
-        </div>
-
-        <div class="faq-section">
-            <h2>Vanliga frågor</h2>
-            
-            <div class="faq-accordion">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Hur kan jag kontakta er?</h3>
-                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Du kan kontakta oss via formuläret på denna sida eller genom att skicka ett e-postmeddelande till <a href="info@futurearc.se">info@futurearc.se</a>.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Vad är FutureArc?</h3>
-                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Future Arc är en community för tech-entusiaster och programmerare i Sverige. Här kommer du kunna nätverk, ta del av tech-nyheter, lära dig genom kurser och få hjälp från likasinnade.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Hur snabbt kan jag förvänta mig svar?</h3>
-                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Vi strävar efter att svara på alla förfrågningar inom 24 timmar under vardagar.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    
+    <!-- Animated Background -->
+    <div class="contact-bg">
+        <div class="bg-particles"></div>
+        <div class="bg-gradients"></div>
     </div>
-    <hr class="section-divider">
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-envelope"></i>
+                <span>Kontakt</span>
+            </div>
+            <h1 class="hero-title">
+                Låt oss <span class="highlight">skapa</span> något fantastiskt tillsammans
+            </h1>
+            <p class="hero-subtitle">
+                Vi är här för att hjälpa dig! Kontakta oss för frågor, samarbeten eller bara för att säga hej.
+            </p>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <i class="fas fa-clock"></i>
+                    <span class="stat-number">24h</span>
+                    <span class="stat-label">Svarstid</span>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Gratis support</span>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <span class="stat-number">Säker</span>
+                    <span class="stat-label">Krypterad</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="contact-main">
+        <div class="contact-container">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <div class="form-header">
+                        <h2>Skicka ett meddelande</h2>
+                        <p>Fyll i formuläret nedan så återkommer vi så snart som möjligt</p>
+                    </div>
+                    
+                    <form id="contact-form" class="contact-form" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="input-wrapper">
+                                    <i class="fas fa-user input-icon"></i>
+                                    <input type="text" id="name" name="name" required />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-wrapper">
+                                    <i class="fas fa-envelope input-icon"></i>
+                                    <input type="email" id="email" name="email" required />
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <i class="fas fa-comment input-icon"></i>
+                                <textarea id="message" name="message" rows="6" required></textarea>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">Skicka meddelande</span>
+                            <i class="fas fa-paper-plane btn-icon"></i>
+                        </button>
+                        
+                        <div id="form-feedback" class="form-feedback"></div>
+                    </form>
+                </div>
+
+                <!-- Quick FAQ - Direkt under formuläret -->
+                <div class="quick-faq-section">
+                    <div class="quick-faq">
+                        <h3>Vanliga frågor</h3>
+                        <div class="faq-list">
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <h4>Hur snabbt får jag svar?</h4>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Vi svarar normalt inom 24 timmar under vardagar.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <h4>Kan jag bidra till communityn?</h4>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Absolut! Vi välkomnar bidrag från communityn.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Direct Contact -->
+                <div class="contact-methods">
+                    <h3>Kontakta oss direkt</h3>
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="method-content">
+                            <h4>E-post</h4>
+                            <a href="mailto:info@futurearc.se">info@futurearc.se</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="method-content">
+                            <h4>Support-tider</h4>
+                            <p>Måndag - Fredag: 09:00 - 18:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div class="social-section">
+                    <h3>Följ oss</h3>
+                    <div class="social-grid">
+                        <a href="https://www.linkedin.com/company/futurearcmedia" class="social-card" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://x.com/future_arcmedia" class="social-card" target="_blank">
+                            <i class="fab fa-x-twitter"></i>
+                            <span>Twitter</span>
+                        </a>
+                        <a href="https://www.instagram.com/futurearcmedia" class="social-card" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://www.tiktok.com/@futurearcmedia" class="social-card" target="_blank">
+                            <i class="fab fa-tiktok"></i>
+                            <span>TikTok</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
 
     <footer>
         <div class="footer" include-html="components/footer.html"></div>
     </footer>
 
     <style>
-/* Grundläggande stil för hela sidan */
+/* ===== MODERN CONTACT PAGE STYLES ===== */
+
+/* Base Styles */
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #141414;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
     color: #f0f0f0;
     position: relative;
     overflow-x: hidden;
+    min-height: 100vh;
 }
 
-/* Container för innehållet - förfinad stil */
-.contact-container {
-    position: relative;
-    display: flex;
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 30px;
-    background-color: #1a1a1a; /* Solid, mörk färg för bättre fokus */
-    box-shadow: 0 0 35px rgba(248, 103, 0, 0.2); /* Mjukare, mer subtil glöd */
-    border: 1px solid rgba(248, 103, 0, 0.3); /* Tunnare, semi-transparent ram */
-    border-radius: 12px;
+/* Animated Background */
+.contact-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
     overflow: hidden;
-    z-index: 2;
-    gap: 30px; /* Mellanrum mellan formulär och FAQ */
 }
 
-/* Vänster sida - Formulär */
-.contact-form {
-    flex: 1.3;
-    padding: 20px;
-    background: transparent; /* Ingen extra bakgrund behövs */
-    border-radius: 10px;
+.bg-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(248, 103, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 140, 66, 0.05) 0%, transparent 50%);
+    animation: backgroundFloat 20s ease-in-out infinite;
 }
 
-/* Höger sida - FAQ */
-.faq-section {
-    flex: 0.7;
-    padding: 20px;
-    background: transparent;
-    border-radius: 10px;
-    max-width: 400px;
+.bg-gradients {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 10% 90%, rgba(248, 103, 0, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 10%, rgba(255, 140, 66, 0.06) 0%, transparent 40%);
+    animation: backgroundFloat 25s ease-in-out infinite reverse;
 }
 
-.faq-section h2 {
-    color: #f86700;
-    margin-bottom: 20px;
-    font-size: 24px;
-    font-weight: 700;
+@keyframes backgroundFloat {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(-10px, -10px) rotate(1deg); }
+    50% { transform: translate(10px, -5px) rotate(-1deg); }
+    75% { transform: translate(-5px, 10px) rotate(0.5deg); }
+}
+
+/* Hero Section */
+.contact-hero {
+    padding: 120px 24px 80px;
     text-align: center;
     position: relative;
-    padding-bottom: 10px;
+    z-index: 1;
 }
 
-.faq-section h2:after {
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, rgba(248, 103, 0, 0.2), rgba(248, 103, 0, 0.1));
+    border: 1px solid rgba(248, 103, 0, 0.3);
+    border-radius: 20px;
+    color: #f86700;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.hero-title {
+    font-family: 'Lexend', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-title .highlight {
+    position: relative;
+    color: #f86700;
+}
+
+.hero-title .highlight::after {
     content: '';
     position: absolute;
-    width: 60px;
-    height: 3px;
-    background-color: #f86700;
+    left: 0;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #f86700 0%, #ff8533 100%);
     border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: highlightExpand 1s ease-out 0.5s forwards;
 }
 
-/* FAQ Accordion stil */
-.faq-accordion {
+@keyframes highlightExpand {
+    to { transform: scaleX(1); }
+}
+
+.hero-subtitle {
+    color: #a0a0a0;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Hero Stats */
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    background: rgba(248, 103, 0, 0.1);
+    border-color: rgba(248, 103, 0, 0.3);
+}
+
+.stat-card i {
+    font-size: 1.5rem;
+    color: #f86700;
+    margin-bottom: 8px;
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #f86700;
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: #a0a0a0;
+    font-weight: 500;
+}
+
+/* Main Contact Section */
+.contact-main {
+    padding: 0 24px 80px;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* Left and Right Columns */
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Contact Form Section */
+.contact-form-section {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 40px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: all 0.3s ease;
+}
+
+.contact-form-section:hover {
+    border-color: rgba(248, 103, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(248, 103, 0, 0.1);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.form-header h2 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.form-header p {
+    color: #a0a0a0;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Form Styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    position: relative;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 16px;
+    color: #f86700;
+    font-size: 1.1rem;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 16px 16px 16px 48px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.form-group textarea {
+    padding-left: 48px;
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #f86700;
+    box-shadow: 0 0 0 3px rgba(248, 103, 0, 0.1);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #666;
+}
+
+/* Submit Button */
+.submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #f86700, #ff8533);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.submit-btn:hover::before {
+    left: 100%;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(248, 103, 0, 0.4);
+}
+
+.btn-icon {
+    transition: transform 0.3s ease;
+}
+
+.submit-btn:hover .btn-icon {
+    transform: translateX(4px);
+}
+
+/* Form Feedback */
+.form-feedback {
+    padding: 16px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 500;
+    display: none;
+    margin-top: 16px;
+}
+
+.form-feedback.success {
+    display: block;
+    background: rgba(42, 157, 143, 0.2);
+    border: 1px solid rgba(42, 157, 143, 0.3);
+    color: #2a9d8f;
+}
+
+.form-feedback.error {
+    display: block;
+    background: rgba(231, 111, 81, 0.2);
+    border: 1px solid rgba(231, 111, 81, 0.3);
+    color: #e76f51;
+}
+
+/* Contact Info Section - REMOVED */
+
+/* Contact Methods */
+.contact-methods {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 32px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.contact-methods h3 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.contact-method {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-method:last-child {
+    border-bottom: none;
+}
+
+.method-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #f86700, #ff8533);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.method-content h4 {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.method-content p,
+.method-content a {
+    color: #a0a0a0;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.method-content a:hover {
+    color: #f86700;
+}
+
+/* Social Section */
+.social-section {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 32px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.social-section h3 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.social-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-card:hover {
+    background: rgba(248, 103, 0, 0.1);
+    border-color: rgba(248, 103, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.social-card i {
+    font-size: 1.5rem;
+    color: #f86700;
+}
+
+.social-card span {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Quick FAQ Section */
+.quick-faq-section {
+    width: 100%;
+}
+
+.quick-faq {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.quick-faq h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.quick-faq h3 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.faq-list {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
 .faq-item {
-    background-color: #222;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     overflow: hidden;
-    transition: all 0.2s ease;
-    border-left: 3px solid #f86700;
+    transition: all 0.3s ease;
+    margin-bottom: 8px;
+}
+
+.faq-item:hover {
+    border-color: rgba(248, 103, 0, 0.3);
 }
 
 .faq-question {
-    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 12px 16px;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.faq-question h3 {
-    margin: 0;
+.faq-question:hover {
+    background: rgba(248, 103, 0, 0.05);
+}
+
+.faq-question h4 {
     color: #fff;
-    font-size: 16px;
+    font-size: 0.9rem;
     font-weight: 500;
-    transition: color 0.2s ease;
+    margin: 0;
 }
 
-.faq-question:hover h3 {
+.faq-question i {
     color: #f86700;
-}
-
-.faq-icon {
-    color: #f86700;
+    font-size: 0.8rem;
     transition: transform 0.3s ease;
 }
 
-.faq-item.active .faq-icon {
+.faq-item.active .faq-question i {
     transform: rotate(180deg);
 }
 
 .faq-answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease-out;
-    background-color: #1c1c1c;
+    transition: all 0.3s ease;
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .faq-answer p {
-    padding: 0 20px 15px 20px;
-    font-size: 15px;
-    line-height: 1.6;
-    color: #ccc;
-    font-weight: 400;
-}
-.faq-answer a {
-    color: #f86700;
-    text-decoration: none;
-}
-.faq-answer a:hover {
-    text-decoration: underline;
+    padding: 0 16px 12px;
+    color: #a0a0a0;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin: 0;
 }
 
 .faq-item.active .faq-answer {
-    max-height: 200px; 
+    max-height: 60px;
 }
 
-/* Stil för rubriker och text */
-h1 {
-    margin-top: 5px;
-    color: #f86700;
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-p.subtitle {
-    color: #ccc;
-    margin-bottom: 30px;
-    font-weight: 400;
-    font-size: 1.1rem;
-}
-p.subtitle a {
-    color: #f86700;
-    text-decoration: none;
-    font-weight: 500;
-}
-p.subtitle a:hover {
-    text-decoration: underline;
-}
-
-/* Stil för formuläret */
-form {
-    display: flex;
-    flex-direction: column;
-}
-.form-group {
-    margin-bottom: 20px;
-}
-
-form label {
-    display: block;
-    color: #ddd;
-    margin-bottom: 8px;
-    font-weight: 500;
-    font-size: 0.9rem;
-}
-
-form input, form textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #444;
-    border-radius: 6px;
-    background-color: #2a2a2a;
-    color: #fff;
-    resize: vertical;
-    box-sizing: border-box; /* Viktigt för padding och border */
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-form input:focus, form textarea:focus {
-    outline: none;
-    border-color: #f86700;
-    box-shadow: 0 0 0 3px rgba(248, 103, 0, 0.3);
-}
-
-form input::placeholder, form textarea::placeholder {
-    color: #888;
-}
-
-/* Stil för knappen - Förenklad och elegant */
-form button {
-    padding: 15px 20px;
-    background-color: #f25c05;
-    color: white;
-    font-size: 16px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 700;
-    transition: all 0.3s ease;
-    margin-top: 10px;
-}
-
-form button:hover {
-    background-color: #ff801a;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 15px rgba(242, 92, 5, 0.3);
-}
-
-/* Stil för formulär-feedback */
-#form-feedback {
-    padding: 12px;
-    margin-top: 20px;
-    border-radius: 6px;
-    text-align: center;
-    font-weight: 500;
-    display: none; /* Dold som standard */
-}
-#form-feedback.success {
-    display: block;
-    background-color: #2a9d8f;
-    color: white;
-}
-#form-feedback.error {
-    display: block;
-    background-color: #e76f51;
-    color: white;
-}
-
-
-/* Stil för följ oss-sektionen */
-.follow-us {
-    margin-top: 40px;
-    text-align: center;
-}
-
-.social-icons-contact {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 15px;
-}
-
-.social-link-contact {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    background-color: #333;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-
-.social-link-contact i {
-    color: #f86700;
-    font-size: 24px;
-    transition: all 0.3s ease;
-}
-
-.social-link-contact:hover {
-    transform: translateY(-5px);
-    background-color: #f86700;
-}
-
-.social-link-contact:hover i {
-    color: #1a1b1e;
-}
-
-/* Media Queries för mobilanpassning */
-@media (max-width: 992px) {
+/* Responsive Design */
+@media (max-width: 1024px) {
     .contact-container {
-        flex-direction: column;
-        padding: 20px;
-        margin: 30px auto;
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
-    .faq-section {
-        max-width: 100%;
+    
+    .hero-stats {
+        gap: 20px;
+    }
+    
+    .stat-card {
+        min-width: 100px;
+        padding: 20px;
     }
 }
+
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2.2rem;
+    .contact-hero {
+        padding: 100px 16px 60px;
     }
-    .social-icons-contact {
-        gap: 1.5rem;
+    
+    .contact-main {
+        padding: 0 16px 60px;
     }
-    .social-link-contact {
-        width: 45px;
-        height: 45px;
+    
+    .contact-form-section {
+        padding: 30px 24px;
     }
-    .social-link-contact i {
-        font-size: 20px;
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 16px;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .social-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-methods,
+    .social-section,
+    .quick-faq {
+        padding: 24px;
     }
 }
     </style>
@@ -411,21 +834,25 @@ form button:hover {
 </body>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Ladda include-html komponenter (Header/Footer)
+    // Ladda include-html komponenter
     includeHTML();
 
-    // Hantera FAQ accordion
+    // FAQ Accordion
     const faqQuestions = document.querySelectorAll('.faq-question');
     faqQuestions.forEach(question => {
         question.addEventListener('click', function() {
             const faqItem = this.parentElement;
-            faqItem.classList.toggle('active');
-            // Stäng andra öppna items för en "accordion"-effekt
-            document.querySelectorAll('.faq-item.active').forEach(openItem => {
-                if (openItem !== faqItem) {
-                    openItem.classList.remove('active');
-                }
+            const isActive = faqItem.classList.contains('active');
+            
+            // Stäng alla andra
+            document.querySelectorAll('.faq-item.active').forEach(item => {
+                item.classList.remove('active');
             });
+            
+            // Öppna denna om den inte var aktiv
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
         });
     });
 
@@ -487,23 +914,34 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    const API_URL = 'http://127.0.0.1:5002'; // Define API URL
-    // --- FORMULÄR-SUBMISSION ---
+    // Formulär-submission
     const form = document.getElementById('contact-form');
     const feedbackElement = document.getElementById('form-feedback');
+    
     if (form) {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
+            
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value;
+            const message = document.getElementById('message').value.trim();
+            
             if (!name || !email || !message) {
-                feedbackElement.textContent = 'Vänligen fyll i alla fält.';
-                feedbackElement.className = 'error';
+                showFeedback('Vänligen fyll i alla fält.', 'error');
                 return;
             }
-            feedbackElement.textContent = 'Skickar...';
-            feedbackElement.className = 'success';
+            
+            // Validera e-post
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showFeedback('Vänligen ange en giltig e-postadress.', 'error');
+                return;
+            }
+            
+            showFeedback('Skickar meddelande...', 'success');
+            
+            const API_URL = 'http://127.0.0.1:5002';
+            
             fetch(`${API_URL}/api/mail/sendmail`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -515,9 +953,9 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(data => {
                 if (data.ok) {
-                    feedbackElement.textContent = data.message;
-                    feedbackElement.className = 'success';
+                    showFeedback(data.message || 'Meddelande skickat! Vi återkommer snart.', 'success');
                     form.reset();
+                    // Starta om animationerna efter reset
                     Object.keys(placeholderTexts).forEach(id => {
                         const inputElement = document.getElementById(id);
                         if(inputElement.value === '') {
@@ -525,16 +963,22 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                     });
                 } else {
-                    feedbackElement.textContent = data.error || 'Något gick fel, försök igen senare.';
-                    feedbackElement.className = 'error';
+                    showFeedback(data.error || 'Något gick fel, försök igen senare.', 'error');
                 }
             })
             .catch(error => {
                 console.error('Fetch Error:', error);
-                feedbackElement.textContent = 'Något gick fel, försök igen senare.';
-                feedbackElement.className = 'error';
+                showFeedback('Något gick fel, försök igen senare.', 'error');
             });
         });
+    }
+    
+    function showFeedback(message, type) {
+        feedbackElement.textContent = message;
+        feedbackElement.className = `form-feedback ${type}`;
+        
+        // Scrolla till feedback
+        feedbackElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 });
 

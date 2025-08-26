@@ -2,184 +2,97 @@
   {
     "title": "Ny produktlansering överträffar förväntningarna",
     "category": "affärer",
-    "timestamp": "2025-08-06T19:23:00Z",
-    "excerpt": "Försäljningsprognoser överträffades med 45%.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Googleplex_HQ_%28cropped%29.jpg/960px-Googleplex_HQ_%28cropped%29.jpg",
+    "timestamp": "2025-01-15T10:30:00Z",
+    "excerpt": "Försäljningsprognoser överträffades med 45% i första kvartalet. Den nya produkten har fått överväldigande respons från marknaden.",
+    "image": "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&auto=format&fit=crop&q=80",
     "body": "Här kommer hela brödtexten för artikeln. Denna kan vara flera stycken lång och innehålla mer detaljerad information, insikter, citat och länkar."
-  }
-
-  ,
+  },
   {
     "title": "Ny forskning visar på fördelarna med meditation",
     "category": "hälsa",
-    "timestamp": "2025-08-06T14:23:00Z",
-    "excerpt": "Studien visar att daglig meditation kan minska stress och öka fokus.",
-    "image": "https://placehold.co/120x80/00aaff/white?text=Hälsa",
-    "body": "Här kommer hela brödtexten för artikeln. Denna kan vara flera stycken lång och innehålla mer detaljerad information, insikter, citat och länkar."
+    "timestamp": "2025-01-14T14:23:00Z",
+    "excerpt": "Studien visar att daglig meditation kan minska stress och öka fokus med upp till 40%.",
+    "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop&q=80",
+    "body": "jag vill börja här med en test och se hur det ser ut"
   },
   {
     "title": "Teknikföretag lanserar ny AI-lösning",
     "category": "teknik",
-    "timestamp": "2025-08-06T14:23:00Z",
-    "excerpt": "Den nya AI-lösningen lovar att revolutionera kundservice.",
-    "image": "https://placehold.co/120x80/ff5722/white?text=Teknik",
+    "timestamp": "2025-01-13T09:15:00Z",
+    "excerpt": "Den nya AI-lösningen lovar att revolutionera kundservice med avancerad naturlig språkbehandling.",
+    "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop&q=80",
     "body": "Här kommer hela brödtexten för artikeln. Denna kan vara flera stycken lång och innehålla mer detaljerad information, insikter, citat och länkar."
   },
   {
     "title": "Klimatförändringar: Ny rapport varnar för allvarliga konsekvenser",
     "category": "miljö",
-    "timestamp": "2025-08-06T14:23:00Z",
-    "excerpt": "Forskarna varnar för att vi måste agera nu för att undvika katastrof.",
-    "image": "https://placehold.co/120x80/4caf50/white?text=Miljö",
+    "timestamp": "2025-01-12T16:45:00Z",
+    "excerpt": "Forskarna varnar för att vi måste agera nu för att undvika katastrofala klimatförändringar.",
+    "image": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&auto=format&fit=crop&q=80",
     "body": "Här kommer hela brödtexten för artikeln. Denna kan vara flera stycken lång och innehålla mer detaljerad information, insikter, citat och länkar."
-  }
-
-  ,
+  },
   {
     "title": "Ny studie visar på vikten av sömn för mental hälsa",
-    "category": "vetenskap",
-    "timestamp": "4 dagar sedan",
-    "excerpt": "Tillräcklig sömn är avgörande för att förebygga depression och ångest.",
-    "image": "https://placehold.co/120x80/9c27b0/white?text=Vetenskap",
+    "category": "hälsa",
+    "timestamp": "2025-01-11T11:20:00Z",
+    "excerpt": "Tillräcklig sömn är avgörande för att förebygga depression och ångest, visar ny forskning.",
+    "image": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&auto=format&fit=crop&q=80",
     "body": "Här kommer hela brödtexten för artikeln. Denna kan vara flera stycken lång och innehålla mer detaljerad information, insikter, citat och länkar."
-  }
-  ,
+  },
   {
     "title": "Kulturevenemang lockar tusentals besökare",
-    "category": "kultur",
-    "timestamp": "2025-08-06T14:23:00Z",
-    "excerpt": "Festivalen har blivit en stor succé med över 10 000 besökare.",
-    "image": "https://placehold.co/120x80/673ab7/white?text=Kultur",
-    "body": "Här kommer hela brödtexten för artikeln. Denna kan vara flera stycken lång och innehålla mer detaljer                                          ad information, insikter, citat och länkar."
-  }
-
-  ,
-  {
-    "title": "Ekonomisk tillväxt i Sverige överträffar förväntningarna",
-    "category": "ekonomi",
-    "timestamp": "2025-08-06T14:23:00Z",
-    "excerpt": "BNP-tillväxten förra kvartalet var den högsta på tre år.",
-    "image": "https://placehold.co/120x80/ffc107/white?text=Ekonomi",
+    "category": "evenemang",
+    "timestamp": "2025-01-10T13:30:00Z",
+    "excerpt": "Festivalen har blivit en stor succé med över 10 000 besökare under helgen.",
+    "image": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&auto=format&fit=crop&q=80",
     "body": "Här kommer hela brödtexten för artikeln. Denna kan vara flera stycken lång och innehålla mer detaljerad information, insikter, citat och länkar."
-  }
-
-    ,
+  },
   {
     "title": "Ekonomisk tillväxt i Sverige överträffar förväntningarna",
-    "category": "ekonomi",
-    "timestamp": "2025-08-06T14:23:00Z",
-    "excerpt": "BNP-tillväxten förra kvartalet var den högsta på tre år.",
-    "image": "https://placehold.co/120x80/ffc107/white?text=Ekonomi",
+    "category": "affärer",
+    "timestamp": "2025-01-09T08:45:00Z",
+    "excerpt": "BNP-tillväxten förra kvartalet var den högsta på tre år med 3.2% tillväxt.",
+    "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&auto=format&fit=crop&q=80",
     "body": "Här kommer hela brödtexten för artikeln. Denna kan vara flera stycken lång och innehålla mer detaljerad information, insikter, citat och länkar."
-  }
-
-    ,
+  },
   {
-    "title": "Ekonomisk tillväxt i Sverige överträffar förväntningarna",
-    "category": "ekonomi",
-    "timestamp": "2025-08-06T14:23:00Z",
-    "excerpt": "BNP-tillväxten förra kvartalet var den högsta på tre år.",
-    "image": "https://placehold.co/120x80/ffc107/white?text=Ekonomi",
+    "title": "Ny miljöteknologi kan revolutionera energiproduktion",
+    "category": "miljö",
+    "timestamp": "2025-01-08T15:10:00Z",
+    "excerpt": "Forskare har utvecklat en ny metod för att producera ren energi från solkraft.",
+    "image": "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&auto=format&fit=crop&q=80",
     "body": "Här kommer hela brödtexten för artikeln. Denna kan vara flera stycken lång och innehålla mer detaljerad information, insikter, citat och länkar."
-  }
-
-    ,
+  },
   {
-    "title": "Ekonomisk tillväxt i Sverige överträffar förväntningarna",
-    "category": "ekonomi",
-    "timestamp": "2025-08-06T14:23:00Z",
-    "excerpt": "BNP-tillväxten förra kvartalet var den högsta på tre år.",
-    "image": "https://placehold.co/120x80/ffc107/white?text=Ekonomi",
-    "body": "Här kommer hela brödtexten för artikeln. Denna kan vara flera stycken lång och innehålla mer detaljerad information, insikter, citat och länkar."
-  }
-
-    ,
-  {
-    "title": "Ekonomisk tillväxt i Sverige överträffar förväntningarna",
-    "category": "ekonomi",
-    "timestamp": "2025-08-06T14:23:00Z",
-    "excerpt": "BNP-tillväxten förra kvartalet var den högsta på tre år.",
-    "image": "https://placehold.co/120x80/ffc107/white?text=Ekonomi",
-    "body": "Här kommer hela brödtexten för artikeln. Denna kan vara flera stycken lång och innehålla mer detaljerad information, insikter, citat och länkar."
-  }
-
-    ,
-  {
-    "title": "Ekonomisk tillväxt i Sverige överträffar förväntningarna",
-    "category": "ekonomi",
-    "timestamp": "2025-08-06T14:23:00Z",
-    "excerpt": "BNP-tillväxten förra kvartalet var den högsta på tre år.",
-    "image": "https://placehold.co/120x80/ffc107/white?text=Ekonomi",
-    "body": "Här kommer hela brödtexten för artikeln. Denna kan vara flera stycken lång och innehålla mer detaljerad information, insikter, citat och länkar."
-  }
-
-    ,
-  {
-    "title": "Ekonomisk tillväxt i Sverige överträffar förväntningarna",
-    "category": "ekonomi",
-    "timestamp": "2025-08-06T14:23:00Z",
-    "excerpt": "BNP-tillväxten förra kvartalet var den högsta på tre år.",
-    "image": "https://placehold.co/120x80/ffc107/white?text=Ekonomi",
-    "body": "Här kommer hela brödtexten för artikeln. Denna kan vara flera stycken lång och innehålla mer detaljerad information, insikter, citat och länkar."
-  }
-
-    ,
-  {
-    "title": "Ekonomisk tillväxt i Sverige överträffar förväntningarna",
-    "category": "ekonomi",
-    "timestamp": "2025-08-06T14:23:00Z",
-    "excerpt": "BNP-tillväxten förra kvartalet var den högsta på tre år.",
-    "image": "https://placehold.co/120x80/ffc107/white?text=Ekonomi",
-    "body": "Här kommer hela brödtexten för artikeln. Denna kan vara flera stycken lång och innehålla mer detaljerad information, insikter, citat och länkar."
-  }
-
-    ,
-  {
-    "title": "Ekonomisk tillväxt i Sverige överträffar förväntningarna",
-    "category": "ekonomi",
-    "timestamp": "2025-08-06T14:23:00Z",
-    "excerpt": "BNP-tillväxten förra kvartalet var den högsta på tre år.",
-    "image": "https://placehold.co/120x80/ffc107/white?text=Ekonomi",
-    "body": "Här kommer hela brödtexten för artikeln. Denna kan vara flera stycken lång och innehålla mer detaljerad information, insikter, citat och länkar."
-  }
-
-    ,
-  {
-    "title": "Ekonomisk tillväxt i Sverige överträffar förväntningarna",
-    "category": "ekonomi",
-    "timestamp": "2025-08-06T14:23:00Z",
-    "excerpt": "BNP-tillväxten förra kvartalet var den högsta på tre år.",
-    "image": "https://placehold.co/120x80/ffc107/white?text=Ekonomi",
-    "body": "Här kommer hela brödtexten för artikeln. Denna kan vara flera stycken lång och innehålla mer detaljerad information, insikter, citat och länkar."
-  }
-
-    ,
-  {
-    "title": "Ekonomisk tillväxt i Sverige överträffar förväntningarna",
+    "title": "Digital transformation accelererar i svenska företag",
     "category": "teknik",
-    "timestamp": "6 dagar sedan",
-    "excerpt": "BNP-tillväxten förra kvartalet var den högsta på tre år.",
-    "image": "https://placehold.co/120x80/ffc107/white?text=Ekonomi",
+    "timestamp": "2025-01-07T12:00:00Z",
+    "excerpt": "Flera stora svenska företag har påbörjat omfattande digitaliseringsprojekt.",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80",
     "body": "Här kommer hela brödtexten för artikeln. Denna kan vara flera stycken lång och innehålla mer detaljerad information, insikter, citat och länkar."
-  }
-
-    ,
+  },
   {
-    "title": "Ekonomisk tillväxt i Sverige överträffar förväntningarna",
-    "category": "teknik",
-    "timestamp": "2025-08-06T14:23:00Z",
-    "excerpt": "BNP-tillväxten förra kvartalet var den högsta på tre år.",
-    "image": "https://placehold.co/120x80/ffc107/white?text=Ekonomi",
+    "title": "Ny hälsokampanj fokuserar på mental välbefinnande",
+    "category": "hälsa",
+    "timestamp": "2025-01-06T10:15:00Z",
+    "excerpt": "Regeringen lanserar en ny nationell kampanj för att förbättra mental hälsa.",
+    "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&auto=format&fit=crop&q=80",
     "body": "Här kommer hela brödtexten för artikeln. Denna kan vara flera stycken lång och innehålla mer detaljerad information, insikter, citat och länkar."
-  }
-
-    ,
+  },
   {
-    "title": "Ekonomisk tillväxt i Sverige överträffar förväntningarna",
-    "category": "teknik",
-    "timestamp": "2025-08-06T14:23:00Z",
-    "excerpt": "BNP-tillväxten förra kvartalet var den högsta på tre år.",
-    "image": "https://placehold.co/120x80/ffc107/white?text=Ekonomi",
+    "title": "Stort tech-event planeras för våren",
+    "category": "evenemang",
+    "timestamp": "2025-01-05T14:30:00Z",
+    "excerpt": "Stockholm blir värd för Nordens största tech-konferens med över 5000 deltagare.",
+    "image": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=80",
+    "body": "Här kommer hela brödtexten för artikeln. Denna kan vara flera stycken lång och innehålla mer detaljerad information, insikter, citat och länkar."
+  },
+  {
+    "title": "Hållbar investering blir allt populärare",
+    "category": "affärer",
+    "timestamp": "2025-01-04T09:45:00Z",
+    "excerpt": "ESG-investeringar har ökat med 60% under det senaste året i Sverige.",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80",
     "body": "Här kommer hela brödtexten för artikeln. Denna kan vara flera stycken lång och innehålla mer detaljerad information, insikter, citat och länkar."
   }
 ]

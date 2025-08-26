@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Din Titel</title>
-    <link rel="stylesheet" href="style.css">
 
     <style>
         /* ===== NY TECH POPUP-STIL ===== */
@@ -70,6 +69,131 @@
         }
         @keyframes shrink-bar { from { width: 100%; } to { width: 0%; } }
         @keyframes pulse-icon { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+
+        /* ===== HAMBURGER MENU STYLES ===== */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 25px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+            margin-right: 20px;
+        }
+
+        .mobile-menu-btn span {
+            width: 100%;
+            height: 3px;
+            background: #f86700;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .mobile-menu ul li {
+            margin: 20px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-overlay.active .mobile-menu ul li {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mobile-menu ul li:nth-child(1) { transition-delay: 0.1s; }
+        .mobile-menu ul li:nth-child(2) { transition-delay: 0.2s; }
+        .mobile-menu ul li:nth-child(3) { transition-delay: 0.3s; }
+        .mobile-menu ul li:nth-child(4) { transition-delay: 0.4s; }
+        .mobile-menu ul li:nth-child(5) { transition-delay: 0.5s; }
+        .mobile-menu ul li:nth-child(6) { transition-delay: 0.6s; }
+
+        .mobile-menu ul li a {
+            display: block;
+            padding: 15px 20px;
+            color: #e0e0e0;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            font-size: 1.1rem;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu ul li a:hover {
+            color: #f86700;
+            border-color: rgba(248, 103, 0, 0.3);
+            background: rgba(248, 103, 0, 0.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .floating-header .header-nav {
+                display: none !important;
+            }
+
+            .mobile-menu-btn {
+                display: flex !important;
+            }
+
+            .beta-tag {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -94,8 +218,29 @@
             <div class="header-placeholder">
                 <span class="beta-tag">BETA V2</span>
             </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <nav class="mobile-menu">
+            <ul>
+                <li><a href="index.html#our-processes">Tjänster</a></li>
+                <li><a href="kurser.html">Kurser</a></li>
+                <li><a href="news.html">Nyheter</a></li> 
+                <li><a href="about.html">Om Oss</a></li>
+                <li><a href="index.html#faq-sektion">FAQ</a></li>
+                <li><a href="contactus.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <div id="news-popup">
         <div class="tech-popup">
@@ -103,6 +248,8 @@
             <div class="popup-timer-bar"></div>
         </div>
     </div>
+
+
 
 </body>
 </html>
