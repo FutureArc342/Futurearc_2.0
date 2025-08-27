@@ -1,94 +1,280 @@
-<footer style="background-color: #121212; padding: 3rem 2rem; color: #ccc;">
+<footer class="modern-footer">
     <style>
+    .modern-footer {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      padding: 4rem 2rem 2rem;
+      color: #e0e0e0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .modern-footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #f86700, transparent);
+    }
+
     .footer-content {
-      display: flex;
-      justify-content: flex-start;
-      flex-wrap: nowrap;
-      gap: 4rem;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
       max-width: 1200px;
-      margin: auto;
-      align-items: center; /* detta gör att alla barn är vertikalt centrerade */
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .footer-logo {
+      max-width: 200px;
+      height: auto;
+      filter: brightness(1.1);
+      transition: filter 0.3s ease;
+    }
+
+    .footer-logo:hover {
+      filter: brightness(1.3);
+    }
+
+    .footer-description {
+      color: #f86700 !important;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0;
+      font-weight: 400;
     }
 
     .footer-column {
-      flex: 1 1 200px;
-      text-align: left;
       display: flex;
       flex-direction: column;
-      justify-content: center; /* centrerar innehållet vertikalt */
-      height: 100%; /* säkerställer att höjden kan anpassas */
+      gap: 1rem;
     }
-    .footer-column h3,
+
     .footer-column h4 {
-      color: #fff;
-      margin-bottom: 1rem;
+      color: #ffffff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0 0 1rem 0;
+      position: relative;
+      padding-bottom: 0.5rem;
     }
-    .footer-column p {
-      color: #ccc;
-      font-size: 0.95rem;
-      line-height: 1.5;
+
+    .footer-column h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background: #f86700;
+      border-radius: 1px;
     }
+
     .footer-column a {
-      display: inline;
-      color: #ccc;
+      color: #b0b0b0;
       text-decoration: none;
-      margin-bottom: 0.5rem;
-      transition: color 0.3s ease;
-      cursor: pointer;
-      padding: 0;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      padding: 0.25rem 0;
+      position: relative;
+      display: inline-block;
     }
+
     .footer-column a:hover {
       color: #f86700;
+      transform: translateX(5px);
     }
+
+    .footer-column a::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: #f86700;
+      transition: width 0.3s ease;
+    }
+
+    .footer-column a:hover::before {
+      width: 100%;
+    }
+
+    .footer-column a.locked {
+      color: #666 !important;
+      cursor: not-allowed;
+      position: relative;
+      opacity: 0.6;
+    }
+
+    .footer-column a.locked:hover {
+      color: #666 !important;
+      transform: none;
+    }
+
+    .footer-column a.locked::before {
+      display: none;
+    }
+
+    .footer-column a.locked::after {
+      content: '\f023';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      margin-left: 8px;
+      font-size: 0.8rem;
+      color: #f86700;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      color: #b0b0b0;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 1.1rem;
+    }
+
+    .social-link:hover {
+      background: #f86700;
+      color: #ffffff;
+      border-color: #f86700;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(248, 103, 0, 0.3);
+    }
+
     .footer-bottom {
-    text-align: center;
-    padding: 1.5rem 1rem; /* Mer padding ovan och under */
-    margin-top: 1.5rem;  /* Luft ovanför linjen */
-    border-top: 1px solid rgba(255,255,255,0.1);
-    font-size: 0.85rem;
-    color: #aaa;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+      text-align: center;
+      padding: 2rem 1rem 0;
+      margin-top: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.9rem;
+      color: #888;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
     }
-    @media (max-width: 600px) {
+
+    .footer-bottom::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #f86700, transparent);
+    }
+
+    .footer-bottom p {
+      margin: 0;
+      font-weight: 400;
+    }
+
+    @media (max-width: 768px) {
       .footer-content {
-        flex-direction: column;
-        flex-wrap: nowrap;
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+      }
+
+      .footer-brand {
+        align-items: center;
+      }
+
+      .footer-column h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+
+      .modern-footer {
+        padding: 3rem 1.5rem 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .modern-footer {
+        padding: 2.5rem 1rem 1.5rem;
+      }
+
+      .footer-content {
         gap: 2rem;
-        align-items: flex-start; /* ändra för mobil */
       }
-      .footer-column {
-        flex: 1 1 100%;
-        height: auto;
+
+      .social-links {
+        gap: 0.75rem;
       }
-    }
-    .footer-column:last-child {
-      margin-top: -1.5rem;
-    }
-    .footer-description {
-    color: #f86700 !important;
+
+      .social-link {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+      }
     }
     </style>
+
     <div class="footer-content">
-      <div class="footer-column">
-        <img src="assets/Images/logowhite.png" alt="Future Arc logo" style="max-width: 180px; height: auto;">
-        <p class="footer-description">Vi skapar möjligheter för framtidens tech-community. Var med och forma framtiden.</p>
+      <div class="footer-brand">
+        <img src="assets/Images/logowhite.png" alt="Future Arc logo" class="footer-logo">
+        <p class="footer-description">Vi skapar möjligheter för framtidens tech-community. Var med och forma framtiden med oss.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/futurearcmedia" target="_blank" class="social-link" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://x.com/future_arcmedia" target="_blank" class="social-link" title="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/futurearcmedia" target="_blank" class="social-link" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://www.tiktok.com/@futurearcmedia" target="_blank" class="social-link" title="TikTok">
+            <i class="fab fa-tiktok"></i>
+          </a>
+        </div>
       </div>
+      
       <div class="footer-column">
         <h4>Utforska</h4>
         <a href="index.html">Hem</a>
         <a href="about.html">Om oss</a>
         <a href="#our-processes">Tjänster</a>
         <a href="contactus.html">Kontakta oss</a>
+        <a href="news.html">Nyheter</a>
       </div>
+      
       <div class="footer-column">
-        <h4>Följ oss</h4>
-        <a href="https://www.instagram.com/futurearcmedia" target="_blank">Instagram</a>
-        <a href="https://x.com/future_arcmedia" target="_blank">Twitter</a>
-        <a href="https://www.linkedin.com/company/futurearcmedia" target="_blank">LinkedIn</a>
-        <a href="https://www.tiktok.com/@futurearcmedia" target="_blank">TikTok</a>
+        <h4>Resurser</h4>
+        <a class="locked">Web Development</a>
+        <a class="locked">Python Tutorials</a>
+        <a class="locked">AI Introduktion</a>
+        <a href="assets/docs/Futurearcwhitepaper.pdf" target="_blank">Whitepaper</a>
       </div>
+      
       <div class="footer-column">
         <h4>Juridiskt</h4>
         <a href="privacypolicy.html">Privacy Policy</a>
@@ -96,7 +282,8 @@
         <a href="copyright.html">Copyright</a>
       </div>
     </div>
+    
     <div class="footer-bottom">
-      <p>&copy; 2025 Future Arc. Alla rättigheter förbehållna.</p>
+      <p>&copy; 2025 Future Arc. Alla rättigheter förbehållna. | Skapat med <i class="fas fa-heart" style="color: #f86700;"></i> för tech-communityn</p>
     </div>
 </footer>

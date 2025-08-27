@@ -1005,5 +1005,15 @@ function includeHTML() {
         }
     }
 }
+
+// Lägg till scroll-to-top knapp
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollButton = document.createElement('button');
+    scrollButton.className = 'scroll-to-top';
+    scrollButton.onclick = scrollToTop;
+    scrollButton.innerHTML = '<i class="fas fa-arrow-up"></i><span>Ta mig upp</span>';
+    document.body.appendChild(scrollButton);
+});
 </script>
+<script src="assets/js/owl-animation.js"></script>
 </html>

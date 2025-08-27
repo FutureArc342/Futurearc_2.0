@@ -40,11 +40,7 @@
 
     html, body {
       height: 100%;
-      background: 
-        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.02) 0%, transparent 50%),
-        linear-gradient(135deg, #0a0a0a 0%, #0f0f0f 25%, #0d0d0d 50%, #0a0a0a 75%, #000000 100%);
+      background: linear-gradient(135deg, #0a0a0a 0%, #0f0f0f 25%, #0d0d0d 50%, #0a0a0a 75%, #000000 100%);
       color: var(--text);
       font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
       line-height: 1.65;
@@ -57,13 +53,13 @@
     /* Global containers */
     main { position: relative; z-index: 1; }
 
-    .section { max-width: 1200px; margin: 0 auto; padding: 100px 24px; }
-
-    .section-divider { 
-      height: 80px; 
-      position: relative; 
-      background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+    .section { 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      padding: 100px 24px; 
     }
+
+
 
     /* ---------------- HERO ---------------- */
     .courses-hero {
@@ -71,24 +67,8 @@
       overflow: clip;
       text-align: center;
       padding: 140px 24px 110px;
-      background: 
-        linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0.1) 60%, transparent 100%),
-        radial-gradient(ellipse at center top, rgba(248,103,0,0.08) 0%, transparent 70%);
-      isolation: isolate;
-    }
-    
-    .courses-hero::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: 
-        radial-gradient(circle at 30% 20%, rgba(248,103,0,0.05) 0%, transparent 40%),
-        radial-gradient(circle at 70% 80%, rgba(255,77,0,0.03) 0%, transparent 40%);
-      pointer-events: none;
-      z-index: -1;
+      background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0.1) 60%, transparent 100%);
+      border-top: 3px solid var(--accent);
     }
     .kicker {
       display: inline-flex; align-items: center; gap: 10px;
@@ -545,6 +525,8 @@
       backdrop-filter: blur(20px);
       position: relative;
       overflow: hidden;
+      text-decoration: none;
+      color: inherit;
     }
     
     .article-card::before {
@@ -561,10 +543,14 @@
     }
     
     .article-card:hover { 
-      border-color: rgba(248,103,0,0.3); 
-      background: rgba(27, 27, 27, 0.8); 
-      transform: translateY(-6px) scale(1.02);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+      border-color: rgba(248,103,0,0.4); 
+      background: rgba(27, 27, 27, 0.9); 
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 
+        0 20px 40px rgba(0,0,0,0.5),
+        0 0 0 1px rgba(248,103,0,0.2),
+        0 0 30px rgba(248,103,0,0.1);
+      text-decoration: none;
     }
     
     .article-card:hover::before {
@@ -587,6 +573,11 @@
       display: block;
       position: relative;
       z-index: 1;
+      transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    
+    .article-card:hover .article-img img {
+      transform: scale(1.05);
     }
     /* Hide any potential text overlay */
     .article-img::before,
@@ -613,8 +604,18 @@
       position: relative;
       z-index: 1;
     }
-    .article-title { font-weight: 800; font-size: 1.1rem; }
-    .article-desc { color: var(--muted); font-size: .98rem; }
+    .article-title { 
+      font-weight: 800; 
+      font-size: 1.1rem; 
+      color: var(--text); 
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .article-card:hover .article-title {
+      color: var(--accent);
+    }
+    .article-desc { color: var(--muted); font-size: .98rem; text-decoration: none; }
 
     .article-arrow { 
       margin-left: auto; 
@@ -624,8 +625,13 @@
       transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
       position: relative;
       z-index: 1;
+      text-decoration: none;
     }
-    .article-card:hover .article-arrow { transform: translateX(4px); }
+    .article-card:hover .article-arrow { 
+      transform: translateX(6px); 
+      color: var(--accent); 
+      opacity: 1;
+    }
     
     @media (max-width: 768px) {
       .article-card {
@@ -975,6 +981,8 @@
     .reveal { opacity: 0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease; }
     .reveal.in { opacity: 1; transform: none; }
 
+
+
     /* Focus styles & reduced motion */
     :focus-visible { outline: 2px solid rgba(248,103,0,0.7); outline-offset: 3px; border-radius: 10px; }
     @media (prefers-reduced-motion: reduce) {
@@ -987,7 +995,6 @@
 <body onload="includeHTML()">
   <!-- Header injected -->
   <div include-html="components/header.html"></div>
-  <div class="section-divider" aria-hidden="true"></div>
 
   <main>
     <!-- HERO -->
@@ -1284,8 +1291,6 @@
       </div>
     </section>
 
-    <div class="section-divider" aria-hidden="true"></div>
-
     <!-- ARTICLES SECTION -->
     <section class="section" id="articles">
       <header class="section-header reveal">
@@ -1415,8 +1420,8 @@
     </section>
   </main>
 
-  <div class="section-divider" aria-hidden="true"></div>
   <div include-html="components/footer.html"></div>
+  <div style="height: 3px; background: var(--accent);"></div>
 
   <script>
     // IntersectionObserver for reveal animations
@@ -1521,6 +1526,14 @@
         }
       });
     });
+    
+    // Lägg till scroll-to-top knapp
+    const scrollButton = document.createElement('button');
+    scrollButton.className = 'scroll-to-top';
+    scrollButton.onclick = scrollToTop;
+    scrollButton.innerHTML = '<i class="fas fa-arrow-up"></i><span>Ta mig upp</span>';
+    document.body.appendChild(scrollButton);
   </script>
+  <script src="assets/js/owl-animation.js"></script>
 </body>
 </html>

@@ -4,138 +4,467 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Om oss</title>
+    <title>Om oss - Future Arc</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="assets/js/include.js"></script>
     <script src="assets/js/navbar.js"></script>
+    <style>
+        /* New About Page Design */
+        .about-page {
+            background: #0a0a0a;
+            min-height: 100vh;
+        }
+
+
+
+        .hero-section {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(248, 103, 0, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(248, 103, 0, 0.05) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #f86700, #ff6b35, #f86700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: #e0e0e0;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            line-height: 1.7;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .current-services {
+            padding: 80px 20px;
+            background: #0f0f0f;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #f86700, #ff6b35);
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .service-card {
+            background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+            border: 1px solid rgba(248, 103, 0, 0.2);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(248, 103, 0, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #f86700;
+            box-shadow: 0 20px 40px rgba(248, 103, 0, 0.2);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #f86700, #ff6b35);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .service-description {
+            color: #b0b0b0;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .future-goals {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        }
+
+        .goals-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .goals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .goal-card {
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(248, 103, 0, 0.3);
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .goal-card:hover {
+            border-color: #f86700;
+            transform: translateY(-5px);
+        }
+
+        .goal-status {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #f86700;
+            color: #ffffff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(248, 103, 0, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(248, 103, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(248, 103, 0, 0); }
+        }
+
+        .goal-title {
+            color: #ffffff;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .goal-description {
+            color: #b0b0b0;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .mission-section {
+            padding: 80px 20px;
+            background: #0f0f0f;
+            text-align: center;
+        }
+
+        .mission-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .mission-text {
+            font-size: 1.3rem;
+            color: #e0e0e0;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .mission-highlight {
+            color: #f86700;
+            font-weight: 600;
+        }
+
+        .cta-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #f86700 0%, #ff6b35 100%);
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            color: #ffffff;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .cta-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ffffff;
+            color: #f86700;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .goals-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .service-card,
+            .goal-card {
+                padding: 2rem;
+            }
+        }
+    </style>
 </head>
 
 <body onload="includeHTML()">
     <div include-html="components/header.html"></div>
-    <hr class="section-divider">
-        <div class="roadmap-about">
-            <img src="assets/Images/timeline.png" alt="Roadmap">
-        </div>   
-        <div class="section-divider"></div>
-        <div class="about-container">
-            <h1>Om oss</h1>
-            <div class="about-text">
-            <!-- First section - Left side -->
-            <div class="text-section-first">
-                <div class="aboutus-vision">
-                    <picture>
-                        <img src="assets/Images/aboutus/1.png" alt="About Us Vision">
-                    </picture>
-                </div>
-                <div class="text-content">
-                    <h4>Vårt Mål :</h4>
-                    <p>På Future Arc har vi en vision om att lösa ett av de största problemen för svenska utvecklare: bristen på nätverk, resurser och stöd. I dagens snabba och konkurrensutsatta arbetsmarknad kan det vara en stor utmaning att hitta likasinnade att samarbeta med, att få hjälp när man fastnar i ett projekt, och att skapa de kontakter som behövs för att ta nästa steg i karriären. Detta gäller särskilt för juniora utvecklare som ofta saknar tillgång till mentorer och företag som kan investera i deras utbildning och utveckling. Men även erfarna utvecklare, som redan har byggt upp sina färdigheter och expertis, kan uppleva svårigheter med att hitta rätt möjligheter och projekt som matchar deras ambitioner och tekniska kunskaper.</p>
+    
+    <div class="about-page">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Vår Vision</h1>
+                <p class="hero-subtitle">
+                    Vi skapar Sveriges ledande tech-community där utvecklare kan växa, 
+                    lära och samarbeta för att forma framtidens teknologi.
+                </p>
+                <p class="hero-description">
+                    Future Arc föddes ur en vision att lösa ett av de största problemen för svenska utvecklare: 
+                    bristen på nätverk, resurser och stöd. Vi tror på att en stark community kan vara lösningen 
+                    och att gemenskapen mellan utvecklare är nyckeln till personlig och professionell framgång.
+                </p>
+            </div>
+        </section>
+
+        <!-- Current Services -->
+        <section class="current-services">
+            <div class="services-container">
+                <h2 class="section-title">Vad vi gör</h2>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="service-title">Community Building</h3>
+                        <p class="service-description">
+                            Vi skapar en stark community där utvecklare kan nätverka, 
+                            dela kunskap och hitta samarbetspartners. Genom regelbundna 
+                            events och online-forum bygger vi relationer som varar livet ut.
+                        </p>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="service-title">Utbildning & Lärande</h3>
+                        <p class="service-description">
+                            Från nybörjare till expert - vi erbjuder kurser, workshops 
+                            och tutorials för alla nivåer. Vårt mål är att göra tech 
+                            tillgängligt för alla som vill lära sig.
+                        </p>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
+                        <h3 class="service-title">Tech-nyheter & Insikter</h3>
+                        <p class="service-description">
+                            Håll dig uppdaterad med de senaste trenderna och 
+                            innovationerna inom tech. Vi filtrerar och presenterar 
+                            det viktigaste för dig.
+                        </p>
+                    </div>
                 </div>
             </div>
-        
-            <!-- Second section - Right side -->
-            <div class="text-section">
-                <div class="text-content">
-                    <h4>En community som driver din utveckling framåt</h4>
-                    <p>Vi tror på att en stark community kan vara lösningen på dessa problem och att gemenskapen mellan utvecklare är nyckeln till personlig och professionell framgång. Genom att skapa en plattform som främjar samarbete, delning av kunskap och stöder utveckling på alla nivåer, strävar vi efter att stärka Sveriges tech-community och göra det lättare för alla att komma vidare i sina karriärer. Vi vill skapa en framtid där alla utvecklare har tillgång till de verktyg och resurser de behöver för att växa, utmana sig själva och bygga meningsfulla relationer.</p>
-                    <p>Future Arc kommer att vara mer än bara en plattform för programmerare – vi vill bli den självklara mötesplatsen för alla tech-entusiaster i Sverige och bortom.</p>
-                </div>
-                <div class="aboutus-vision">
-                    <picture>
-                        <img src="assets/Images/aboutus/2.png" alt="About Us Vision">
-                    </picture>
-                </div>
-            </div>
-        
-            <!-- Third section - Left side -->
-            <div class="text-section">
-                <div class="aboutus-vision">
-                    <picture>
-                        <img src="assets/Images/aboutus/3.png" alt="About Us Vision">
-                    </picture>
-                </div>
-                <div class="text-content">
-                    <h4>En växande och dynamisk plattform</h4>
-                    <p>Future Arc kommer att vara en digital mötesplats där utvecklare från olika delar av landet, och även internationellt, kan samlas, interagera och dela med sig av sina erfarenheter och kunskaper. Plattformen ska erbjuda funktioner som gör det möjligt att hitta samarbetspartners, ta del av guider och tutorials, samt få hjälp och råd när det behövs. Vi ser till att det alltid finns något för alla – från de som vill lära sig de grundläggande programmeringsteknikerna till de som vill dyka in i mer avancerade ämnen som maskininlärning och artificiell intelligens.</p>
-                </div>
-            </div>
-        
-            <!-- Fourth section - Right side -->
-            <div class="text-section">
-                <div class="text-content">
-                    <h4>Fysiska och virtuella evenemang</h4>
-                    <p>För att skapa mer personliga och engagerande upplevelser kommer vi att arrangera en rad event  både fysiska träffar och virtuella konferenser – som gör det möjligt för medlemmar att träffas, utbyta idéer och knyta kontakter. Vi planerar att hålla tech-träffar och hackathons i samarbete med företag och utbildningsinstitut i Sverige. Dessa evenemang kommer att ge utvecklare möjlighet att träffas ansikte mot ansikte, diskutera aktuella trender och teknologier och kanske till och med hitta nya samarbeten som kan leda till gemensamma projekt eller jobb.</p>
-                </div>
-                <div class="aboutus-vision">
-                    <picture>
-                        <img src="assets/Images/aboutus/8.png" loading="lazy" alt="About Us Vision">
-                    </picture>
-                </div>
-            </div>
-        
-            <!-- Fifth section - Left side -->
-            <div class="text-section">
-                <div class="aboutus-vision">
-                    <picture>
-                        <img src="assets/Images/aboutus/4.png" loading="lazy" alt="About Us Vision">
-                    </picture>
-                </div>
-                <div class="text-content">
-                    <h4>Kurser och utbildning för alla nivåer</h4>
-                    <p>För att göra tech-världen mer tillgänglig och för att hjälpa fler att ta sina första steg inom programmering erbjuder vi kurser för både nybörjare och mer erfarna utvecklare. Kurserna kommer att vara både praktiska och inspirerande, så att alla medlemmar kan utveckla sina färdigheter i sin egen takt. För de som vill ta sina kunskaper till nästa nivå erbjuder vi även avancerade kurser och certifieringar inom specifika områden som fullstack-utveckling, dataanalys och cybersäkerhet. Vi vill se till att alla känner sig välkomna och rustade att börja sin resa i tech-världen, oavsett var de befinner sig idag.</p>
+        </section>
+
+        <!-- Future Goals -->
+        <section class="future-goals">
+            <div class="goals-container">
+                <h2 class="section-title">Framtida Mål</h2>
+                
+                <div class="goals-grid">
+                    <div class="goal-card">
+                        <div class="goal-status">🎯 Framtida Mål</div>
+                        <h3 class="goal-title">Karriärstöd & Mentorprogram</h3>
+                        <p class="goal-description">
+                            Vi hjälper dig att ta nästa steg i din karriär genom 
+                            mentorprogram, CV-granskning och kopplingar till 
+                            spännande företag och projekt.
+                        </p>
+                    </div>
+
+                    <div class="goal-card">
+                        <div class="goal-status">🎯 Framtida Mål</div>
+                        <h3 class="goal-title">Innovation & Projekt</h3>
+                        <p class="goal-description">
+                            Tillsammans skapar vi innovativa projekt och lösningar. 
+                            Från hackathons till startup-incubators - vi ger dig 
+                            verktygen att förverkliga dina idéer.
+                        </p>
+                    </div>
+
+                    <div class="goal-card">
+                        <div class="goal-status">🎯 Framtida Mål</div>
+                        <h3 class="goal-title">Globalt Nätverk</h3>
+                        <p class="goal-description">
+                            Kopplingar till internationella tech-communities och 
+                            möjligheter att samarbeta med utvecklare från hela världen. 
+                            Framtiden är global.
+                        </p>
+                    </div>
                 </div>
             </div>
-        
-            <!-- Sixth section - Right side -->
-            <div class="text-section">
-                <div class="text-content">
-                    <h4>Kodningsutmaningar och interaktiva forum</h4>
-                    <p>Vi kommer att skapa en miljö som uppmuntrar till kreativitet och innovation genom att erbjuda kodningsutmaningar, tekniska tävlingar och projekt där utvecklare kan utmana sig själva och lära sig nya färdigheter. Genom att erbjuda regelbundna utmaningar och praktiska projekt skapar vi en plats för medlemmarna att förbättra sina färdigheter och ta sig an verkliga problem. Vi kommer även att utveckla dedikerade forum och diskussionsgrupper där utvecklare kan ställa frågor, ge feedback och lära sig av varandras erfarenheter. Dessa forum kommer att vara en värdefull källa till stöd och inspiration, där alla kan dela sina lösningar och idéer.</p>
-                </div>
-                <div class="aboutus-vision">
-                    <picture>
-                        <img src="assets/Images/aboutus/5.png" loading="lazy" alt="About Us Vision">
-                    </picture>
-                </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section class="mission-section">
+            <div class="mission-container">
+                <h2 class="section-title">Vårt Uppdrag</h2>
+                <p class="mission-text">
+                    Vårt långsiktiga mål är att skapa en ledande tech-community i Sverige, 
+                    som fungerar som en inkubator för idéer, innovation och samarbete. 
+                    Genom att erbjuda en helhetslösning för utbildning, nätverkande och 
+                    karriärutveckling, vill vi <span class="mission-highlight">stärka Sveriges position som en global tech-hub</span> 
+                    och göra det möjligt för utvecklare på alla nivåer att växa och nå sina mål.
+                </p>
+                <p class="mission-text">
+                    Vi är övertygade om att framtidens tech-scen i Sverige kommer att vara en plats 
+                    där alla har möjlighet att bidra och växa, och vi bjuder in dig att vara en del av denna resa.
+                </p>
             </div>
-        
-            <!-- Seventh section - Left side -->
-            <div class="text-section">
-                <div class="aboutus-vision">
-                    <picture>
-                        <img src="assets/Images/aboutus/6.png" loading="lazy" alt="About Us Vision">
-                    </picture>
-                </div>
-                <div class="text-content">
-                    <h4>Jobbannonser och karriärstöd</h4>
-                    <p>Future Arc kommer att vara en nav för talang och möjligheter, där företag kan hitta utvecklare som passar deras behov och där medlemmar kan upptäcka nya jobbchanser. Förutom att samla relevanta jobbannonser från både startups och etablerade företag, kommer vi även att erbjuda karriärstöd, som CV-granskning, intervju-coaching och personlig rådgivning. Vi kommer att erbjuda medlemskap i ett mentorprogram, där erfarna utvecklare kan vägleda juniora kollegor och hjälpa dem att navigera arbetsmarknaden.</p>
-                </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-container">
+                <h2 class="cta-title">Bli en del av framtiden</h2>
+                <p class="cta-text">
+                    Gå med i Sveriges mest innovativa tech-community och 
+                    börja din resa mot framtiden redan idag.
+                </p>
+                <a href="contactus.html" class="cta-button">Gå med nu</a>
             </div>
-        
-            <!-- Eighth section - Right side -->
-            <div class="text-section">
-                <div class="text-content">
-                    <h4>Tech-nyheter och insikter</h4>
-                    <p>För att hålla alla våra medlemmar uppdaterade om de senaste trenderna och innovationerna inom tech kommer vi att kontinuerligt publicera nyheter, artiklar och analyser om de mest aktuella ämnena – både från Sverige och internationellt. Vi vill skapa en plattform där utvecklare inte bara lär sig tekniska färdigheter utan också håller sig informerade om de senaste nyheterna, verktygen och bästa metoderna inom sina områden.</p>
-                </div>
-                <div class="aboutus-vision">
-                    <picture>
-                        <img src="assets/Images/aboutus/7.png" loading="lazy" alt="About Us Vision">
-                    </picture>
-                </div>
-            </div>
-        
-            <!-- Conclusion section - Full width -->
-            <div class="text-section full-width">
-                <div class="full-text-content">
-                    <p class="vision-conclusion">Vårt långsiktiga mål är att skapa en ledande tech-community i Sverige, som fungerar som en inkubator för idéer, innovation och samarbete. Genom att erbjuda en helhetslösning för utbildning, nätverkande och karriärutveckling, vill vi stärka Sveriges position som en global tech-hub och göra det möjligt för utvecklare på alla nivåer att växa och nå sina mål. Vi är övertygade om att framtidens tech-scen i Sverige kommer att vara en plats där alla har möjlighet att bidra och växa, och vi bjuder in dig att vara en del av denna resa. Tillsammans kan vi skapa en tech-community som inte bara är en plattform för att hitta jobb och nätverka, utan en plats där vi alla kan inspireras, lära oss och driva teknologiska framsteg framåt.</p>
-                </div>
-            </div>
-        </div>
+        </section>
     </div>
-</div>
-    <hr class="section-divider">
+
     <button onclick="scrollToTop()" class="scroll-to-top">
         <i class="fas fa-arrow-up"></i>
         <span>Ta mig upp</span>
@@ -144,38 +473,8 @@
     <footer>
         <div class="footer" include-html="components/footer.html"></div>
     </footer>
-    <script>
-    function autoResize(textarea) {
-        textarea.style.height = 'auto'; // Återställer höjden
-        textarea.style.height = textarea.scrollHeight + 'px'; // Sätter höjden baserat på innehållet
-    }
-    </script>
-    <script>
-        function scrollToTop() {
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        }
-        </script>
-    <script>
-// JavaScript för att hantera visning och dölja knappen
-window.onscroll = function() {
-    var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
-    var windowHeight = window.innerHeight;
-    var fullHeight = document.body.scrollHeight;
-    
-    var button = document.querySelector('.scroll-to-top');
-    
-    // Visa knappen endast när användaren är nära botten av sidan
-    if (fullHeight - (scrollPosition + windowHeight) <= 1000) {
-        button.style.bottom = '20px'; // Flyttar upp knappen så den är synlig
-    } else {
-        button.style.bottom = '-60px'; // Gömmer knappen
-    }
-};
 
-function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-</script>
+    <script src="assets/js/owl-animation.js"></script>
 </body>
 </html>
 
