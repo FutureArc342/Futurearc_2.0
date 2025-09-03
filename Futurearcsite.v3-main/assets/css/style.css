@@ -373,7 +373,7 @@ body {
     }
     
     .floating-header .logo-link {
-        width: 120px;
+        width: 160px;
     }
 }
 
@@ -463,35 +463,55 @@ body {
 }
 
 .hero .cta {
-    background-color: #f25c05; /* Orange bakgrund */
+    background: linear-gradient(135deg, #e74c3c 0%, #f39c12 50%, #e74c3c 100%); /* Mörkare orange-röd gradient */
     color: #ffffff; /* Vit text */
-    padding: 15px 30px; /* Ökar padding för att göra knappen större */
-    font-size: 1.2rem; /* Ökar fontstorleken */
-    border-radius: 5px; /* Rundade hörn */
+    padding: 18px 36px; /* Större padding för mer impact */
+    font-size: 1.1rem; /* Balanserad textstorlek */
+    border-radius: 50px; /* Rundare hörn för modern look */
     text-decoration: none; /* Tar bort understrykning */
-    font-weight: bold; /* Fetstil */
-    transition: all 0.3s ease; /* Animation för alla effekter */
+    font-weight: 700; /* Bold för mer impact */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bounce animation */
     margin-bottom: 50px;
-    box-shadow: 0 0 15px rgba(242, 92, 5, 0.3),
-                0 0 30px rgba(242, 92, 5, 0.2);
-    border: 2px solid transparent;
+    box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3),
+                0 4px 15px rgba(243, 156, 18, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2); /* 3D-effekt med inner highlight */
+    border: 2px solid rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
+    letter-spacing: 0.8px; /* Mer spacing för modern look */
+    text-transform: uppercase; /* Uppercase för mer impact */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero .cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.hero .cta:hover::before {
+    left: 100%;
 }
 
 .hero .cta:hover {
-    background-color: transparent; /* Transparent bakgrund vid hover */
-    border-radius: 5px; /* Rundade hörn */
-    border: 2px solid #f25c05; /* Orange border vid hover */
-    color: #f25c05; /* Orange text vid hover */
-    transform: translateY(-3px); /* Lätt uppåtrörelse */
-    box-shadow: 0 0 20px rgba(242, 92, 5, 0.5),
-                0 0 40px rgba(242, 92, 5, 0.3),
-                0 0 60px rgba(242, 92, 5, 0.2);
+    background: linear-gradient(135deg, #f39c12 0%, #e74c3c 50%, #f39c12 100%); /* Inverterad gradient vid hover */
+    transform: translateY(-4px) scale(1.05); /* Bounce och scale effekt */
+    box-shadow: 0 15px 35px rgba(231, 76, 60, 0.4),
+                0 8px 20px rgba(243, 156, 18, 0.3),
+                0 0 0 3px rgba(255, 255, 255, 0.1); /* Glow effekt */
+    color: #ffffff; /* Behåller vit text */
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .hero .cta:active {
-    transform: translateY(0); /* Återgår när knappen trycks ner */
+    transform: translateY(-1px) scale(1.02); /* Mindre bounce när knappen trycks */
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3),
+                0 2px 8px rgba(243, 156, 18, 0.2); /* Mindre skugga vid aktivt tillstånd */
 }
 
 .hero .intro-cta {
@@ -613,7 +633,9 @@ body {
     }
 
     .hero .cta, .hero .intro-cta {
-        padding: 8px 20px; /* Mindre padding på små skärmar */
+        padding: 16px 32px; /* Anpassad padding för mobil */
+        font-size: 1rem; /* Mindre textstorlek på mobil */
+        border-radius: 40px; /* Mindre border-radius på mobil */
     }
 }
 

@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title id="pageTitle">Artikel - FutureArc</title>
+  <link rel="icon" type="image/png" href="assets/Images/favoicon.png" class="favicon">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="assets/css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -341,52 +342,10 @@
       transform: translateY(0);
     }
 
-    /* Mobile Menu */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      cursor: pointer;
-      z-index: 60;
-    }
 
-    .hamburger span {
-      height: 4px;
-      width: 100%;
-      background: #fff;
-      margin: 4px 0;
-      border-radius: 2px;
-      display: block;
-      transition: all 0.3s ease;
-    }
 
     /* Mobile Responsive */
     @media (max-width: 900px) {
-      nav ul {
-        display: none;
-        flex-direction: column !important;
-        background: rgba(23, 22, 21, 0.95);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 250px;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        border-radius: 0 0 0 16px;
-        padding: 1rem 0;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      
-      nav ul.open {
-        display: flex;
-      }
-      
-      .hamburger {
-        display: flex;
-      }
       
       .hero-image-section {
         height: 50vh;
@@ -395,6 +354,11 @@
       
       .hero-overlay {
         padding: 2rem 1rem;
+      }
+      
+      .article-title {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        margin-bottom: 1rem;
       }
       
       .article-content-wrapper {
@@ -422,6 +386,11 @@
         min-height: 300px;
       }
       
+      .article-title {
+        font-size: clamp(1.5rem, 3.5vw, 2rem);
+        margin-bottom: 0.8rem;
+      }
+      
       .article-meta {
         flex-direction: column;
         align-items: flex-start;
@@ -434,10 +403,7 @@
       }
     }
 
-    /* FIX: Använder ID även här för att matcha */
-    ul#navMenu.open {
-      display: flex;
-    }
+
   </style>
 </head>
 
@@ -640,22 +606,7 @@
           console.error('Error loading article content:', error);
         });
 
-      // Mobile menu functionality
-      const hamburgerBtn = document.getElementById('hamburgerBtn');
-      const navMenu = document.getElementById('navMenu');
-      
-      if (hamburgerBtn && navMenu) {
-        hamburgerBtn.onclick = function (e) {
-          navMenu.classList.toggle('open');
-          e.stopPropagation();
-        };
-        
-        document.addEventListener('click', function (e) {
-          if (window.innerWidth <= 900 && !navMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
-            navMenu.classList.remove('open');
-          }
-        });
-      }
+
 
       // Add scroll event listener for reading progress
       window.addEventListener('scroll', updateReadingProgress);
@@ -668,6 +619,7 @@
       document.body.appendChild(scrollButton);
     });
   </script>
+  <script src="assets/js/include.js"></script>
   <script src="assets/js/owl-animation.js"></script>
 </body>
 </html>
