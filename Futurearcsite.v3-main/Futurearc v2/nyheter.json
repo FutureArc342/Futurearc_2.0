@@ -1,0 +1,402 @@
+[
+  {
+    "title": "Google lanserar Gemini 3 Flash",
+    "category": "teknik",
+    "timestamp": "2025-12-20T10:00:00Z",
+    "excerpt": "Googles snabbaste modell hittills blir standard i Gemini-appen och erbjuder blixtsnabb respons för vardagliga uppgifter.",
+    "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop&q=80",
+    "body": "Google har officiellt rullat ut Gemini 3 Flash, en lättviktsmodell optimerad för extremt låg latens. Den ersätter tidigare modeller som standardval i gratisversionen och fokuserar på snabba svar i mobila miljöer."
+  },
+  {
+    "title": "Svenska Lovable värderas till 6,6 miljarder dollar",
+    "category": "affärer",
+    "timestamp": "2025-12-19T14:30:00Z",
+    "excerpt": "Vibe-coding-pionjären tar in kapital från Nvidia och Google för att revolutionera hur mjukvara skapas med AI.",
+    "image": "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&auto=format&fit=crop&q=80",
+    "body": "Den svenska startupen Lovable har stängt en ny investeringsrunda. Genom att låta användare 'viba' fram kod genom naturligt språk har de blivit en av de snabbast växande enhörningarna i svensk techhistoria."
+  },
+  {
+    "title": "Nvidia Nemotron 3: Öppna modeller för AI-agenter",
+    "category": "teknik",
+    "timestamp": "2025-12-19T09:15:00Z",
+    "excerpt": "Nvidia släpper en ny familj av öppen källkods-modeller designade för att driva autonoma agenter i företagsmiljöer.",
+    "image": "https://images.unsplash.com/photo-1591453088216-37b774675df1?w=800&auto=format&fit=crop&q=80",
+    "body": "Med Nemotron 3 vill Nvidia utmana de proprietära modellerna. Dessa 'open-weight'-modeller är särskilt tränade för att utföra uppgifter, använda verktyg och navigera i komplexa digitala miljöer."
+  },
+  {
+    "title": "Samsung visar upp Exynos 2600 – världens första 2nm-chip",
+    "category": "teknik",
+    "timestamp": "2025-12-20T08:00:00Z",
+    "excerpt": "Det nya chippet lovar 30% högre effektivitet och kommer sannolikt driva nästa flaggskepp i Galaxy-serien.",
+    "image": "https://images.unsplash.com/photo-1581090464762-c29033324f8e?w=800&auto=format&fit=crop&q=80",
+    "body": "Samsung har tagit ledningen i chip-racet genom att presentera Exynos 2600. Den nya 2-nanometerstekniken ger plats för fler transistorer, vilket drastiskt förbättrar både AI-prestanda och batteritid."
+  },
+  {
+    "title": "Sam Altman: 'Oändligt minne' är viktigare än resonemang",
+    "category": "teknik",
+    "timestamp": "2025-12-20T16:45:00Z",
+    "excerpt": "OpenAI-chefen hävdar att nästa stora genombrott ligger i hur AI lagrar och minns personlig kontext över tid.",
+    "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&auto=format&fit=crop&q=80",
+    "body": "Under ett tech-event i San Francisco förklarade Sam Altman att framtidens AI inte bara behöver bli smartare på att lösa logiska gåtor, utan snarare bättre på att fungera som en personlig minnesbank som aldrig glömmer detaljer."
+  },
+  {
+    "title": "SpaceX planerar AI-datacenter i omloppsbana",
+    "category": "teknik",
+    "timestamp": "2025-12-19T22:10:00Z",
+    "excerpt": "Elon Musk vill använda Starlink-nätverket för att erbjuda serverkapacitet direkt i rymden för att minska latens globalt.",
+    "image": "https://images.unsplash.com/photo-1517976487492-5750f3195933?w=800&auto=format&fit=crop&q=80",
+    "body": "Genom att placera serverkluster i låg omloppsbana hoppas SpaceX kunna erbjuda en ny typ av molntjänst som inte begränsas av fysiska kablar på jorden, med fokus på tung AI-träning."
+  },
+  {
+    "title": "Merriam-Webster utser 'Slop' till årets ord 2025",
+    "category": "kultur",
+    "timestamp": "2025-12-18T11:00:00Z",
+    "excerpt": "Uttrycket syftar på det överflöd av lågkvalitativt AI-genererat innehåll som nu dominerar internetflöden.",
+    "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&auto=format&fit=crop&q=80",
+    "body": "Termen 'AI-slop' har blivit den digitala motsvarigheten till skräppost. Beslutet att göra det till årets ord markerar en vändpunkt i hur allmänheten ser på automatiskt genererat innehåll."
+  },
+  {
+    "title": "Nintendo Switch 2: Första testerna visar imponerande grafik",
+    "category": "spel",
+    "timestamp": "2025-12-17T15:20:00Z",
+    "excerpt": "Portningar av moderna spel visar att den nya hårdvaran kan mäta sig med stationära konsoler i bärbart format.",
+    "image": "https://images.unsplash.com/photo-1585857183826-5863d97f6d4d?w=800&auto=format&fit=crop&q=80",
+    "body": "Läckta tester av Nintendo Switch 2 bekräftar stöd för DLSS 3.5, vilket gör det möjligt att köra tunga titlar som Cyberpunk 2077 med stabil bilduppdatering på språng."
+  },
+  {
+    "title": "Chalmers utvecklar 3D-printing för extrema miljöer",
+    "category": "miljö",
+    "timestamp": "2025-12-15T09:30:00Z",
+    "excerpt": "Ny teknik för metallbaserad 3D-printing gör det möjligt att bygga vätgasdrivna turbiner som tål enorm hetta.",
+    "image": "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&auto=format&fit=crop&q=80",
+    "body": "Forskare på Chalmers har presenterat ett genombrott inom additiv tillverkning. Detta är en nyckelkomponent för att ställa om industrin till hållbara energisystem."
+  },
+  {
+    "title": "Northvolt testar natriumjon-batterier för storskalig lagring",
+    "category": "miljö",
+    "timestamp": "2025-12-14T13:45:00Z",
+    "excerpt": "Det litiumfria alternativet börjar nu installeras i svenska vindkraftsparker för att jämna ut elproduktionen.",
+    "image": "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=800&auto=format&fit=crop&q=80",
+    "body": "Svenska Northvolt tar nästa steg i batterirevolutionen. Genom att använda natrium istället för kritiska mineraler minskar både kostnad och miljöpåverkan avsevärt."
+  },
+  {
+    "title": "OpenAI Codex uppdateras med GPT-5.2-arkitektur",
+    "category": "teknik",
+    "timestamp": "2025-12-19T17:00:00Z",
+    "excerpt": "Utvecklare får nu tillgång till en modell som förstår hela kodbaser istället för bara enstaka filer.",
+    "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&auto=format&fit=crop&q=80",
+    "body": "Den nya versionen av Codex kan analysera samband mellan tusentals kodfiler samtidigt, vilket minimerar buggar vid stora arkitekturella ändringar."
+  },
+  {
+    "title": "EU-granskning av Googles AI-läge i Chrome",
+    "category": "teknik",
+    "timestamp": "2025-12-16T10:15:00Z",
+    "excerpt": "Europeiska kommissionen undersöker om Googles integrerade AI bryter mot konkurrenslagar genom att favorisera egna tjänster.",
+    "image": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80",
+    "body": "Efter klagomål från mindre söktjänster tittar EU nu på hur Gemini-integrationen i Chrome påverkar användarnas valfrihet på nätet."
+  },
+  {
+    "title": "Datacenter i Mellansverige kräver el motsvarande fem kärnkraftverk",
+    "category": "affärer",
+    "timestamp": "2025-12-17T08:50:00Z",
+    "excerpt": "En enorm våg av ansökningar om att bygga AI-kluster i Sverige sätter press på det nationella elnätet.",
+    "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?w=800&auto=format&fit=crop&q=80",
+    "body": "Efterfrågan på beräkningskraft för AI har lett till en byggboom av datacenter. Myndigheter varnar nu för att infrastrukturen inte hinner byggas ut i samma takt."
+  },
+  {
+    "title": "Apple tätar kritiska säkerhetshål i iOS 19.2",
+    "category": "teknik",
+    "timestamp": "2025-12-15T14:20:00Z",
+    "excerpt": "Användare uppmanas att uppdatera omedelbart efter upptäckt av en sårbarhet som tillåter distansåtkomst.",
+    "image": "https://images.unsplash.com/photo-1616348436168-de43ad0db179?w=800&auto=format&fit=crop&q=80",
+    "body": "Säkerhetsuppdateringen åtgärdar en noll-dagars sårbarhet som upptäckts av oberoende forskare. Felet ska ha funnits i webbläsarmotorn WebKit."
+  },
+  {
+    "title": "Xiaomi lanserar MiMo-V2-Flash",
+    "category": "teknik",
+    "timestamp": "2025-12-20T07:30:00Z",
+    "excerpt": "Kinas tech-jätte utmanar DeepSeek med en ny kraftfull lättviktsmodell med öppen källkod.",
+    "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&auto=format&fit=crop&q=80",
+    "body": "MiMo-V2-Flash är utformad för att köras direkt på smarta hem-enheter och smartphones, vilket minskar behovet av molnanslutning för röstassistenter."
+  },
+  {
+    "title": "Mistra Electrification får 53 miljoner för hållbar energi",
+    "category": "miljö",
+    "timestamp": "2025-12-12T11:45:00Z",
+    "excerpt": "Forskningsprogrammet förlängs med fyra år för att påskynda Sveriges omställning till ett fossilfritt elsystem.",
+    "image": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&auto=format&fit=crop&q=80",
+    "body": "Med det nya anslaget ska forskare titta på hur man bäst integrerar sol, vind och lagring för att skapa ett resilient energisystem i hela landet."
+  },
+  {
+    "title": "Svenskarna tappar tilltron till ny teknik",
+    "category": "kultur",
+    "timestamp": "2025-12-04T09:00:00Z",
+    "excerpt": "Enligt Tomorrow Report 2025 oroar sig 66% för att AI ska minska människors känsla av syfte.",
+    "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&fit=crop&q=80",
+    "body": "Rapporten visar ett tydligt trendbrott där teknikoptimismen minskar. Fler svenskar vill nu prioritera digitalt försvar framför klimatteknik."
+  },
+  {
+    "title": "OnePlus Nord CE5: Ny kung i mellanklassen",
+    "category": "teknik",
+    "timestamp": "2025-12-01T15:00:00Z",
+    "excerpt": "Med brutal batteritid och AI-verktyg som standard sätter OnePlus press på konkurrenterna under vintern.",
+    "image": "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=800&auto=format&fit=crop&q=80",
+    "body": "OnePlus fortsätter sin satsning på prisvärda telefoner. Den nya CE5-modellen fokuserar på AI-driven optimering för att förlänga batteritiden till upp till tre dagar."
+  },
+  {
+    "title": "Amazon Prime Video pausar AI-sammanfattningar",
+    "category": "teknik",
+    "timestamp": "2025-12-15T18:15:00Z",
+    "excerpt": "Funktionen som sammanfattar missade avsnitt stängs av tillfälligt efter att ha gett användare grova spoilers.",
+    "image": "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=800&auto=format&fit=crop&q=80",
+    "body": "Det som skulle vara en bekvämlighet för tittarna blev ett fiasko. AI-verktyget avslöjade hemligheter för tidigt, vilket ledde till en folkstorm på sociala medier."
+  },
+  {
+    "title": "Hackare hotar läcka Pornhub-användares data",
+    "category": "säkerhet",
+    "timestamp": "2025-12-16T12:00:00Z",
+    "excerpt": "En cyberattack mot moderbolaget kan ha kommit åt känslig information om miljontals konton.",
+    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
+    "body": "Säkerhetsexperter varnar för att detta kan leda till storskalig utpressning om datan visar sig vara autentisk och innehålla e-postadresser."
+  },
+  {
+    "title": "Truecaller rullar ut AI-telefonsvarare gratis",
+    "category": "teknik",
+    "timestamp": "2025-12-20T11:20:00Z",
+    "excerpt": "Den svenska appen lanserar en röstassistent som svarar på samtal och filtrerar bort bedragare automatiskt.",
+    "image": "https://images.unsplash.com/photo-1512428559083-a40ce10b8857?w=800&auto=format&fit=crop&q=80",
+    "body": "Funktionen använder avancerad röstkloning och NLP för att föra korta samtal med okända nummer och ge användaren en textversion av vad ärendet gäller."
+  },
+  {
+    "title": "Adobe och Runway i strategiskt partnerskap",
+    "category": "affärer",
+    "timestamp": "2025-12-19T13:45:00Z",
+    "excerpt": "Nästa generations AI-videoverktyg integreras direkt i Premiere Pro och After Effects.",
+    "image": "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&auto=format&fit=crop&q=80",
+    "body": "Samarbetet innebär att professionella videoredigerare nu kan generera scener och effekter med enkla textkommandon direkt i sitt arbetsflöde."
+  },
+  {
+    "title": "NASA fångar sällsynt bild av en interstellär komet",
+    "category": "vetenskap",
+    "timestamp": "2025-12-20T19:00:00Z",
+    "excerpt": "Sonden Europa Clipper använde sin unika position för att se objektet som Earth-teleskop missade.",
+    "image": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=800&auto=format&fit=crop&q=80",
+    "body": "Upptäckten ger forskare en unik chans att studera materia från ett annat solsystem på nära håll, något som bara hänt ett fåtal gånger tidigare."
+  },
+  {
+    "title": "Google lägger ner darknet-bevakare",
+    "category": "säkerhet",
+    "timestamp": "2025-12-16T16:30:00Z",
+    "excerpt": "Tjänsten som varnar om dina uppgifter läckt på mörka nätet stängs ner efter nyår.",
+    "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=80",
+    "body": "Google meddelar att de istället kommer integrera dessa säkerhetsfunktioner direkt i Google One och Chrome för att nå fler användare."
+  },
+  {
+    "title": "Sorbitol kan trigga sockerliknande effekter i levern",
+    "category": "hälsa",
+    "timestamp": "2025-12-20T10:45:00Z",
+    "excerpt": "Ny forskning visar att det populära sötningsmedlet kan omvandlas till fruktos och påverka hälsan mer än man trott.",
+    "image": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&auto=format&fit=crop&q=80",
+    "body": "Studien visar att även om sorbitol är sockerfritt, kan levern bryta ner det på ett sätt som vid överkonsumtion liknar effekterna av vanligt socker."
+  },
+  {
+    "title": "GitHub backar från planer på att ta betalt för runners",
+    "category": "teknik",
+    "timestamp": "2025-12-20T14:10:00Z",
+    "excerpt": "Efter hård kritik från open-source-världen fortsätter själv-hostade runners att vara kostnadsfria.",
+    "image": "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=800&auto=format&fit=crop&q=80",
+    "body": "GitHub meddelar att de lyssnat på användarna och skrotar den föreslagna prismodellen som skulle ha fördyrat automatiserade tester för mindre team."
+  },
+  {
+    "title": "Svenska småföretag halkar efter i AI-racet",
+    "category": "affärer",
+    "timestamp": "2025-12-02T11:00:00Z",
+    "excerpt": "En ny rapport visar att brist på vägledning och verktyg gör att mindre bolag inte vågar satsa på AI.",
+    "image": "https://images.unsplash.com/photo-1521791136064-7986c2959210?w=800&auto=format&fit=crop&q=80",
+    "body": "Medan storföretagen rusar framåt kämpar småföretagare med att förstå hur de ska implementera tekniken på ett säkert och lönsamt sätt."
+  },
+  {
+    "title": "Sony WH-1000XM7 läcker: Ny design och bättre ANC",
+    "category": "teknik",
+    "timestamp": "2025-12-20T08:15:00Z",
+    "excerpt": "Bilder på nästa generations flaggskeppshörlurar har dykt upp online före den officiella lanseringen.",
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=80",
+    "body": "De nya hörlurarna sägs ha dubbelt så bra brusreducering som föregångaren och en helt ny hopfällbar design för bättre rörlighet."
+  },
+  {
+    "title": "JPMorgan Chase satsar 18 miljarder dollar på AI-strategi",
+    "category": "affärer",
+    "timestamp": "2025-12-16T15:45:00Z",
+    "excerpt": "Bankjätten ser enorma vinster genom att använda generativ AI för investeringsrådgivning och riskbedömning.",
+    "image": "https://images.unsplash.com/photo-1560516193-dfca06015bd6?w=800&auto=format&fit=crop&q=80",
+    "body": "Genom att bygga egna språkmodeller hoppas JPMorgan kunna förutse marknadsrörelser snabbare än konkurrenterna och automatisera stora delar av sin kundservice."
+  },
+  {
+    "title": "Cisco lanserar sin första egna stora språkmodell",
+    "category": "teknik",
+    "timestamp": "2025-12-19T09:30:00Z",
+    "excerpt": "Efter år av utveckling är Ciscos AI nu redo att integreras i företagets nätverksprodukter för självläkande nät.",
+    "image": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&auto=format&fit=crop&q=80",
+    "body": "Modellen är särskilt tränad på nätverksdata och kan förutsäga avbrott innan de sker, samt föreslå optimeringar i realtid."
+  },
+  {
+    "title": "AI-skriven kod innehåller fler buggar än mänsklig kod",
+    "category": "teknik",
+    "timestamp": "2025-12-20T11:00:00Z",
+    "excerpt": "En ny analys av CodeRabbit visar att kod genererad av AI ofta saknar logisk stringens och säkerhetskontroller.",
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop&q=80",
+    "body": "Studien understryker vikten av mänsklig granskning (code review) då AI tenderar att producera kod som ser korrekt ut men fallerar i kantfall."
+  },
+  {
+    "title": "Indien lanserar DHRUV64 – egen RISC-V processor",
+    "category": "teknik",
+    "timestamp": "2025-12-20T10:00:00Z",
+    "excerpt": "Den nya processorn markerar ett steg mot digital självständighet för landets IoT-sektor.",
+    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
+    "body": "DHRUV64 är en dual-core processor som ska användas i allt från smarta mätare till medicinsk utrustning, helt oberoende av västerländsk tekniklicensiering."
+  },
+  {
+    "title": "Google Pay rullar ut 'Flex' – digitalt kreditkort",
+    "category": "affärer",
+    "timestamp": "2025-12-18T14:00:00Z",
+    "excerpt": "En ny tjänst kopplar digitala krediter direkt till användarens UPI-konto för snabba vardagsköp.",
+    "image": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&auto=format&fit=crop&q=80",
+    "body": "Tjänsten lanseras först i Indien men förväntas rullas ut globalt under 2026 för att utmana traditionella kreditkortsbolag."
+  },
+  {
+    "title": "Zaras AI-användning förändrar butiksflöden",
+    "category": "affärer",
+    "timestamp": "2025-12-19T09:45:00Z",
+    "excerpt": "Genom att förutsäga trender i realtid kan klädjätten nu minska lageröverskott med 20%.",
+    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&auto=format&fit=crop&q=80",
+    "body": "Zaras nya system analyserar sociala medier och försäljningsdata varje timme för att styra produktionen i sina fabriker med extrem precision."
+  },
+  {
+    "title": "Roblox integrerar AI direkt i Studio",
+    "category": "spel",
+    "timestamp": "2025-12-16T17:20:00Z",
+    "excerpt": "Skapare kan nu bygga hela spelvärldar genom att bara beskriva dem för en inbyggd AI-assistent.",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&auto=format&fit=crop&q=80",
+    "body": "Verktyget kan generera både 3D-modeller och fungerande kod-script, vilket sänker tröskeln för unga utvecklare att förverkliga sina idéer."
+  },
+  {
+    "title": "Australien förbjuder sociala medier för minderåriga",
+    "category": "kultur",
+    "timestamp": "2025-12-18T21:00:00Z",
+    "excerpt": "En ny lag sätter en strikt åldersgräns på 16 år för konton på plattformar som TikTok och Instagram.",
+    "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&auto=format&fit=crop&q=80",
+    "body": "Lagen är den striktaste i världen och kräver att plattformarna implementerar robusta metoder för åldersverifiering under hot om miljardböter."
+  },
+  {
+    "title": "Nvidia når nytt börsrekord på 4 biljoner dollar",
+    "category": "affärer",
+    "timestamp": "2025-12-15T16:10:00Z",
+    "excerpt": "Efterfrågan på Blackwell-chip för AI-agenter driver upp värderingen till historiska nivåer.",
+    "image": "https://images.unsplash.com/photo-1611095773164-12340277781c?w=800&auto=format&fit=crop&q=80",
+    "body": "Nvidia är nu världens i särklass mest värdefulla bolag, drivet av den globala kapprustningen inom artificiell intelligens."
+  },
+  {
+    "title": "Waterfox går 'AI-free' för integritetsfokuserade användare",
+    "category": "teknik",
+    "timestamp": "2025-12-20T12:00:00Z",
+    "excerpt": "I en värld av integrerade AI-assistenter väljer webbläsaren Waterfox att rensa bort alla smarta funktioner.",
+    "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&auto=format&fit=crop&q=80",
+    "body": "Företaget bakom webbläsaren menar att användare vill ha kontroll över sin data utan att en AI konstant analyserar deras surfvanor."
+  },
+  {
+    "title": "Elon Musk lovar Mars-landning 2026",
+    "category": "teknik",
+    "timestamp": "2025-12-16T23:30:00Z",
+    "excerpt": "SpaceX planerar att skicka de första obemannade Starship-farkosterna till den röda planeten under nästa lanseringsfönster.",
+    "image": "https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?w=800&auto=format&fit=crop&q=80",
+    "body": "Målet är att testa landningssystemet och leverera utrustning som behövs för framtida bemannade uppdrag."
+  },
+  {
+    "title": "Svensk forskning: Sociala medier försämrar barns koncentration",
+    "category": "hälsa",
+    "timestamp": "2025-12-08T10:00:00Z",
+    "excerpt": "En omfattande studie visar att korta videoklipp omformar ungas förmåga till djupt fokus.",
+    "image": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=800&auto=format&fit=crop&q=80",
+    "body": "Forskare varnar för att 'scroll-beroende' leder till sämre skolresultat och rekommenderar striktare skärmtider för barn under 13 år."
+  },
+  {
+    "title": "Google planerar återkomst till PC-marknaden med 'Aluminium OS'",
+    "category": "teknik",
+    "timestamp": "2025-12-18T09:15:00Z",
+    "excerpt": "Ett nytt operativsystem designat för high-end laptops ska utmana Windows och macOS.",
+    "image": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&auto=format&fit=crop&q=80",
+    "body": "Aluminium OS bygger på Android-kärnan men är helt optimerat för mus och tangentbord med sömlös AI-integration."
+  },
+  {
+    "title": "AstraZeneca leder revolutionen inom AI-kliniska tester",
+    "category": "hälsa",
+    "timestamp": "2025-12-17T14:30:00Z",
+    "excerpt": "Genom att använda digitala tvillingar kan läkemedelsbolaget korta tiden för godkännande av nya mediciner.",
+    "image": "https://images.unsplash.com/photo-1576086213369-97a306dca665?w=800&auto=format&fit=crop&q=80",
+    "body": "AI-modeller simulerar hur patienter reagerar på behandling, vilket minskar behovet av stora fysiska testgrupper i de tidiga stadierna."
+  },
+  {
+    "title": "Microsoft säkerhetsuppdatering ställer till problem för äldre system",
+    "category": "säkerhet",
+    "timestamp": "2025-12-20T15:00:00Z",
+    "excerpt": "En patch för MSMQ-sårbarheten får Windows-servrar att krascha över hela världen.",
+    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
+    "body": "IT-administratörer arbetar övertid för att rulla tillbaka uppdateringen efter rapporter om blåskärmar på affärskritiska system."
+  },
+  {
+    "title": "Samsung Galaxy Z TriFold visas upp",
+    "category": "teknik",
+    "timestamp": "2025-12-19T08:00:00Z",
+    "excerpt": "Den nya vikbara mobilen kan fällas ut i tre steg och bli en fullstor surfplatta.",
+    "image": "https://images.unsplash.com/photo-1510557880182-3d4d3cba3f9e?w=800&auto=format&fit=crop&q=80",
+    "body": "Med en dubbel gångjärnskonstruktion hoppas Samsung återta initiativet på den vikbara marknaden från kinesiska utmanare."
+  },
+  {
+    "title": "California DMV varnar Tesla om Autopilot-reklam",
+    "category": "teknik",
+    "timestamp": "2025-12-20T17:30:00Z",
+    "excerpt": "Myndigheten kräver att Tesla slutar använda termer som antyder att bilarna är helt självstyrande.",
+    "image": "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=800&auto=format&fit=crop&q=80",
+    "body": "Efter flera olyckor ökar pressen på biltillverkaren att vara tydlig med att föraren alltid måste vara uppmärksam."
+  },
+  {
+    "title": "Forskare hittar nytt sätt att sakta ner åldrande i celler",
+    "category": "vetenskap",
+    "timestamp": "2025-12-19T10:00:00Z",
+    "excerpt": "En liten justering av mitokondriell energiproduktion har gett dramatiska resultat i laboratorietester.",
+    "image": "https://images.unsplash.com/photo-1532187863486-abf9d39d6627?w=800&auto=format&fit=crop&q=80",
+    "body": "Genom att optimera cellernas 'kraftverk' hoppas forskare kunna förebygga åldersrelaterade sjukdomar som Alzheimers."
+  },
+  {
+    "title": "Prishöjningar på SaaS pressar IT-budgetar",
+    "category": "affärer",
+    "timestamp": "2025-12-16T11:20:00Z",
+    "excerpt": "Prenumerationskostnader för molntjänster har ökat med i snitt 15% under det senaste året.",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80",
+    "body": "Företag letar nu efter alternativ eller sätt att konsolidera sina licenser när kostnaderna börjar bli ohållbara."
+  },
+  {
+    "title": "Genomskinlig isolering håller byggnader varma",
+    "category": "miljö",
+    "timestamp": "2025-12-19T12:00:00Z",
+    "excerpt": "Forskare har utvecklat ett nytt material som släpper in ljus men stänger ute kyla med extrem effektivitet.",
+    "image": "https://images.unsplash.com/photo-1518005020480-47b678276522?w=800&auto=format&fit=crop&q=80",
+    "body": "Materialet kan revolutionera arkitektur genom att möjliggöra stora glasytor även i arktiska klimat utan energiförlust."
+  },
+  {
+    "title": "Kim's krypto-stölder når rekordnivåer",
+    "category": "säkerhet",
+    "timestamp": "2025-12-20T13:00:00Z",
+    "excerpt": "Nordkoreanska hackare beräknas ha stulit över 2 miljarder dollar i kryptovaluta under 2025.",
+    "image": "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?w=800&auto=format&fit=crop&q=80",
+    "body": "Rapporter visar att medlen används för att finansiera landets vapenprogram, vilket leder till krav på hårdare reglering av krypto-börser."
+  },
+  {
+    "title": "Airbus migrerar kritiska appar till suveränt moln",
+    "category": "affärer",
+    "timestamp": "2025-12-20T09:00:00Z",
+    "excerpt": "Flygjätten väljer ett europeiskt molnalternativ för att skydda strategisk data från utländsk insyn.",
+    "image": "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=800&auto=format&fit=crop&q=80",
+    "body": "Beslutet är en del av en större trend i Europa där företag vill ha full kontroll över sin data i enlighet med strikta lagar."
+  }
+]

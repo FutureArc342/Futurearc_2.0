@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kurser & Utbildning – FutureArc</title>
+  <meta name="description" content="Professionella kurser inom webbutveckling, AI, datavetenskap och programmering. Lär dig av experter och bygg verkliga projekt." />
+  <link rel="icon" type="image/png" href="assets/Images/favoicon.png" class="favicon">
+  
+  <!-- Base styles & icons -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="assets/js/include.js"></script>
+
+  <style>
+    /* -----------------------------
+      MASTER-LEVEL THEME (FutureArc)
+    ------------------------------ */
+    :root {
+      --bg-0: #0a0a0a;
+      --bg-1: #0f0f0f;
+      --bg-2: #151515;
+      --card: #1b1b1b;
+      --muted: #a0a0a0;
+      --text: #eaeaea;
+      --border: #2a2a2a;
+      --accent: #f86700;
+      --accent-2: #ff4d00;
+      --accent-grad: linear-gradient(90deg, #f86700, #ff4d00);
+      --radius: 16px;
+      --radius-lg: 22px;
+      --shadow-lg: 0 20px 55px rgba(248, 103, 0, 0.22);
+      --shadow-md: 0 14px 30px rgba(248, 103, 0, 0.18);
+      --shadow-sm: 0 8px 18px rgba(248, 103, 0, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      height: 100%;
+      background: linear-gradient(135deg, #0a0a0a 0%, #0f0f0f 25%, #0d0d0d 50%, #0a0a0a 75%, #000000 100%);
+      color: var(--text);
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Clean background without noise overlay */
+
+    /* Global containers */
+    main { position: relative; z-index: 1; }
+
+    .section { 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      padding: 100px 24px; 
+    }
+
+
+
+    /* ---------------- HERO ---------------- */
+    .courses-hero {
+      position: relative;
+      overflow: clip;
+      text-align: center;
+      padding: 140px 24px 110px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0.1) 60%, transparent 100%);
+      border-top: 3px solid var(--accent);
+    }
+    .kicker {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 20px; border-radius: 999px; font-weight: 600;
+      background: rgba(248,103,0,0.1); border: 1px solid rgba(248,103,0,0.2);
+      color: #fff; box-shadow: 0 8px 32px rgba(248,103,0,0.15);
+      backdrop-filter: blur(20px);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .kicker::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .kicker:hover::before {
+      left: 100%;
+    }
+    .kicker i { color: var(--accent); }
+
+    .hero-title {
+      margin: 18px auto 12px;
+      max-width: 1000px;
+      font-size: clamp(2.8rem, 6vw, 4.8rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      background: linear-gradient(135deg, #f86700 0%, #ff4d00 25%, #ff6b35 50%, #f86700 75%, #ff4d00 100%);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+      position: relative;
+    }
+    
+    .hero-title::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #f86700, transparent);
+      border-radius: 2px;
+    }
+    .hero-sub {
+      max-width: 760px; margin: 0 auto 28px; color: var(--muted);
+      font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+    }
+
+    .hero-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; border-radius: 12px; padding: 14px 22px; font-weight: 700; text-decoration: none; transition: translate .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease; }
+    .btn i { font-size: 0.95rem; }
+    .btn-primary { background: var(--accent-grad); color: #fff; box-shadow: var(--shadow-md); }
+    .btn-primary:hover { translate: 0 -3px; box-shadow: var(--shadow-lg); }
+    .btn-ghost { border: 1px solid rgba(248,103,0,0.45); color: #fff; background: rgba(248,103,0,0.06); }
+    .btn-ghost:hover { background: rgba(248,103,0,0.12); translate: 0 -3px; }
+    
+    @media (max-width: 768px) {
+      .courses-hero {
+        padding: 100px 16px 80px;
+      }
+      .hero-cta {
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+      }
+      .btn {
+        padding: 12px 18px;
+        font-size: 0.95rem;
+      }
+      .btn i {
+        font-size: 0.9rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .courses-hero {
+        padding: 80px 12px 60px;
+      }
+      .hero-cta {
+        gap: 8px;
+      }
+      .btn {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    .hero-stats { 
+      display: grid; 
+      grid-template-columns: repeat(4, minmax(0,1fr)); 
+      gap: 16px; 
+      max-width: 900px; 
+      margin: 40px auto 0; 
+    }
+    .stat { 
+      background: rgba(255,255,255,0.03); 
+      border: 1px solid rgba(255,255,255,0.06); 
+      border-radius: 20px; 
+      padding: 24px 20px; 
+      display: grid; 
+      gap: 6px; 
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+    
+    .stat::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(248,103,0,0.05) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    
+    .stat:hover::before {
+      opacity: 1;
+    }
+    .stat:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.12);
+      transform: translateY(-2px);
+    }
+    .stat .num { 
+      font-size: 1.4rem; 
+      font-weight: 900; 
+      color: var(--accent);
+      letter-spacing: -0.02em;
+    }
+    .stat .lbl { 
+      font-size: 0.85rem; 
+      color: var(--muted); 
+      font-weight: 500;
+    }
+    
+    @media (max-width: 768px) {
+      .hero-stats { 
+        grid-template-columns: repeat(2, minmax(0,1fr)); 
+        gap: 12px;
+        max-width: 600px;
+      }
+      .stat {
+        padding: 16px 12px;
+      }
+      .stat .num {
+        font-size: 1.2rem;
+      }
+      .stat .lbl {
+        font-size: 0.8rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero-stats { 
+        grid-template-columns: repeat(2, minmax(0,1fr)); 
+        gap: 8px;
+        max-width: 100%;
+      }
+      .stat {
+        padding: 12px 8px;
+      }
+      .stat .num {
+        font-size: 1.1rem;
+      }
+      .stat .lbl {
+        font-size: 0.75rem;
+      }
+    }
+
+    /* ---------------- SECTION HEADERS ---------------- */
+    .section-header { text-align: center; margin-bottom: 56px; }
+    .section-header h2 { font-size: clamp(2.1rem, 4.4vw, 3rem); font-weight: 900; letter-spacing: -0.02em; margin-bottom: 10px; }
+    .section-header .muted { color: var(--muted); max-width: 700px; margin: 0 auto; }
+    
+    @media (max-width: 768px) {
+      .section-header { 
+        margin-bottom: 40px; 
+      }
+      .section-header h2 { 
+        font-size: clamp(1.8rem, 5vw, 2.5rem); 
+        margin-bottom: 8px; 
+      }
+      .section-header .muted { 
+        max-width: 600px; 
+        font-size: 0.95rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .section-header { 
+        margin-bottom: 32px; 
+      }
+      .section-header h2 { 
+        font-size: clamp(1.6rem, 6vw, 2rem); 
+        margin-bottom: 6px; 
+      }
+      .section-header .muted { 
+        max-width: 100%; 
+        font-size: 0.9rem;
+      }
+    }
+
+    /* ---------------- FILTERS ---------------- */
+    .filters { 
+      display: flex; 
+      gap: 10px; 
+      flex-wrap: wrap; 
+      justify-content: center; 
+      margin: 20px 0 36px; 
+    }
+    .chip { 
+      cursor: pointer; 
+      user-select: none; 
+      padding: 12px 18px; 
+      border-radius: 999px; 
+      border: 1px solid rgba(255,255,255,0.1); 
+      background: rgba(27, 27, 27, 0.6); 
+      color: #fff; 
+      font-weight: 600; 
+      transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      backdrop-filter: blur(20px);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .chip::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(248,103,0,0.1) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    
+    .chip:hover::before {
+      opacity: 1;
+    }
+    .chip:hover { 
+      border-color: rgba(248,103,0,0.3); 
+      background: rgba(27, 27, 27, 0.8); 
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+    .chip.active { 
+      background: linear-gradient(135deg, #f86700 0%, #ff4d00 50%, #ff6b35 100%); 
+      border-color: transparent; 
+      box-shadow: 0 8px 25px rgba(248,103,0,0.3);
+      transform: translateY(-1px);
+    }
+    
+    @media (max-width: 768px) {
+      .filters {
+        gap: 8px;
+        margin: 16px 0 28px;
+      }
+      .chip {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .filters {
+        gap: 6px;
+        margin: 12px 0 24px;
+      }
+      .chip {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+      }
+    }
+
+    /* ---------------- GRIDS ---------------- */
+    .grid { 
+      display: grid; 
+      grid-template-columns: repeat(12, 1fr); 
+      gap: 22px; 
+    }
+    .col-4 { grid-column: span 4; }
+    .col-6 { grid-column: span 6; }
+    .col-12 { grid-column: span 12; }
+
+    /* Responsive breakpoints */
+    @media (max-width: 1200px) {
+      .section { padding: 80px 20px; }
+      .grid { gap: 18px; }
+    }
+    
+    @media (max-width: 1024px) { 
+      .col-4, .col-6 { grid-column: span 6; } 
+      .section { padding: 60px 16px; }
+    }
+    
+    @media (max-width: 768px) {
+      .col-4, .col-6 { grid-column: span 12; }
+      .section { padding: 50px 12px; }
+      .grid { gap: 16px; }
+    }
+    
+    @media (max-width: 640px) { 
+      .col-4, .col-6 { grid-column: span 12; }
+      .section { padding: 40px 8px; }
+      .grid { gap: 14px; }
+    }
+
+    /* ---------------- COURSE CARD ---------------- */
+    .course-card { 
+      position: relative; 
+      background: rgba(27, 27, 27, 0.8); 
+      border: 1px solid rgba(255,255,255,0.08); 
+      border-radius: 24px; 
+      overflow: hidden; 
+      display: flex; 
+      flex-direction: column; 
+      transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+      backdrop-filter: blur(20px);
+    }
+    
+    .course-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(248,103,0,0.03) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 0;
+    }
+    
+    .course-card:hover { 
+      transform: translateY(-12px) scale(1.02); 
+      border-color: rgba(248,103,0,0.3); 
+      box-shadow: 0 25px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(248,103,0,0.1);
+    }
+    
+    .course-card:hover::before {
+      opacity: 1;
+    }
+
+    .course-media { position: relative; overflow: hidden; aspect-ratio: 16/9; }
+    .course-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+    .course-card:hover .course-media img { transform: scale(1.06); }
+
+    .badge { 
+      position: absolute; 
+      top: 16px; 
+      left: 16px; 
+      padding: 8px 12px; 
+      font-size: 0.75rem; 
+      font-weight: 800; 
+      border-radius: 999px; 
+      background: rgba(0,0,0,0.8); 
+      border: 1px solid rgba(255,255,255,0.15); 
+      backdrop-filter: blur(20px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      z-index: 2;
+    }
+
+    .course-body { 
+      padding: 24px; 
+      display: grid; 
+      gap: 14px; 
+      flex: 1; 
+      position: relative;
+      z-index: 1;
+    }
+    .course-meta { 
+      display: flex; 
+      gap: 10px; 
+      align-items: center; 
+      font-size: .88rem; 
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+    .course-meta .pill { 
+      display: inline-flex; 
+      align-items: center; 
+      gap: 8px; 
+      padding: 6px 10px; 
+      border-radius: 999px; 
+      background: rgba(255,255,255,0.04); 
+      border: 1px solid rgba(255,255,255,0.06);
+      white-space: nowrap;
+    }
+    
+    @media (max-width: 768px) {
+      .course-body { padding: 18px; }
+      .course-meta { gap: 8px; }
+      .course-meta .pill { 
+        padding: 5px 8px; 
+        font-size: 0.8rem; 
+      }
+    }
+    .course-title { font-size: 1.28rem; font-weight: 800; letter-spacing: -0.01em; }
+    .course-desc { color: var(--muted); }
+
+    .course-cta { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: auto; }
+    .course-cta .btn-card { padding: 10px 14px; border-radius: 10px; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; background: var(--accent-grad); color: #fff; }
+    .course-cta .btn-card:hover { box-shadow: var(--shadow-sm); transform: translateY(-2px); }
+
+    .course-cta .meta { font-size: .92rem; color: var(--muted); display: inline-flex; align-items: center; gap: 10px; }
+    .course-cta .meta i { color: var(--accent); }
+    
+    @media (max-width: 768px) {
+      .course-cta {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+      }
+      .course-cta .btn-card {
+        justify-content: center;
+        padding: 12px 16px;
+        font-size: 0.9rem;
+      }
+      .course-cta .meta {
+        justify-content: center;
+        font-size: 0.85rem;
+      }
+    }
+
+    /* ---------------- ARTICLE CARD ---------------- */
+    .article-card { 
+      display: flex; 
+      gap: 20px; 
+      align-items: center; 
+      background: rgba(27, 27, 27, 0.6); 
+      border: 1px solid rgba(255,255,255,0.08); 
+      border-radius: 20px; 
+      padding: 20px; 
+      transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+      backdrop-filter: blur(20px);
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    .article-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(248,103,0,0.03) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 0;
+    }
+    
+    .article-card:hover { 
+      border-color: rgba(248,103,0,0.4); 
+      background: rgba(27, 27, 27, 0.9); 
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 
+        0 20px 40px rgba(0,0,0,0.5),
+        0 0 0 1px rgba(248,103,0,0.2),
+        0 0 30px rgba(248,103,0,0.1);
+      text-decoration: none;
+    }
+    
+    .article-card:hover::before {
+      opacity: 1;
+    }
+
+    .article-img { 
+      flex: 0 0 84px; 
+      width: 84px; 
+      height: 84px; 
+      border-radius: 12px; 
+      overflow: hidden; 
+      position: relative;
+      background: var(--card);
+    }
+    .article-img img { 
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; 
+      display: block;
+      position: relative;
+      z-index: 1;
+      transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    
+    .article-card:hover .article-img img {
+      transform: scale(1.05);
+    }
+    /* Hide any potential text overlay */
+    .article-img::before,
+    .article-img::after {
+      display: none !important;
+    }
+    
+    /* Ensure no text appears over images */
+    .article-img * {
+      font-size: 0 !important;
+      color: transparent !important;
+      text-indent: -9999px !important;
+    }
+    
+    .article-img img {
+      font-size: inherit !important;
+      color: inherit !important;
+      text-indent: 0 !important;
+    }
+
+    .article-body { 
+      display: grid; 
+      gap: 8px; 
+      position: relative;
+      z-index: 1;
+    }
+    .article-title { 
+      font-weight: 800; 
+      font-size: 1.1rem; 
+      color: var(--text); 
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .article-card:hover .article-title {
+      color: var(--accent);
+    }
+    .article-desc { color: var(--muted); font-size: .98rem; text-decoration: none; }
+
+    .article-arrow { 
+      margin-left: auto; 
+      font-size: 1.2rem; 
+      color: var(--accent); 
+      opacity: 0.8; 
+      transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+      position: relative;
+      z-index: 1;
+      text-decoration: none;
+    }
+    .article-card:hover .article-arrow { 
+      transform: translateX(6px); 
+      color: var(--accent); 
+      opacity: 1;
+    }
+    
+    @media (max-width: 768px) {
+      .article-card {
+        padding: 16px;
+        gap: 14px;
+      }
+      .article-img {
+        flex: 0 0 70px;
+        width: 70px;
+        height: 70px;
+      }
+      .article-title {
+        font-size: 1rem;
+      }
+      .article-desc {
+        font-size: 0.9rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .article-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+      }
+      .article-img {
+        flex: 0 0 80px;
+        width: 80px;
+        height: 80px;
+      }
+      .article-arrow {
+        margin-left: 0;
+        margin-top: 8px;
+      }
+    }
+
+    /* ---------------- LEARNING PATHS ---------------- */
+    .path-card {
+      background: rgba(27, 27, 27, 0.8);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 32px;
+      transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(20px);
+    }
+    .path-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+    .path-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      border-color: rgba(248,103,0,0.3);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(248,103,0,0.1);
+    }
+    .path-card:hover::before {
+      opacity: 1;
+    }
+
+    .path-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .path-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #f86700 0%, #ff4d00 50%, #ff6b35 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: #fff;
+      flex-shrink: 0;
+      box-shadow: 0 8px 24px rgba(248,103,0,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .path-icon::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%);
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+    }
+    
+    .path-card:hover .path-icon::before {
+      transform: translateX(100%);
+    }
+    .path-info {
+      flex: 1;
+    }
+    .path-info h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin: 0 0 4px 0;
+      letter-spacing: -0.01em;
+    }
+    .path-info p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.95rem;
+    }
+    .path-duration {
+      background: rgba(248,103,0,0.1);
+      color: var(--accent);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .path-courses {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .course-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      transition: all 0.25s ease;
+    }
+    .course-item:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.15);
+    }
+    .course-number {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--accent-grad);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .course-name {
+      flex: 1;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .course-duration {
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .path-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .path-price {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    
+    @media (max-width: 768px) {
+      .path-card {
+        padding: 24px;
+      }
+      .path-header {
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+      .path-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.2rem;
+      }
+      .path-info h3 {
+        font-size: 1.2rem;
+      }
+      .path-info p {
+        font-size: 0.9rem;
+      }
+      .path-cta {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+      }
+      .path-price {
+        text-align: center;
+        font-size: 1.1rem;
+      }
+    }
+
+    /* ---------------- CERTIFICATES ---------------- */
+    .cert-card {
+      background: rgba(27, 27, 27, 0.8);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 36px;
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(20px);
+    }
+    .cert-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+    .cert-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      border-color: rgba(248,103,0,0.3);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(248,103,0,0.1);
+    }
+    .cert-card:hover::before {
+      opacity: 1;
+    }
+
+    .cert-icon {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f86700 0%, #ff4d00 50%, #ff6b35 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      color: #fff;
+      margin: 0 auto 28px;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 12px 32px rgba(248,103,0,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cert-icon::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%);
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+    }
+    
+    .cert-card:hover .cert-icon::before {
+      transform: translateX(100%);
+    }
+
+    .cert-card h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin: 0 0 12px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cert-card p {
+      color: var(--muted);
+      margin: 0 0 24px 0;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cert-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px 0;
+      text-align: left;
+    }
+    .cert-features li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+      position: relative;
+      z-index: 1;
+    }
+    .cert-features i {
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+
+    .cert-card .btn {
+      position: relative;
+      z-index: 1;
+    }
+    
+    @media (max-width: 768px) {
+      .cert-card {
+        padding: 24px;
+      }
+      .cert-icon {
+        width: 64px;
+        height: 64px;
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+      }
+      .cert-card h3 {
+        font-size: 1.2rem;
+      }
+      .cert-card p {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+      }
+      .cert-features {
+        margin-bottom: 24px;
+      }
+      .cert-features li {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+      }
+    }
+
+    /* ---------------- REVEAL ANIMATIONS ---------------- */
+    .reveal { opacity: 0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+
+
+
+    /* Focus styles & reduced motion */
+    :focus-visible { outline: 2px solid rgba(248,103,0,0.7); outline-offset: 3px; border-radius: 10px; }
+    @media (prefers-reduced-motion: reduce) {
+      .course-card, .article-card, .btn, .course-media img { transition: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+
+<body onload="includeHTML()">
+  <!-- Header injected -->
+  <div include-html="components/header.html"></div>
+
+  <main>
+    <!-- HERO -->
+    <section class="courses-hero">
+      <div class="section">
+        <div class="kicker reveal in" style="transition-delay:.05s">
+          <i class="fa-solid fa-graduation-cap"></i> Professionell utbildning
+        </div>
+        <h1 class="hero-title reveal" style="transition-delay:.08s">
+          Mastera framtidens tekniker
+        </h1>
+        <p class="hero-sub reveal" style="transition-delay:.12s">
+          Från grundläggande webbutveckling till avancerad AI och machine learning. 
+          Bygg verkliga projekt, lär dig verktygen som företag använder och få stöd av vårt expert-team.
+        </p>
+        <div class="hero-cta reveal" style="transition-delay:.16s">
+          <a href="#courses" class="btn btn-primary">
+            <i class="fa-solid fa-rocket"></i> Börja din resa
+          </a>
+          <a href="#learning-path" class="btn btn-ghost">
+            <i class="fa-solid fa-route"></i> Se utbildningsvägar
+          </a>
+          <a href="#certificates" class="btn btn-ghost">
+            <i class="fa-solid fa-certificate"></i> Certifieringar
+          </a>
+        </div>
+        <div class="hero-stats reveal" style="transition-delay:.2s">
+          <div class="stat">
+            <span class="num">50+</span>
+            <span class="lbl">Kurser</span>
+          </div>
+          <div class="stat">
+            <span class="num">200+</span>
+            <span class="lbl">Timmar innehåll</span>
+          </div>
+          <div class="stat">
+            <span class="num">15k+</span>
+            <span class="lbl">Studenter</span>
+          </div>
+          <div class="stat">
+            <span class="num">98%</span>
+            <span class="lbl">Tillfredsställelse</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section">
+      <!-- COURSES HEADER -->
+      <header class="section-header reveal">
+        <h2>Videokurser</h2>
+        <p class="muted">Djupgående kurser ledda av experter inom webbutveckling, AI och modern programmering.</p>
+      </header>
+
+      <!-- FILTERS -->
+      <div class="filters reveal" id="course-filters" role="tablist" aria-label="Filtrera kurser">
+        <button class="chip active" data-filter="all" role="tab" aria-selected="true">
+          <i class="fa-solid fa-th-large"></i> Alla kurser
+        </button>
+        <button class="chip" data-filter="Webbutveckling" role="tab">
+          <i class="fa-solid fa-code"></i> Webbutveckling
+        </button>
+        <button class="chip" data-filter="AI-ML" role="tab">
+          <i class="fa-solid fa-brain"></i> AI & Machine Learning
+        </button>
+        <button class="chip" data-filter="Datavetenskap" role="tab">
+          <i class="fa-solid fa-database"></i> Datavetenskap
+        </button>
+        <button class="chip" data-filter="Programmering" role="tab">
+          <i class="fa-solid fa-laptop-code"></i> Programmering
+        </button>
+        <button class="chip" data-filter="DevOps" role="tab">
+          <i class="fa-solid fa-server"></i> DevOps & Cloud
+        </button>
+      </div>
+
+      <!-- COURSES GRID -->
+      <div class="grid" id="courses">
+        <!-- Course: Modern Web Development -->
+        <article class="course-card col-4 reveal" data-category="Webbutveckling">
+          <div class="course-media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2000&auto=format&fit=crop" alt="Modern webbutveckling kurs omslagsbild" />
+            <span class="badge"><i class="fa-solid fa-sparkles"></i> Ny</span>
+          </div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="pill"><i class="fa-solid fa-code"></i> Webbutveckling</span>
+              <span class="pill"><i class="fa-solid fa-gauge-high"></i> Nybörjare</span>
+              <span class="pill"><i class="fa-regular fa-clock"></i> 12h</span>
+            </div>
+            <h3 class="course-title">Modern Webbutveckling</h3>
+            <p class="course-desc">HTML5, CSS3, JavaScript ES6+. Bygg responsiva webbplatser med modern semantik och tillgänglighet.</p>
+            <div class="course-cta">
+              <a href="#" class="btn-card"><i class="fa-solid fa-circle-play"></i> Starta kurs</a>
+              <div class="meta"><i class="fa-solid fa-star"></i> 4.9 • 2 400+ elever</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Course: React Mastery -->
+        <article class="course-card col-4 reveal" data-category="Webbutveckling">
+          <div class="course-media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2000&auto=format&fit=crop" alt="React utveckling kurs omslagsbild" />
+            <span class="badge"><i class="fa-solid fa-fire"></i> Populär</span>
+          </div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="pill"><i class="fa-solid fa-code"></i> Webbutveckling</span>
+              <span class="pill"><i class="fa-solid fa-gauge"></i> Medel</span>
+              <span class="pill"><i class="fa-regular fa-clock"></i> 15h</span>
+            </div>
+            <h3 class="course-title">React Mastery</h3>
+            <p class="course-desc">Hooks, Context, Redux, TypeScript. Bygg skalbara React-applikationer med moderna patterns.</p>
+            <div class="course-cta">
+              <a href="#" class="btn-card"><i class="fa-solid fa-circle-play"></i> Starta kurs</a>
+              <div class="meta"><i class="fa-solid fa-code-branch"></i> 8 projekt</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Course: AI Fundamentals -->
+        <article class="course-card col-4 reveal" data-category="AI-ML">
+          <div class="course-media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2000&auto=format&fit=crop" alt="AI fundamentals kurs omslagsbild" />
+            <span class="badge"><i class="fa-solid fa-rocket"></i> Avancerad</span>
+          </div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="pill"><i class="fa-solid fa-brain"></i> AI & ML</span>
+              <span class="pill"><i class="fa-solid fa-gauge-high"></i> Avancerad</span>
+              <span class="pill"><i class="fa-regular fa-clock"></i> 20h</span>
+            </div>
+            <h3 class="course-title">AI & Machine Learning</h3>
+            <p class="course-desc">TensorFlow, PyTorch, neurala nätverk. Implementera AI-lösningar från grunden.</p>
+            <div class="course-cta">
+              <a href="#" class="btn-card"><i class="fa-solid fa-circle-play"></i> Starta kurs</a>
+              <div class="meta"><i class="fa-solid fa-chart-line"></i> 5 AI-projekt</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Course: Data Science -->
+        <article class="course-card col-4 reveal" data-category="Datavetenskap">
+          <div class="course-media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1629654857513-2c4149009a6e?q=80&w=2000&auto=format&fit=crop" alt="Data Science kurs omslagsbild" />
+            <span class="badge"><i class="fa-solid fa-trending-up"></i> Trendande</span>
+          </div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="pill"><i class="fa-solid fa-database"></i> Datavetenskap</span>
+              <span class="pill"><i class="fa-solid fa-gauge"></i> Medel</span>
+              <span class="pill"><i class="fa-regular fa-clock"></i> 18h</span>
+            </div>
+            <h3 class="course-title">Data Science Essentials</h3>
+            <p class="course-desc">Pandas, NumPy, Scikit-learn. Från data cleaning till machine learning-modeller.</p>
+            <div class="course-cta">
+              <a href="#" class="btn-card"><i class="fa-solid fa-circle-play"></i> Starta kurs</a>
+              <div class="meta"><i class="fa-solid fa-database"></i> 6 datasets</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Course: DevOps & Cloud -->
+        <article class="course-card col-4 reveal" data-category="DevOps">
+          <div class="course-media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000&auto=format&fit=crop" alt="DevOps och Cloud kurs omslagsbild" />
+            <span class="badge"><i class="fa-solid fa-cloud"></i> Cloud</span>
+          </div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="pill"><i class="fa-solid fa-server"></i> DevOps</span>
+              <span class="pill"><i class="fa-solid fa-gauge"></i> Medel</span>
+              <span class="pill"><i class="fa-regular fa-clock"></i> 14h</span>
+            </div>
+            <h3 class="course-title">DevOps & Cloud Native</h3>
+            <p class="course-desc">Docker, Kubernetes, AWS. Deploy och skala applikationer i molnet.</p>
+            <div class="course-cta">
+              <a href="#" class="btn-card"><i class="fa-solid fa-circle-play"></i> Starta kurs</a>
+              <div class="meta"><i class="fa-solid fa-server"></i> 4 deployment-projekt</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Course: Advanced Python -->
+        <article class="course-card col-4 reveal" data-category="Programmering">
+          <div class="course-media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1614741118884-62ac62b31e16?q=80&w=2000&auto=format&fit=crop" alt="Avancerad Python kurs omslagsbild" />
+            <span class="badge"><i class="fa-solid fa-snake"></i> Expert</span>
+          </div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="pill"><i class="fa-solid fa-laptop-code"></i> Programmering</span>
+              <span class="pill"><i class="fa-solid fa-gauge-high"></i> Avancerad</span>
+              <span class="pill"><i class="fa-regular fa-clock"></i> 16h</span>
+            </div>
+            <h3 class="course-title">Avancerad Python</h3>
+            <p class="course-desc">Decorators, generators, async/await, design patterns. Skriv enterprise-grade Python.</p>
+            <div class="course-cta">
+              <a href="#" class="btn-card"><i class="fa-solid fa-circle-play"></i> Starta kurs</a>
+              <div class="meta"><i class="fa-solid fa-code-branch"></i> 7 avancerade moduler</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- LEARNING PATHS SECTION -->
+    <section class="section" id="learning-path">
+      <header class="section-header reveal">
+        <h2>Utbildningsvägar</h2>
+        <p class="muted">Strukturerade vägar för att nå dina karriärmål. Följ en väg eller skapa din egen kombination.</p>
+      </header>
+
+      <div class="grid">
+        <!-- Frontend Developer Path -->
+        <div class="path-card col-6 reveal">
+          <div class="path-header">
+            <div class="path-icon">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <div class="path-info">
+              <h3>Frontend Developer</h3>
+              <p>Bli en fullstack frontend-utvecklare</p>
+            </div>
+            <div class="path-duration">6 månader</div>
+          </div>
+          <div class="path-courses">
+            <div class="course-item">
+              <span class="course-number">1</span>
+              <span class="course-name">Modern Webbutveckling</span>
+              <span class="course-duration">12h</span>
+            </div>
+            <div class="course-item">
+              <span class="course-number">2</span>
+              <span class="course-name">React Mastery</span>
+              <span class="course-duration">15h</span>
+            </div>
+            <div class="course-item">
+              <span class="course-number">3</span>
+              <span class="course-name">TypeScript Fundamentals</span>
+              <span class="course-duration">10h</span>
+            </div>
+            <div class="course-item">
+              <span class="course-number">4</span>
+              <span class="course-name">Next.js & Fullstack</span>
+              <span class="course-duration">18h</span>
+            </div>
+          </div>
+          <div class="path-cta">
+            <a href="#" class="btn btn-primary">Starta väg</a>
+            <span class="path-price">2 995 kr</span>
+          </div>
+        </div>
+
+        <!-- Data Scientist Path -->
+        <div class="path-card col-6 reveal">
+          <div class="path-header">
+            <div class="path-icon">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <div class="path-info">
+              <h3>Data Scientist</h3>
+              <p>Mastera AI och machine learning</p>
+            </div>
+            <div class="path-duration">8 månader</div>
+          </div>
+          <div class="path-courses">
+            <div class="course-item">
+              <span class="course-number">1</span>
+              <span class="course-name">Python Fundamentals</span>
+              <span class="course-duration">14h</span>
+            </div>
+            <div class="course-item">
+              <span class="course-number">2</span>
+              <span class="course-name">Data Science Essentials</span>
+              <span class="course-duration">18h</span>
+            </div>
+            <div class="course-item">
+              <span class="course-number">3</span>
+              <span class="course-name">AI & Machine Learning</span>
+              <span class="course-duration">20h</span>
+            </div>
+            <div class="course-item">
+              <span class="course-number">4</span>
+              <span class="course-name">Deep Learning</span>
+              <span class="course-duration">22h</span>
+            </div>
+          </div>
+          <div class="path-cta">
+            <a href="#" class="btn btn-primary">Starta väg</a>
+            <span class="path-price">3 995 kr</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARTICLES SECTION -->
+    <section class="section" id="articles">
+      <header class="section-header reveal">
+        <h2>Kunskapsbank & Guider</h2>
+        <p class="muted">Snabba "lär-dig"-inlägg, guider och artiklar för att lösa specifika problem och bredda din kunskap.</p>
+      </header>
+
+      <div class="grid">
+        <a href="#" class="article-card col-6 reveal">
+          <div class="article-img">
+            <img loading="lazy" src="https://plus.unsplash.com/premium_photo-1663089684347-60e55b349f7b?q=80&w=2000&auto=format&fit=crop" alt="REST API guide omslagsbild" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #f86700, #ff4d00)';" />
+          </div>
+          <div class="article-body">
+            <div class="article-title">Förstå REST API:er på 5 minuter</div>
+            <div class="article-desc">Hur RESTful API:er fungerar och hur du kopplar upp dem i dina projekt (med exempel).</div>
+          </div>
+          <i class="fa-solid fa-arrow-right article-arrow" aria-hidden="true"></i>
+        </a>
+
+        <a href="#" class="article-card col-6 reveal">
+          <div class="article-img">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=2000&auto=format&fit=crop" alt="Cybersäkerhet omslagsbild" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #f86700, #ff4d00)';" />
+          </div>
+          <div class="article-body">
+            <div class="article-title">3 enkla säkerhetstips för utvecklare</div>
+            <div class="article-desc">Grundläggande principer för att skydda dina appar mot vanliga sårbarheter.</div>
+          </div>
+          <i class="fa-solid fa-arrow-right article-arrow" aria-hidden="true"></i>
+        </a>
+
+        <a href="#" class="article-card col-6 reveal">
+          <div class="article-img">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1555952494-efd681c7e3f9?q=80&w=2000&auto=format&fit=crop" alt="Git och GitHub omslagsbild" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #f86700, #ff4d00)';" />
+          </div>
+          <div class="article-body">
+            <div class="article-title">Kom igång med Git & GitHub</div>
+            <div class="article-desc">Versionshantering, branches och pull requests – samarbeta effektivt från dag ett.</div>
+          </div>
+          <i class="fa-solid fa-arrow-right article-arrow" aria-hidden="true"></i>
+        </a>
+
+        <a href="#" class="article-card col-6 reveal">
+          <div class="article-img">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=2000&auto=format&fit=crop" alt="Testing omslagsbild" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #f86700, #ff4d00)';" />
+          </div>
+          <div class="article-body">
+            <div class="article-title">Snabbstart: Enhetstester i JavaScript</div>
+            <div class="article-desc">Bygg trygg kod med test-strategier och verktyg som Jest och Vitest.</div>
+          </div>
+          <i class="fa-solid fa-arrow-right article-arrow" aria-hidden="true"></i>
+        </a>
+
+        <a href="#" class="article-card col-6 reveal">
+          <div class="article-img">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2000&auto=format&fit=crop" alt="TypeScript guide omslagsbild" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #f86700, #ff4d00)';" />
+          </div>
+          <div class="article-body">
+            <div class="article-title">TypeScript för JavaScript-utvecklare</div>
+            <div class="article-desc">Gradvis övergång från JavaScript till TypeScript med praktiska exempel.</div>
+          </div>
+          <i class="fa-solid fa-arrow-right article-arrow" aria-hidden="true"></i>
+        </a>
+
+        <a href="#" class="article-card col-6 reveal">
+          <div class="article-img">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop" alt="Performance optimization omslagsbild" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #f86700, #ff4d00)';" />
+          </div>
+          <div class="article-body">
+            <div class="article-title">Webbprestanda: 10 snabba optimeringar</div>
+            <div class="article-desc">Förbättra din webbplats hastighet med dessa beprövade tekniker.</div>
+          </div>
+          <i class="fa-solid fa-arrow-right article-arrow" aria-hidden="true"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES SECTION -->
+    <section class="section" id="certificates">
+      <header class="section-header reveal">
+        <h2>Certifieringar & Bevis</h2>
+        <p class="muted">Få officiella certifieringar som bevisar dina färdigheter och ökar din marknadsvärde.</p>
+      </header>
+
+      <div class="grid">
+        <div class="cert-card col-4 reveal">
+          <div class="cert-icon">
+            <i class="fa-solid fa-certificate"></i>
+          </div>
+          <h3>Frontend Developer</h3>
+          <p>Certifiering för moderna webbutvecklingstekniker och frameworks.</p>
+          <ul class="cert-features">
+            <li><i class="fa-solid fa-check"></i> Officiellt certifikat</li>
+            <li><i class="fa-solid fa-check"></i> LinkedIn-integration</li>
+            <li><i class="fa-solid fa-check"></i> Verifierbar online</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Skaffa certifikat</a>
+        </div>
+
+        <div class="cert-card col-4 reveal">
+          <div class="cert-icon">
+            <i class="fa-solid fa-brain"></i>
+          </div>
+          <h3>AI & ML Specialist</h3>
+          <p>Avancerad certifiering för AI och machine learning-specialister.</p>
+          <ul class="cert-features">
+            <li><i class="fa-solid fa-check"></i> Officiellt certifikat</li>
+            <li><i class="fa-solid fa-check"></i> LinkedIn-integration</li>
+            <li><i class="fa-solid fa-check"></i> Verifierbar online</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Skaffa certifikat</a>
+        </div>
+
+        <div class="cert-card col-4 reveal">
+          <div class="cert-icon">
+            <i class="fa-solid fa-server"></i>
+          </div>
+          <h3>DevOps Engineer</h3>
+          <p>Certifiering för cloud-native utveckling och deployment.</p>
+          <ul class="cert-features">
+            <li><i class="fa-solid fa-check"></i> Officiellt certifikat</li>
+            <li><i class="fa-solid fa-check"></i> LinkedIn-integration</li>
+            <li><i class="fa-solid fa-check"></i> Verifierbar online</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Skaffa certifikat</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div include-html="components/footer.html"></div>
+  <div style="height: 3px; background: var(--accent);"></div>
+
+  <script>
+    // IntersectionObserver for reveal animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in'); 
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Course filtering with enhanced functionality
+    const chips = document.querySelectorAll('.chip');
+    const cards = document.querySelectorAll('.course-card');
+
+    function setActiveChip(chip){
+      // Remove active class from all chips
+      chips.forEach(c => {
+        c.classList.remove('active');
+        c.setAttribute('aria-selected', 'false');
+      });
+      
+      // Add active class to clicked chip
+      chip.classList.add('active');
+      chip.setAttribute('aria-selected', 'true');
+      
+      const filter = chip.dataset.filter;
+      
+      // Filter cards with smooth animation
+      cards.forEach(card => {
+        const show = (filter === 'all') || card.dataset.category === filter;
+        
+        if (show) {
+          card.style.display = '';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 50);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(20px)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 300);
+        }
+      });
+    }
+
+    // Add click and keyboard event listeners
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => setActiveChip(chip));
+      chip.setAttribute('tabindex', '0');
+      chip.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { 
+          e.preventDefault(); 
+          chip.click(); 
+        }
+      });
+    });
+
+    // Enhanced course card interactions
+    document.querySelectorAll('.course-card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-10px) scale(1.02)';
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0) scale(1)';
+      });
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Add loading states to buttons
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        if (!this.classList.contains('btn-ghost')) {
+          const originalText = this.innerHTML;
+          this.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Laddar...';
+          this.disabled = true;
+          
+          // Simulate loading (remove in production)
+          setTimeout(() => {
+            this.innerHTML = originalText;
+            this.disabled = false;
+          }, 2000);
+        }
+      });
+    });
+    
+    // Lägg till scroll-to-top knapp
+    const scrollButton = document.createElement('button');
+    scrollButton.className = 'scroll-to-top';
+    scrollButton.onclick = scrollToTop;
+    scrollButton.innerHTML = '<i class="fas fa-arrow-up"></i><span>Ta mig upp</span>';
+    document.body.appendChild(scrollButton);
+  </script>
+  <script src="assets/js/owl-animation.js"></script>
+</body>
+</html>

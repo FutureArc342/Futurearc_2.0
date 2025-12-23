@@ -1,0 +1,2278 @@
+/* Först importera fonterna i början av filen */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Iceland&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+.process-component {
+  all: initial; /* Reset för att undvika CSS-konflikter */
+  display: block;
+  position: relative;
+  isolation: isolate; /* Skapar en ny lagerkontext */
+}
+
+/* Återinför dina viktigaste variabler */
+.process-component {
+  --background-color: #121212;
+  --surface-color: #1E1E1E;
+  --primary-accent-color: #FF6B00;
+  /* ... resten av dina variabler ... */
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif; /* Sätter fonten till Arial */
+    line-height: 1.6; /* Radavstånd */
+    margin: 0; /* Tar bort marginaler från kroppen */
+    padding: 0; /* Tar bort padding */
+    color: #000000; /* Textfärg: svart */
+    background-color: #1b1b1b; /* Bakgrundsfärg: ljusgrå */
+}
+
+/* Custom Scrollbar - Orange Theme */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #f86700, #e05e00);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #ff8c42, #f86700);
+}
+
+.container {
+    width: 100%; /* Behåller 100% av bredden av skärmen */
+    max-width: 1200px; /* Maxbredd på 1200px */
+    margin: 0 auto; /* Centrerar innehållet */
+    padding: 0 15px; /* Sidpadding */
+}
+
+
+
+
+
+/* ===== SLUTGILTIG HEADER-STIL (V.5 - Korrigerad & Balanserad) ===== */
+
+/* GRUNDSTIL (Gäller alla sidor) */
+.floating-header {
+    position: relative;
+    z-index: 100;
+    padding: 15px 0;
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #333;
+}
+
+/* SPECIALSTIL FÖR ENDAST HEMSIDAN */
+.homepage .floating-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    border-bottom: none;
+    padding: 25px 0;
+}
+
+/* --- Gemensamma stilar för layout och element --- */
+.floating-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    perspective: 1000px;
+}
+
+.floating-header .logo-link {
+    width: 230px;
+    flex-shrink: 0; /* Förhindrar att den krymper */
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+                filter 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.floating-header .logo { width: 100%; height: auto; }
+.floating-header .logo-link:hover {
+    transform: scale(1.1) rotateX(5deg) rotateY(-5deg);
+    filter: drop-shadow(0 5px 15px rgba(248, 103, 0, 0.4));
+}
+
+/* **KORRIGERING:** Säkerställer att platshållaren har samma bredd som loggan */
+.header-placeholder {
+    width: 230px; /* <-- VIKTIGASTE ÄNDRINGEN */
+    flex-shrink: 0; /* Förhindrar att den krymper */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Stil för navigerings-pillen (Med mer blur) */
+.floating-header .header-nav {
+    /* Justerad bakgrundsfärg för starkare glas-effekt */
+    background-color: rgba(35, 35, 35, 0.25); 
+    
+    /* Ökat blur-värde för mer oskärpa */
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    transition: all 0.4s ease;
+}
+
+.homepage .floating-header .header-nav:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.floating-header .header-nav ul {
+    list-style: none;
+    padding: 0; margin: 0;
+    display: flex;
+    gap: 0.5rem;
+}
+.floating-header .header-nav ul li a {
+    font-family: 'Roboto', 'Open Sans', sans-serif;
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 10px 22px;
+    border-radius: 40px;
+    transition: all 0.25s ease;
+    display: block;
+}
+.floating-header .header-nav ul li a:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+.floating-header .header-nav ul li a.active {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+}
+
+/* Stil för Beta-etiketten */
+.beta-tag {
+    display: none; /* Dold som standard, visas bara på startsidan */
+    padding: 12px 28px;
+    background-color: rgba(248, 103, 0, 0.15);
+    color: #f86700;
+    border: 1px solid rgba(248, 103, 0, 0.3);
+    border-radius: 50px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.homepage .beta-tag {
+    display: inline-block; /* Visa BARA på startsidan */
+}
+
+/* ===== HAMBURGER MENU STYLES ===== */
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+    margin-right: 20px;
+}
+
+.mobile-menu-btn span {
+    width: 100%;
+    height: 3px;
+    background: #f86700;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mobile-menu ul li {
+    margin: 20px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-overlay.active .mobile-menu ul li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mobile-menu ul li:nth-child(1) { transition-delay: 0.1s; }
+.mobile-menu ul li:nth-child(2) { transition-delay: 0.2s; }
+.mobile-menu ul li:nth-child(3) { transition-delay: 0.3s; }
+.mobile-menu ul li:nth-child(4) { transition-delay: 0.4s; }
+.mobile-menu ul li:nth-child(5) { transition-delay: 0.5s; }
+.mobile-menu ul li:nth-child(6) { transition-delay: 0.6s; }
+
+.mobile-menu ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: #e0e0e0;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu ul li a:hover {
+    color: #f86700;
+    border-color: rgba(248, 103, 0, 0.3);
+    background: rgba(248, 103, 0, 0.05);
+}
+
+
+/* ----- Responsivitet ----- */
+
+/* Gradvis krympning av header innan hamburgermeny */
+@media (max-width: 1200px) {
+    .floating-header .logo-link {
+        width: 200px;
+    }
+    
+    .header-placeholder {
+        width: 200px;
+    }
+    
+    .floating-header .header-nav ul li a {
+        font-size: 0.9rem;
+        padding: 8px 18px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .floating-header .logo-link {
+        width: 180px;
+    }
+    
+    .header-placeholder {
+        width: 180px;
+    }
+    
+    .floating-header .header-nav ul li a {
+        font-size: 0.85rem;
+        padding: 7px 16px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .floating-header .logo-link {
+        width: 160px;
+    }
+    
+    .header-placeholder {
+        width: 160px;
+    }
+    
+    .floating-header .header-nav ul li a {
+        font-size: 0.8rem;
+        padding: 6px 14px;
+    }
+}
+
+@media (max-width: 990px) {
+    .floating-header .header-nav {
+        display: none !important;
+    }
+
+    .mobile-menu-btn {
+        display: flex !important;
+    }
+
+    .beta-tag {
+        display: none !important;
+    }
+}
+
+@media (max-width: 990px) {
+    .floating-header .logo-link {
+        width: 140px;
+    }
+}
+
+@media (max-width: 768px) {
+    .floating-header .header-placeholder {
+        display: none;
+    }
+    
+    .floating-header .logo-link {
+        width: 160px;
+    }
+}
+
+
+
+
+/* Hero Section Styles */
+
+
+.hero {                 /* bakgrunden kan ändras med bara banner.png , vi får bestämma */
+    position: relative;
+    background: url(../Images/bakett.png) no-repeat center center/cover;
+    background-size: cover;
+    color: #ffffff; /* Vit text för läsbarhet */
+    text-align: center; /* Centrerar all text */
+    padding: 50px 20px; /* Justerar padding för bättre layout */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); /* Lägger till en mjuk vit glow-effekt */
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.593); /* Justera opaciteten för önskad kontrast */
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 500px; /* Justera höjden på fade */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    pointer-events: none; /* Så att det inte stör klick på innehåll */
+    z-index: 2; /* Samma lager som overlay, men under text */
+}
+
+.hero > * {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+.hero h2 {
+    padding-top: 40px;
+    text-transform: none;
+    font-family: "Lexend", serif; 
+    font-size: 3.5rem; /* Ökar storleken på rubriken */
+    color: #ffffff; /* Vit text för hög kontrast mot mörk bakgrund */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Lägger till vit glow-effekt */
+    font-weight: 500; /* Gör texten fetare */
+    line-height: 1.2; /* Justerar radavståndet för bättre läsbarhet */
+    margin-top: 100px;
+}
+
+.hero h2 .highlight {
+    position: relative;
+    display: inline-block;
+}
+
+.hero h2 .highlight::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #f86700, #fd8b39);
+    border-radius: 0;
+    filter: blur(1.5px);
+}
+
+.hero h2 .highlight .y-letter {
+    position: relative;
+    z-index: 1; 
+}
+
+.hero p {
+    font-size: 1.2rem; /* Justerar textstorleken för paragrafer */
+    color: #cccccc; /* Ljusare grå färg för paragrafer för att skilja från rubriken */
+    margin-bottom: 30px; /* Ökar utrymmet under paragrafer */
+}
+
+.hero .cta {
+    background: linear-gradient(135deg, #e74c3c 0%, #f39c12 50%, #e74c3c 100%); /* Mörkare orange-röd gradient */
+    color: #ffffff; /* Vit text */
+    padding: 18px 36px; /* Större padding för mer impact */
+    font-size: 1.1rem; /* Balanserad textstorlek */
+    border-radius: 50px; /* Rundare hörn för modern look */
+    text-decoration: none; /* Tar bort understrykning */
+    font-weight: 700; /* Bold för mer impact */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bounce animation */
+    margin-bottom: 50px;
+    box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3),
+                0 4px 15px rgba(243, 156, 18, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2); /* 3D-effekt med inner highlight */
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.8px; /* Mer spacing för modern look */
+    text-transform: uppercase; /* Uppercase för mer impact */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero .cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.hero .cta:hover::before {
+    left: 100%;
+}
+
+.hero .cta:hover {
+    background: linear-gradient(135deg, #f39c12 0%, #e74c3c 50%, #f39c12 100%); /* Inverterad gradient vid hover */
+    transform: translateY(-4px) scale(1.05); /* Bounce och scale effekt */
+    box-shadow: 0 15px 35px rgba(231, 76, 60, 0.4),
+                0 8px 20px rgba(243, 156, 18, 0.3),
+                0 0 0 3px rgba(255, 255, 255, 0.1); /* Glow effekt */
+    color: #ffffff; /* Behåller vit text */
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.hero .cta:active {
+    transform: translateY(-1px) scale(1.02); /* Mindre bounce när knappen trycks */
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3),
+                0 2px 8px rgba(243, 156, 18, 0.2); /* Mindre skugga vid aktivt tillstånd */
+}
+
+.hero .intro-cta {
+    background-color: #f25c05; /* Orange bakgrund */
+    color: #ffffff; /* Vit text */
+    padding: 10px 20px; /* Ökar padding för att göra knappen större */
+    font-size: 1.2rem; /* Ökar fontstorleken */
+    border-radius: 5px; /* Rundade hörn */
+    text-decoration: none; /* Tar bort understrykning */
+    font-weight: bold; /* Fetstil */
+    transition: background-color 0.3s ease; /* Animation för hover-effekt */
+}
+
+.hero .intro-cta:hover {
+    background-color: #e24e1b; /* Mörkare orange vid hover */
+    transform: scale(1.1); /* Lätt förstoringseffekt */
+}
+
+/* Video styling */
+.hero .intro-video {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.hero .intro-video video {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border: 2px solid rgba(248, 103, 0, 0.6);
+    animation: videoGlow 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 5px rgba(248, 103, 0, 0.3));
+}
+
+@keyframes videoGlow {
+    0%, 100% {
+        box-shadow: 
+            0 0 10px rgba(248, 103, 0, 0.3),
+            0 0 15px rgba(248, 103, 0, 0.2),
+            0 0 20px rgba(248, 103, 0, 0.1);
+        border-color: rgba(248, 103, 0, 0.6);
+    }
+    50% {
+        box-shadow: 
+            0 0 20px rgba(255, 69, 0, 0.4),
+            0 0 42px rgba(255, 69, 0, 0.3),
+            0 0 52px rgba(255, 69, 0, 0.2);
+        border-color: rgba(255, 69, 0, 0.7);
+    }
+}
+
+/* Scroll Indicator Styles */
+.scroll-indicator {
+    position: relative;
+    z-index: 10;
+    margin-top: 30px;
+    text-align: center;
+    animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+.scroll-text {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #f86700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+    opacity: 0.9;
+    font-family: "Lexend", sans-serif;
+}
+
+.scroll-arrow {
+    display: inline-block;
+    animation: bounce 2s infinite;
+}
+
+.scroll-arrow i {
+    color: #f86700;
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-8px);
+    }
+    60% {
+        transform: translateY(-4px);
+    }
+}
+
+/* Responsivitet */
+@media (max-width: 768px) {
+    .hero h2, .hero .intro-text h2 {
+        font-size: 2rem; /* Mindre rubrikstorlek på små skärmar */
+    }
+
+    .hero p {
+        font-size: 1rem; /* Mindre textstorlek på små skärmar */
+    }
+
+    .hero .cta, .hero .intro-cta {
+        padding: 16px 32px; /* Anpassad padding för mobil */
+        font-size: 1rem; /* Mindre textstorlek på mobil */
+        border-radius: 40px; /* Mindre border-radius på mobil */
+    }
+}
+
+/* Call-to-Action Button */
+.cta {
+    display: inline-block; /* Inline-block för att styra storleken */
+    background-color: #f25c05; /* Orange bakgrund */
+    color: #fff; /* Vit text */
+    padding: 10px 20px; /* Padding runt texten */
+    text-decoration: none; /* Ingen understrykning */
+    font-weight: 900;
+    font-size: 1rem; /* Standard textstorlek */
+    margin-top: 20px; /* Utrymme ovanför */
+    border-radius: 5px; /* Rundade hörn */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+
+.cta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    z-index: 0;
+    transform: skewX(-45deg);
+    transition: left 0.5s ease;
+}
+
+.cta:hover::before {
+    left: 100%;
+}
+
+.cta:hover {
+    background-color: #9c4a1a; /* Mörkare orange vid hover */
+}       
+
+
+
+@media (max-width: 768px) {
+    .intro-container {
+        flex-direction: column;
+    }
+
+    .intro-text, .intro-video {
+        width: 100%;
+    }
+}
+
+.intro-cta {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #f86700;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.intro-cta:hover {
+    background-color: transparent;
+    border: 2px solid #f86700;
+    color: #f86700;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(248, 103, 0, 0.4);
+}
+
+.intro-cta:active {
+    transform: translateY(0);
+}
+
+
+
+
+
+
+/* Social Icons */
+.social-icons a {
+    font-size: 20px; /* Större ikoner */
+    margin: 0 10px; /* Mellanrum mellan ikoner */
+    text-decoration: none; /* Ingen understrykning */
+    transition: color 0.3s; /* Smidig färgövergång vid hover */
+}
+
+.social-icons a:hover {
+    color: #f25c05; /* Guld färg vid hover */
+}
+
+/* Responsiv Design */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .hero {
+        padding: 50px 10px;
+    }
+
+    .articles {
+        flex-direction: column; /* Staplar artiklarna på varandra */
+        align-items: center;
+    }
+
+    .articles article {
+        width: 90%; /* Gör artiklarna bredare för små skärmar */
+    }
+
+    nav ul li {
+        display: block; /* Gör att länkar staplas */
+        margin: 10px 0;
+        text-align: center;
+    }
+}
+
+/*det är för medeleandet som kommer upp på sidan*/
+
+.bottom-header {
+    position: relative; /* Börja med relative position */
+    width: 100%;
+    background: #f86700;
+    z-index: 1001;
+    transition: all 0.5s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.bottom-header.sticky {
+    position: fixed; /* Blir fixed när den får sticky-klassen */
+    top: 0;
+    left: 0;
+}
+
+.bottom-header.hide {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.medelande {
+    text-align: center;
+    padding: 10px 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.medelande h6 {
+    margin: 0;
+    color: white;
+    font-size: 0.85rem;
+    line-height: 1.3;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+
+
+
+
+
+
+/*Modal*/
+.modal {
+    display: none;  /* Detta är det enda vi behöver lägga till/ändra */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1000;
+    overflow-y: auto;  /* Gör modalen scrollbar */
+    display: flex;     /* Använd flex för centrering */
+    align-items: center;  /* Vertikal centrering */
+    justify-content: center;  /* Horisontell centrering */
+}
+
+.modal-content {
+    position: relative;
+    background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+    padding: 2rem;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 16px;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    margin: 2rem auto;  /* Lägg till margin top och bottom */
+    max-height: 85vh;   /* Maxhöjd på 85% av viewport height */
+    overflow-y: auto;   /* Gör innehållet scrollbart */
+    animation: modalFadeIn 0.4s ease-out;
+}
+/*Animation för modalen*/
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Snygga till scrollbaren */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: #f86700;
+    border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: #e55d00;
+}
+
+.close-button {
+    color: #f86700;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover {
+    color: #ff8533;
+}
+
+.modal-content img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.learn-more {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    background-color: #f86700;
+    font-weight: bolder;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.learn-more:hover {
+    background-color: #e55d00;
+}
+
+.modal-content h2 {
+    font-family: 'Oswald', sans-serif;  /* Primär font */
+    color: #f86700;
+    font-size: 2.5rem;
+    font-weight: 700;  /* Justerat för Oswald */
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 3px solid #f86700;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+/* För övrig text i modalen kan du använda Open Sans */
+.modal-content p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;  /* Regular weight för brödtext */
+}
+
+/* Om du vill ha en understrykning eller border under rubriken */
+.modal-content h2 {
+    border-bottom: 3px solid #f86700;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+/* Responsiv Design */
+@media (max-width: 768px) {
+    .news-container {
+        flex-direction: column; /* Staplar news-main och news-sidebar vertikalt */
+    }
+
+    .news-main {
+        margin-right: 0; /* Tar bort marginalen till höger */
+    }
+
+    .news-sidebar {
+        margin-top: 20px; /* Mellanrum ovanför sidopanelen */
+    }
+
+    nav ul li {
+        display: block; /* Gör att länkar staplas */
+        margin: 10px 0;
+        text-align: center;
+    }
+}
+
+/* För sektionsrubriker (som "Senaste Nyheterna") */
+.news h2, section h2 {
+    font-family: 'Oswald', sans-serif;
+    color: #f86700;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+
+
+
+
+
+
+
+/* ===== PROFESSIONELL FAQ-STIL (V3 - Modern & Elegant) ===== */
+
+.faq-section-v2 {
+    padding: 80px 24px;
+    background: linear-gradient(90deg, #171615, #000000);
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.faq-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Hero Section */
+.faq-hero {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.faq-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, rgba(248, 103, 0, 0.2), rgba(248, 103, 0, 0.1));
+    border: 1px solid rgba(248, 103, 0, 0.3);
+    border-radius: 20px;
+    color: #f86700;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.faq-badge i {
+    font-size: 1rem;
+}
+
+.faq-headline {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.faq-headline .highlight-faq {
+    position: relative;
+    display: inline-block;
+    color: #f86700;
+}
+
+.faq-headline .highlight-faq::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #f86700 0%, #ff8533 100%);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: highlightExpand 1s ease-out 0.5s forwards;
+}
+
+@keyframes highlightExpand {
+    to {
+        transform: scaleX(1);
+    }
+}
+
+.faq-subheadline {
+    color: #a0a0a0;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Stats Section */
+.faq-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    background: rgba(248, 103, 0, 0.1);
+    border-color: rgba(248, 103, 0, 0.3);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #f86700;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #a0a0a0;
+    font-weight: 500;
+}
+
+/* FAQ Content */
+.faq-content {
+    margin-bottom: 80px;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.faq-item:hover {
+    border-color: rgba(248, 103, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(248, 103, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.faq-item.active {
+    border-color: #f86700;
+    background: rgba(248, 103, 0, 0.05);
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 28px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+    background: rgba(248, 103, 0, 0.05);
+}
+
+.faq-question-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+}
+
+.faq-icon-wrapper {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #f86700, #ff8533);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.faq-question h3 {
+    color: #fff;
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.faq-toggle {
+    color: #f86700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.faq-answer-content {
+    padding: 0 28px 28px;
+}
+
+.faq-answer p {
+    color: #a0a0a0;
+    margin: 0 0 16px 0;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.faq-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.faq-tag {
+    padding: 4px 12px;
+    background: rgba(248, 103, 0, 0.1);
+    color: #f86700;
+    border: 1px solid rgba(248, 103, 0, 0.2);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+    opacity: 1;
+}
+
+/* CTA Section */
+.faq-cta {
+    text-align: center;
+    padding: 40px 30px;
+    background: linear-gradient(135deg, rgba(248, 103, 0, 0.1), rgba(248, 103, 0, 0.05));
+    border: 1px solid rgba(248, 103, 0, 0.2);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.faq-cta-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.faq-cta-content p {
+    color: #a0a0a0;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-button-faq {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #f86700, #ff8533);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 2px solid transparent;
+    box-shadow: 0 8px 25px rgba(248, 103, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-button-faq::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.contact-button-faq:hover::before {
+    left: 100%;
+}
+
+.contact-button-faq:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(248, 103, 0, 0.4);
+}
+
+.contact-button-faq i {
+    transition: transform 0.3s ease;
+}
+
+.contact-button-faq:hover i {
+    transform: rotate(-15deg) scale(1.1);
+}
+
+/* Responsivitet */
+@media (max-width: 768px) {
+    .faq-section-v2 {
+        padding: 60px 16px;
+    }
+    
+    .faq-stats {
+        flex-direction: column;
+        gap: 20px;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        max-width: 900px;
+    }
+    
+    .faq-question {
+        padding: 20px 24px;
+    }
+    
+    .faq-answer-content {
+        padding: 0 24px 24px;
+    }
+    
+    .faq-cta {
+        padding: 40px 24px;
+    }
+    
+    .faq-cta-content h3 {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Specific styles for about page */
+.about-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    overflow-x: hidden;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text-section-first {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+.text-section {
+    margin-top: -4rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+
+/* Varannan sektion - omvänd ordning */
+.text-section:nth-child(even) {
+    flex-direction: flex-end;
+}
+.text-section full-width {
+    width: 100%;
+}
+
+.text-content {
+    flex: 1;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    border: 1px solid rgba(248, 103, 0, 0.2);
+    max-width: 800px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    z-index: 1;
+}
+
+.text-content:hover {
+    transform: translateY(-10px) scale(1.1);
+    background: rgba(0, 0, 0, 0.7);
+    border-color: #f86700;
+    box-shadow: 
+        0 10px 20px rgba(248, 103, 0, 0.2),
+        0 6px 6px rgba(248, 103, 0, 0.1);
+}
+
+.text-content::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        rgba(248, 103, 0, 0.1),
+        rgba(248, 103, 0, 0)
+    );
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.text-content:hover::after {
+    opacity: 1;
+}
+
+.aboutus-vision {
+    flex: 0 0 400px;
+    overflow: hidden;  /* This will hide the overflowing parts of the image */
+    border-radius: 8px;
+}
+
+.aboutus-vision img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    transform: scale(1.5);
+}
+
+
+/* Mobilanpassning */
+@media (max-width: 968px) {
+    .text-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-section:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .text-content {
+        max-width: 100%;
+        margin: 0; /* Ta bort eventuella marginaler */
+    }
+
+    .aboutus-vision {
+        display: none; /* Dölj bilderna helt i mobilvy */
+    }
+
+    /* Justera spacing för bättre mobilvy */
+    .text-section {
+        margin-top: -2rem; /* Justera mellanrum mellan sektioner */
+        margin-bottom: 2rem;
+        gap: 1rem;
+    }
+
+    .roadmap-about {
+        display: none; /* Dölj roadmap i mobilvy */
+    }
+}
+
+.about-container h1 {
+    color: #f86700;
+    font-size: 2.9rem;
+    margin-bottom: 4rem;
+    text-align: center;
+    width: 100%;
+    display: block;
+    position: relative;
+    padding-bottom: 1rem; /* Utrymme för understreck */
+}
+
+/* Lägg till en understrykning under rubriken */
+.about-container h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px; /* Bredden på understrykningen */
+    height: 3px;
+    background-color: #f86700;
+    border-radius: 2px;
+}
+
+.about-text h2 {
+    color: #f86700;
+    font-size: 2rem;
+    margin: 1.5rem 0;
+}
+
+.about-text h3 {
+    color: #f86700;
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.about-text h4 {
+    color: #f86700;
+    font-size: 1.2rem;
+    margin: 1.2rem 0;
+}
+
+.vision-conclusion {
+    margin-top: 2rem;
+    font-style: italic;
+    border-left: 3px solid #f86700;
+    padding-left: 1rem;
+}
+
+
+
+.about-text h1 {
+    color: #f86700;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #f4f4f4;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+
+
+@media (max-width: 1200px) {
+    .aboutus-vision {
+        flex: 0 0 400px; /* Mindre bredd på större skärmar */
+    }
+}
+
+@media (max-width: 968px) {
+    .about-container {
+        flex-direction: column;
+    }
+    
+    .about-text {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+    
+    .aboutus-vision {
+        flex: none;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+
+
+
+
+.section-divider-about {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, transparent, #f86700, transparent);
+    margin: 40px 0; /* Ger utrymme ovanför och nedanför linjen */
+}
+
+
+
+
+
+
+/* Detta kan man tabort senare när vi har alla dessa futures på plats dvs. discord, tutorials, nyheter */
+.future-box {
+    position: relative; /* Lägger till relativ positionering så att absolut positionerade barn kan positioneras korrekt */
+    /* Övriga stilar behålls */
+}
+
+.coming-soon {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    background-color: red;
+    color: white;
+    padding: 10px 15px;
+    font-weight: bolder;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease; /* Smidig övergång för alla egenskaper */
+}
+
+.coming-soon:hover {
+    animation: vibrate 0.5s linear infinite;
+}
+
+
+
+.future-box:hover .coming-soon {
+    animation: glowColorChange 1s ease-in-out infinite alternate;
+}
+
+@keyframes glowColorChange {
+    0% {
+        background-color: #f86700; /* Ursprunglig orange färg */
+        box-shadow: 0 0 5px #f86700; /* Lägger till en svag glöd runt etiketten */
+    }
+    50% {
+        background-color: #ff4500; /* Mellanfärg, ljusare röd */
+        box-shadow: 0 0 10px #ff4500; /* Starkare glöd */
+    }
+    100% {
+        background-color: #ff0000; /* Röd färg */
+        box-shadow: 0 0 15px #ff0000; /* Starkaste glöden */
+    }
+}
+
+
+.roadmap-section {
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centrera innehållet horisontellt */
+}
+
+.roadmap-section gif {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    padding: 0;
+    transform: translateX(20px); /* Justera detta värde för att flytta bilden åt höger */
+}
+
+/* Media Queries för olika skärmstorlekar */
+@media (max-width: 768px) {
+    .roadmap-section img {
+        width: 100%; /* Fullbredd på mindre skärmar */
+        height: auto; /* Automatisk höjd för att behålla proportioner */
+        max-width: 100%; /* Säkerställer att bilden inte blir större än skärmen */
+    }
+}
+
+
+
+/* detta är för timeline bilden som är i about.html */
+.roadmap-about img {
+    width: 100vw; /* Sätter bilden till att vara lika bred som viewporten */
+    height: auto; /* Behåller bildens proportioner */
+    object-fit: fill; /* Ser till att bilden täcker tillgängligt utrymme utan att klippas */
+    display: block; /* Tar bort eventuellt extra utrymme under bilden */
+    margin: 0; /* Tar bort marginal */
+    padding: 0; /* Tar bort padding */
+}
+
+.roadmap-about {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Förhindrar horisontell scrollning */
+}
+
+.roadmap-about img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+}
+
+.section-divider {
+    width: 100%;
+    height: 3px;
+    background: #f25c05;
+    margin: 0;
+    padding: 0;
+    border: none;
+    display: block;
+    box-sizing: border-box;
+}
+
+.section-divider-hero {
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, transparent, #f25c05, transparent);
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* Popup meddelande styling */
+.news-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.95);
+    padding: 25px 50px;
+    border-radius: 15px;
+    border: 3px solid #f25c05;
+    z-index: 10000;
+    text-align: center;
+    animation: popupFadeIn 0.5s ease-out;
+    box-shadow: 0 0 30px rgba(242, 92, 5, 0.6),
+                inset 0 0 20px rgba(242, 92, 5, 0.3);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.news-popup.show {
+    display: block;
+    opacity: 1;
+}
+
+.news-popup p {
+    color: white;
+    font-size: 2rem;
+    margin: 0;
+    font-family: "Iceland", serif;
+    text-shadow: 0 0 10px rgba(242, 92, 5, 0.8);
+    animation: textGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes popupFadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 10px rgba(242, 92, 5, 0.8);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(242, 92, 5, 1),
+                     0 0 30px rgba(242, 92, 5, 0.8),
+                     0 0 40px rgba(242, 92, 5, 0.6);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(242, 92, 5, 0.8);
+    }
+}
+
+
+
+
+/* Scroll to top button */
+.scroll-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: -60px; /* Startar gömd under sidans botten */
+    width: 50px; /* Bredare för mer professionell look */
+    height: 50px; /* Högre för mer professionell look */
+    background: linear-gradient(135deg, #f86700, #e05e00);
+    color: white;
+    border-radius: 50%; /* Rund form för modern look */
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(248, 103, 0, 0.3);
+    z-index: 1000;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    margin: 0;
+    backdrop-filter: blur(10px);
+}
+
+.scroll-to-top i {
+    font-size: 1.4rem; /* Större ikon för bättre synlighet */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.scroll-to-top span {
+    margin-left: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.scroll-to-top:hover {
+    width: 130px; /* Bredare för text */
+    background: linear-gradient(135deg, #f86700, #e05e00);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(248, 103, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.15);
+    border-radius: 25px;
+}
+
+.scroll-to-top:hover i {
+    opacity: 0; /* Dölj pilen vid hover */
+    transform: translateX(-50%) scale(0.6);
+    transition: all 0.2s ease;
+}
+
+.scroll-to-top:hover span {
+    opacity: 1;
+    margin-left: 0;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+/* Media Queries för mobilanpassning */
+@media (max-width: 768px) {
+    .scroll-to-top {
+        width: 45px; /* Behåll professionell storlek på mobiler */
+        height: 45px;
+        right: 20px;
+        font-size: 0.8rem;
+    }
+
+    .scroll-to-top:hover {
+        width: 110px;
+        transform: translateY(-2px);
+        border-radius: 20px;
+    }
+
+    .scroll-to-top i {
+        font-size: 1.2rem;
+    }
+
+    .scroll-to-top:hover i {
+        transform: translateX(-50%) rotate(360deg);
+    }
+
+    .scroll-to-top:hover span {
+        margin-left: 0;
+        font-size: 0.8rem;
+    }
+}
+
+/* Flying Owl Animation - Global */
+.flying-owl {
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none;
+    font-size: 3rem;
+    color: #f86700;
+    text-shadow: 0 0 10px rgba(248, 103, 0, 0.8);
+    animation: flyOwl 1.5s ease-in-out forwards;
+}
+
+/* ===== CTA SECTION STYLES ===== */
+.cta-section {
+    padding: 100px 20px 80px 20px;
+    background: linear-gradient(135deg, #f86700 0%, #ff6b35 50%, #f86700 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+/* Homepage specific CTA styling - more transparent background */
+.homepage .cta-section {
+    background: linear-gradient(135deg, rgba(248, 103, 0, 0.7) 0%, rgba(255, 107, 53, 0.7) 50%, rgba(248, 103, 0, 0.7) 100%);
+}
+
+/* Global background for homepage - same as hero but blurred and darker */
+.homepage {
+    background: url(../Images/bakett.png) no-repeat center center/cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.homepage::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Ensure hero section keeps its original styling */
+.homepage .hero {
+    background: url(../Images/bakett.png) no-repeat center center/cover;
+    background-size: cover;
+    position: relative;
+}
+
+.homepage .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.593);
+    z-index: 1;
+    pointer-events: none;
+    backdrop-filter: none;
+}
+
+/* Override backgrounds for all sections on homepage except hero */
+.homepage section:not(.hero),
+.homepage .section,
+.homepage .tech-stack-section,
+.homepage .latest-news-section,
+.homepage .faq-section,
+.homepage .process-section,
+.homepage .feature-section,
+.homepage .community-hub-section {
+    background: transparent !important;
+    position: relative;
+    z-index: 1;
+}
+
+/* Override specific component backgrounds */
+.homepage .tech-stack-wrapper {
+    background: transparent !important;
+}
+
+.homepage .latest-news-section {
+    background: transparent !important;
+}
+
+.homepage .faq-section {
+    background: transparent !important;
+}
+
+.homepage .process-section {
+    background: transparent !important;
+}
+
+/* Ensure all content sections have proper contrast */
+.homepage section:not(.hero) *,
+.homepage .section *,
+.homepage .tech-stack-section *,
+.homepage .latest-news-section *,
+.homepage .faq-section *,
+.homepage .process-section *,
+.homepage .feature-section *,
+.homepage .community-hub-section * {
+    position: relative;
+    z-index: 2;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+.cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.cta-title {
+    color: #ffffff;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+    0% { text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.3); }
+    100% { text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 255, 255, 0.6); }
+}
+
+.cta-subtitle {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.cta-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+    line-height: 1.7;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-features {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.cta-feature {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 1.5rem;
+    min-width: 200px;
+    transition: all 0.3s ease;
+}
+
+.cta-feature:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-5px);
+}
+
+.cta-feature-icon {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.cta-feature-text {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
+    color: #f86700;
+    padding: 1.4rem 3.5rem;
+    border-radius: 60px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    position: relative;
+    overflow: hidden;
+    border: none;
+    min-width: 200px;
+    backdrop-filter: blur(10px);
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.4), 
+        transparent);
+    transition: left 0.7s ease;
+}
+
+.cta-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.1) 0%, 
+        transparent 50%, 
+        rgba(255, 255, 255, 0.05) 100%);
+    border-radius: 60px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.cta-button:hover::after {
+    opacity: 1;
+}
+
+.cta-button:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 30%, #ffffff 100%);
+}
+
+.cta-button:active {
+    transform: translateY(-4px) scale(0.98);
+    box-shadow: 
+        0 15px 30px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.15),
+        inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button i {
+    margin-right: 15px;
+    font-size: 1.4rem;
+    transition: transform 0.3s ease;
+    font-weight: 600;
+}
+
+.cta-button:hover i {
+    transform: translateX(5px);
+}
+
+.cta-button span {
+    position: relative;
+    z-index: 1;
+}
+
+/* Subtle pulse animation for the button */
+@keyframes buttonPulse {
+    0%, 100% { 
+        box-shadow: 
+            0 10px 30px rgba(0, 0, 0, 0.3),
+            0 0 0 1px rgba(255, 255, 255, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+    50% { 
+        box-shadow: 
+            0 10px 30px rgba(0, 0, 0, 0.3),
+            0 0 0 1px rgba(255, 255, 255, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.8),
+            0 0 20px rgba(255, 255, 255, 0.1);
+    }
+}
+
+.cta-button {
+    animation: buttonPulse 3s ease-in-out infinite;
+}
+
+/* Mobile responsive for CTA section */
+@media (max-width: 768px) {
+    .cta-title {
+        font-size: 2.5rem;
+    }
+
+    .cta-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .cta-text {
+        font-size: 1.1rem;
+    }
+
+    .cta-features {
+        gap: 1rem;
+    }
+
+    .cta-feature {
+        min-width: 150px;
+        padding: 1rem;
+    }
+
+    .cta-feature-icon {
+        font-size: 1.5rem;
+    }
+
+    .cta-feature-text {
+        font-size: 0.8rem;
+    }
+}
+
+.flying-owl::before {
+    content: '';
+    width: 60px;
+    height: 60px;
+    background-image: url('../Images/owl-icon.png.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    filter: hue-rotate(0deg) saturate(2) brightness(1.2); /* Gör ugglan orange */
+}
+
+@keyframes flyOwl {
+    0% {
+        bottom: 20px;
+        right: 20px;
+        transform: scale(0.8);
+        opacity: 1;
+    }
+    25% {
+        bottom: 30vh;
+        right: 20px;
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        bottom: 50vh;
+        right: 20px;
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    75% {
+        bottom: 70vh;
+        right: 20px;
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        bottom: 100vh;
+        right: 20px;
+        transform: scale(0.8);
+        opacity: 0;
+    }
+}
+

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/Images/favoicon.png" class="favicon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Lägg till nyhet</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .admin-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background: linear-gradient(145deg, #2a2a2a, #1e1e1e);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 107, 0, 0.1);
+        }
+
+        .admin-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .admin-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .admin-subtitle {
+            color: #cccccc;
+            font-size: 1.1rem;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            display: block;
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .form-input, .form-textarea, .form-select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            background: #1a1a1a;
+            color: #ffffff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .form-input:focus, .form-textarea:focus, .form-select:focus {
+            outline: none;
+            border-color: #FF6B00;
+            box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #FF6B00, #FF8C42);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(255, 107, 0, 0.4);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .success-message {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .error-message {
+            background: linear-gradient(135deg, #dc3545, #e74c3c);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #FF6B00;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #FF8C42;
+            transform: translateX(-5px);
+        }
+
+        .preview-section {
+            margin-top: 30px;
+            padding: 20px;
+            background: #1a1a1a;
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+
+        .preview-title {
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .preview-card {
+            background: #2a2a2a;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .preview-category {
+            display: inline-block;
+            background: linear-gradient(135deg, #FF6B00, #FF8C42);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .preview-title-text {
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .preview-excerpt {
+            color: #cccccc;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body style="background-color: #1b1b1b; margin: 0; padding: 20px;">
+    <div class="admin-container">
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            Tillbaka till huvudsidan
+        </a>
+
+        <div class="admin-header">
+            <h1 class="admin-title">Lägg till ny artikel</h1>
+            <p class="admin-subtitle">Skapa en ny nyhetsartikel för webbplatsen</p>
+        </div>
+
+        <form id="newsForm">
+            <div class="form-group">
+                <label for="title" class="form-label">Titel *</label>
+                <input type="text" id="title" name="title" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+                <label for="category" class="form-label">Kategori *</label>
+                <select id="category" name="category" class="form-select" required>
+                    <option value="">Välj kategori</option>
+                    <option value="affärer">Affärer</option>
+                    <option value="teknik">Teknik</option>
+                    <option value="hälsa">Hälsa</option>
+                    <option value="miljö">Miljö</option>
+                    <option value="evenemang">Evenemang</option>
+                    <option value="sport">Sport</option>
+                    <option value="kultur">Kultur</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="excerpt" class="form-label">Kort beskrivning *</label>
+                <textarea id="excerpt" name="excerpt" class="form-textarea" required 
+                          placeholder="En kort sammanfattning av artikeln..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="body" class="form-label">Artikeltext *</label>
+                <textarea id="body" name="body" class="form-textarea" required 
+                          placeholder="Hela artikeltexten..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="image" class="form-label">Bild-URL *</label>
+                <input type="url" id="image" name="image" class="form-input" required
+                       placeholder="https://example.com/image.jpg">
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">
+                <i class="fas fa-plus"></i>
+                Lägg till artikel
+            </button>
+        </form>
+
+        <div id="message"></div>
+
+        <div class="preview-section">
+            <h3 class="preview-title">Förhandsvisning</h3>
+            <div id="preview" class="preview-card">
+                <div class="preview-category" id="previewCategory">Kategori</div>
+                <div class="preview-title-text" id="previewTitle">Artikelns titel</div>
+                <div class="preview-excerpt" id="previewExcerpt">Kort beskrivning av artikeln...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Preview functionality
+        function updatePreview() {
+            const title = document.getElementById('title').value || 'Artikelns titel';
+            const category = document.getElementById('category').value || 'Kategori';
+            const excerpt = document.getElementById('excerpt').value || 'Kort beskrivning av artikeln...';
+
+            document.getElementById('previewTitle').textContent = title;
+            document.getElementById('previewCategory').textContent = category;
+            document.getElementById('previewExcerpt').textContent = excerpt;
+        }
+
+        // Add event listeners for preview
+        document.getElementById('title').addEventListener('input', updatePreview);
+        document.getElementById('category').addEventListener('change', updatePreview);
+        document.getElementById('excerpt').addEventListener('input', updatePreview);
+
+        // Form submission
+        document.getElementById('newsForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const messageDiv = document.getElementById('message');
+            
+            // Disable button and show loading
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Lägger till...';
+            
+            try {
+                // Get form data
+                const formData = new FormData(e.target);
+                const newArticle = {
+                    title: formData.get('title'),
+                    category: formData.get('category'),
+                    excerpt: formData.get('excerpt'),
+                    body: formData.get('body'),
+                    image: formData.get('image'),
+                    timestamp: new Date().toISOString()
+                };
+
+                // Load existing news
+                const response = await fetch('nyheter.json');
+                const existingNews = await response.json();
+                
+                // Add new article to the beginning
+                existingNews.unshift(newArticle);
+                
+                // In a real application, you would send this to a server
+                // For now, we'll just show a success message
+                console.log('New article would be added:', newArticle);
+                console.log('Updated news array:', existingNews);
+                
+                // Show success message
+                messageDiv.innerHTML = `
+                    <div class="success-message">
+                        <i class="fas fa-check-circle"></i>
+                        Artikel tillagd framgångsrikt! Den kommer att visas på huvudsidan.
+                    </div>
+                `;
+                
+                // Reset form
+                e.target.reset();
+                updatePreview();
+                
+                // In a real application, you would save the updated JSON file here
+                // For demonstration purposes, we'll show what would happen
+                setTimeout(() => {
+                    messageDiv.innerHTML = `
+                        <div class="success-message">
+                            <i class="fas fa-info-circle"></i>
+                            I en riktig applikation skulle artikeln sparas i databasen och visas automatiskt på huvudsidan.
+                        </div>
+                    `;
+                }, 3000);
+                
+            } catch (error) {
+                console.error('Error adding article:', error);
+                messageDiv.innerHTML = `
+                    <div class="error-message">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Ett fel uppstod när artikeln skulle läggas till. Försök igen.
+                    </div>
+                `;
+            } finally {
+                // Re-enable button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-plus"></i> Lägg till artikel';
+            }
+        });
+
+        // Initialize preview
+        updatePreview();
+        
+        // Lägg till scroll-to-top knapp
+        const scrollButton = document.createElement('button');
+        scrollButton.className = 'scroll-to-top';
+        scrollButton.onclick = scrollToTop;
+        scrollButton.innerHTML = '<i class="fas fa-arrow-up"></i><span>Ta mig upp</span>';
+        document.body.appendChild(scrollButton);
+    </script>
+    <script src="assets/js/owl-animation.js"></script>
+</body>
+</html>

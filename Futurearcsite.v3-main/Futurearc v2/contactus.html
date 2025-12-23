@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakta Oss - FutureArc</title>
+    <link rel="icon" type="image/png" href="assets/Images/favoicon.png" class="favicon">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+</head>
+<body>
+    <div include-html="components/header.html"></div>
+    
+    <!-- Animated Background -->
+    <div class="contact-bg">
+        <div class="bg-particles"></div>
+        <div class="bg-gradients"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-envelope"></i>
+                <span>Kontakt</span>
+            </div>
+            <h1 class="hero-title">
+                Låt oss <span class="highlight">skapa</span> något fantastiskt tillsammans
+            </h1>
+            <p class="hero-subtitle">
+                Vi är här för att hjälpa dig! Kontakta oss för frågor, samarbeten eller bara för att säga hej.
+            </p>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <i class="fas fa-clock"></i>
+                    <span class="stat-number">24h</span>
+                    <span class="stat-label">Svarstid</span>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Gratis support</span>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <span class="stat-number">Säker</span>
+                    <span class="stat-label">Krypterad</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="contact-main">
+        <div class="contact-container">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <div class="form-header">
+                        <h2>Skicka ett meddelande</h2>
+                        <p>Fyll i formuläret nedan så återkommer vi så snart som möjligt</p>
+                    </div>
+                    
+                    <form id="contact-form" class="contact-form" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="input-wrapper">
+                                    <i class="fas fa-user input-icon"></i>
+                                    <input type="text" id="name" name="name" required />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-wrapper">
+                                    <i class="fas fa-envelope input-icon"></i>
+                                    <input type="email" id="email" name="email" required />
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <i class="fas fa-comment input-icon"></i>
+                                <textarea id="message" name="message" rows="6" required></textarea>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">Skicka meddelande</span>
+                            <i class="fas fa-paper-plane btn-icon"></i>
+                        </button>
+                        
+                        <div id="form-feedback" class="form-feedback"></div>
+                    </form>
+                </div>
+
+                <!-- Quick FAQ - Direkt under formuläret -->
+                <div class="quick-faq-section">
+                    <div class="quick-faq">
+                        <h3>Vanliga frågor</h3>
+                        <div class="faq-list">
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <h4>Hur snabbt får jag svar?</h4>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Vi svarar normalt inom 24 timmar under vardagar.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <h4>Kan jag bidra till communityn?</h4>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Absolut! Vi välkomnar bidrag från communityn.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Direct Contact -->
+                <div class="contact-methods">
+                    <h3>Kontakta oss direkt</h3>
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="method-content">
+                            <h4>E-post</h4>
+                            <a href="mailto:info@futurearc.se">info@futurearc.se</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="method-content">
+                            <h4>Support-tider</h4>
+                            <p>Måndag - Fredag: 09:00 - 18:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div class="social-section">
+                    <h3>Följ oss</h3>
+                    <div class="social-grid">
+                        <a href="https://www.linkedin.com/company/futurearcmedia" class="social-card" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://x.com/future_arcmedia" class="social-card" target="_blank">
+                            <i class="fab fa-x-twitter"></i>
+                            <span>Twitter</span>
+                        </a>
+                        <a href="https://www.instagram.com/futurearcmedia" class="social-card" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://www.tiktok.com/@futurearcmedia" class="social-card" target="_blank">
+                            <i class="fab fa-tiktok"></i>
+                            <span>TikTok</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer" include-html="components/footer.html"></div>
+    </footer>
+
+    <style>
+/* ===== MODERN CONTACT PAGE STYLES ===== */
+
+/* Base Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+    color: #f0f0f0;
+    position: relative;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Animated Background */
+.contact-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.bg-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(248, 103, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 140, 66, 0.05) 0%, transparent 50%);
+    animation: backgroundFloat 20s ease-in-out infinite;
+}
+
+.bg-gradients {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 10% 90%, rgba(248, 103, 0, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 10%, rgba(255, 140, 66, 0.06) 0%, transparent 40%);
+    animation: backgroundFloat 25s ease-in-out infinite reverse;
+}
+
+@keyframes backgroundFloat {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(-10px, -10px) rotate(1deg); }
+    50% { transform: translate(10px, -5px) rotate(-1deg); }
+    75% { transform: translate(-5px, 10px) rotate(0.5deg); }
+}
+
+/* Hero Section */
+.contact-hero {
+    padding: 120px 24px 80px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, rgba(248, 103, 0, 0.2), rgba(248, 103, 0, 0.1));
+    border: 1px solid rgba(248, 103, 0, 0.3);
+    border-radius: 20px;
+    color: #f86700;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.hero-title {
+    font-family: 'Lexend', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-title .highlight {
+    position: relative;
+    color: #f86700;
+}
+
+.hero-title .highlight::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #f86700 0%, #ff8533 100%);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: highlightExpand 1s ease-out 0.5s forwards;
+}
+
+@keyframes highlightExpand {
+    to { transform: scaleX(1); }
+}
+
+.hero-subtitle {
+    color: #a0a0a0;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Hero Stats */
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    background: rgba(248, 103, 0, 0.1);
+    border-color: rgba(248, 103, 0, 0.3);
+}
+
+.stat-card i {
+    font-size: 1.5rem;
+    color: #f86700;
+    margin-bottom: 8px;
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #f86700;
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: #a0a0a0;
+    font-weight: 500;
+}
+
+/* Main Contact Section */
+.contact-main {
+    padding: 0 24px 80px;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* Left and Right Columns */
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Contact Form Section */
+.contact-form-section {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 40px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: all 0.3s ease;
+}
+
+.contact-form-section:hover {
+    border-color: rgba(248, 103, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(248, 103, 0, 0.1);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.form-header h2 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.form-header p {
+    color: #a0a0a0;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Form Styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    position: relative;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 16px;
+    color: #f86700;
+    font-size: 1.1rem;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 16px 16px 16px 48px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.form-group textarea {
+    padding-left: 48px;
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #f86700;
+    box-shadow: 0 0 0 3px rgba(248, 103, 0, 0.1);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #666;
+}
+
+/* Submit Button */
+.submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #f86700, #ff8533);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.submit-btn:hover::before {
+    left: 100%;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(248, 103, 0, 0.4);
+}
+
+.btn-icon {
+    transition: transform 0.3s ease;
+}
+
+.submit-btn:hover .btn-icon {
+    transform: translateX(4px);
+}
+
+/* Form Feedback */
+.form-feedback {
+    padding: 16px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 500;
+    display: none;
+    margin-top: 16px;
+}
+
+.form-feedback.success {
+    display: block;
+    background: rgba(42, 157, 143, 0.2);
+    border: 1px solid rgba(42, 157, 143, 0.3);
+    color: #2a9d8f;
+}
+
+.form-feedback.error {
+    display: block;
+    background: rgba(231, 111, 81, 0.2);
+    border: 1px solid rgba(231, 111, 81, 0.3);
+    color: #e76f51;
+}
+
+/* Contact Info Section - REMOVED */
+
+/* Contact Methods */
+.contact-methods {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 32px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.contact-methods h3 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.contact-method {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-method:last-child {
+    border-bottom: none;
+}
+
+.method-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #f86700, #ff8533);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.method-content h4 {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.method-content p,
+.method-content a {
+    color: #a0a0a0;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.method-content a:hover {
+    color: #f86700;
+}
+
+/* Social Section */
+.social-section {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 32px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.social-section h3 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.social-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-card:hover {
+    background: rgba(248, 103, 0, 0.1);
+    border-color: rgba(248, 103, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.social-card i {
+    font-size: 1.5rem;
+    color: #f86700;
+}
+
+.social-card span {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Quick FAQ Section */
+.quick-faq-section {
+    width: 100%;
+}
+
+.quick-faq {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.quick-faq h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.quick-faq h3 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.faq-item {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    margin-bottom: 8px;
+}
+
+.faq-item:hover {
+    border-color: rgba(248, 103, 0, 0.3);
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+    background: rgba(248, 103, 0, 0.05);
+}
+
+.faq-question h4 {
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.faq-question i {
+    color: #f86700;
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.faq-answer p {
+    padding: 0 16px 12px;
+    color: #a0a0a0;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 60px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .hero-stats {
+        gap: 20px;
+    }
+    
+    .stat-card {
+        min-width: 100px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-hero {
+        padding: 100px 16px 60px;
+    }
+    
+    .contact-main {
+        padding: 0 16px 60px;
+    }
+    
+    .contact-form-section {
+        padding: 30px 24px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 16px;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .social-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-methods,
+    .social-section,
+    .quick-faq {
+        padding: 24px;
+    }
+}
+    </style>
+
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Ladda include-html komponenter
+    includeHTML();
+
+    // FAQ Accordion
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const faqItem = this.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Stäng alla andra
+            document.querySelectorAll('.faq-item.active').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Öppna denna om den inte var aktiv
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        });
+    });
+
+    // --- ANIMERAD PLATSHÅLLARE FÖR FORMULÄR ---
+    const placeholderTexts = {
+        name: 'T.ex. Ada Lovelace',
+        email: 'ada.lovelace@example.com',
+        message: 'Hej, jag är intresserad av era kurser...'
+    };
+    const animationStates = {};
+
+    function typeAnimation(element, text) {
+        let i = 0;
+        let isDeleting = false;
+        // Rensa eventuell gammal animation för detta element
+        if (animationStates[element.id]) {
+            clearInterval(animationStates[element.id]);
+        }
+        const typingInterval = setInterval(() => {
+            if (isDeleting) {
+                element.placeholder = text.substring(0, i - 1);
+                i--;
+                if (i === 0) {
+                    isDeleting = false;
+                    clearInterval(typingInterval);
+                    setTimeout(() => typeAnimation(element, text), 2000);
+                }
+            } else {
+                element.placeholder = text.substring(0, i + 1);
+                i++;
+                if (i > text.length) {
+                    isDeleting = true;
+                    clearInterval(typingInterval);
+                    setTimeout(() => typeAnimation(element, text), 3000);
+                }
+            }
+        }, isDeleting ? 50 : 100);
+        animationStates[element.id] = typingInterval;
+    }
+
+    function stopAnimation(element) {
+        if (animationStates[element.id]) {
+            clearInterval(animationStates[element.id]);
+            delete animationStates[element.id];
+        }
+        element.placeholder = '';
+    }
+
+    Object.keys(placeholderTexts).forEach(id => {
+        const inputElement = document.getElementById(id);
+        if (inputElement) {
+            typeAnimation(inputElement, placeholderTexts[id]);
+            inputElement.addEventListener('focus', () => stopAnimation(inputElement));
+            inputElement.addEventListener('blur', () => {
+                if (inputElement.value === '') {
+                    typeAnimation(inputElement, placeholderTexts[id]);
+                }
+            });
+        }
+    });
+
+    // Formulär-submission
+    const form = document.getElementById('contact-form');
+    const feedbackElement = document.getElementById('form-feedback');
+    
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            if (!name || !email || !message) {
+                showFeedback('Vänligen fyll i alla fält.', 'error');
+                return;
+            }
+            
+            // Validera e-post
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showFeedback('Vänligen ange en giltig e-postadress.', 'error');
+                return;
+            }
+            
+            showFeedback('Skickar meddelande...', 'success');
+            
+            const API_URL = 'http://127.0.0.1:5002';
+            
+            fetch(`${API_URL}/api/mail/sendmail`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, message }),
+            })
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.json();
+            })
+            .then(data => {
+                if (data.ok) {
+                    showFeedback(data.message || 'Meddelande skickat! Vi återkommer snart.', 'success');
+                    form.reset();
+                    // Starta om animationerna efter reset
+                    Object.keys(placeholderTexts).forEach(id => {
+                        const inputElement = document.getElementById(id);
+                        if(inputElement.value === '') {
+                            typeAnimation(inputElement, placeholderTexts[id]);
+                        }
+                    });
+                } else {
+                    showFeedback(data.error || 'Något gick fel, försök igen senare.', 'error');
+                }
+            })
+            .catch(error => {
+                console.error('Fetch Error:', error);
+                showFeedback('Något gick fel, försök igen senare.', 'error');
+            });
+        });
+    }
+    
+    function showFeedback(message, type) {
+        feedbackElement.textContent = message;
+        feedbackElement.className = `form-feedback ${type}`;
+        
+        // Scrolla till feedback
+        feedbackElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+});
+
+// Funktion för att inkludera HTML-komponenter
+function includeHTML() {
+    var z, i, elmnt, file, xhttp;
+    z = document.getElementsByTagName("*");
+    for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        file = elmnt.getAttribute("include-html");
+        if (file) {
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4) {
+                    if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                    if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                    elmnt.removeAttribute("include-html");
+                    includeHTML();
+                }
+            }
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            return;
+        }
+    }
+}
+
+// Lägg till scroll-to-top knapp
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollButton = document.createElement('button');
+    scrollButton.className = 'scroll-to-top';
+    scrollButton.onclick = scrollToTop;
+    scrollButton.innerHTML = '<i class="fas fa-arrow-up"></i><span>Ta mig upp</span>';
+    document.body.appendChild(scrollButton);
+});
+</script>
+<script src="assets/js/owl-animation.js"></script>
+</html>

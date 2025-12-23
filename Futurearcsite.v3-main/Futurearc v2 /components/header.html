@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Din Titel</title>
+
+    <style>
+        /* ===== NY TECH POPUP-STIL ===== */
+        #news-popup {
+            opacity: 0;
+            pointer-events: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 2000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(18, 18, 18, 0.7);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transition: opacity 0.3s ease-in-out;
+        }
+        #news-popup.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .tech-popup {
+            background-color: #1a1b1e;
+            color: #eaeaea;
+            padding: 25px 35px;
+            border-radius: 12px;
+            text-align: center;
+            position: relative;
+            border: 1px solid #FF6B00;
+            box-shadow: 0 0 25px rgba(255, 107, 0, 0.3), 0 0 10px rgba(255, 107, 0, 0.2) inset;
+            max-width: 450px;
+            overflow: hidden;
+            transform: translateY(-30px);
+            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        #news-popup.active .tech-popup {
+            transform: translateY(0);
+        }
+        .tech-popup h2 {
+            font-family: 'Roboto', 'Open Sans', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin: 0;
+            color: #fff;
+            text-shadow: 0 0 8px rgba(255, 107, 0, 0.5);
+        }
+        .tech-popup h2 i {
+            color: #FF6B00;
+            margin-right: 12px;
+            animation: pulse-icon 2s ease-in-out infinite;
+        }
+        .popup-timer-bar {
+            position: absolute;
+            bottom: 0; left: 0;
+            height: 4px;
+            width: 100%;
+            background-color: #FF6B00;
+            box-shadow: 0 0 10px #FF6B00;
+        }
+        #news-popup.active .popup-timer-bar {
+            animation: shrink-bar 1.5s linear forwards;
+        }
+        @keyframes shrink-bar { from { width: 100%; } to { width: 0%; } }
+        @keyframes pulse-icon { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+
+        /* ===== KURSER POPUP-STIL ===== */
+        #kurser-popup {
+            opacity: 0;
+            pointer-events: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 2000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(18, 18, 18, 0.7);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transition: opacity 0.3s ease-in-out;
+        }
+        #kurser-popup.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .kurser-popup {
+            background-color: #1a1b1e;
+            color: #eaeaea;
+            padding: 25px 35px;
+            border-radius: 12px;
+            text-align: center;
+            position: relative;
+            border: 1px solid #FF6B00;
+            box-shadow: 0 0 25px rgba(255, 107, 0, 0.3), 0 0 10px rgba(255, 107, 0, 0.2) inset;
+            max-width: 450px;
+            overflow: hidden;
+            transform: translateY(-30px);
+            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        #kurser-popup.active .kurser-popup {
+            transform: translateY(0);
+        }
+        .kurser-popup h2 {
+            font-family: 'Roboto', 'Open Sans', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin: 0;
+            color: #fff;
+            text-shadow: 0 0 8px rgba(255, 107, 0, 0.5);
+        }
+        .kurser-popup h2 i {
+            color: #FF6B00;
+            margin-right: 12px;
+            animation: pulse-icon 2s ease-in-out infinite;
+        }
+        .kurser-popup-timer-bar {
+            position: absolute;
+            bottom: 0; left: 0;
+            height: 4px;
+            width: 100%;
+            background-color: #FF6B00;
+            box-shadow: 0 0 10px #FF6B00;
+        }
+        #kurser-popup.active .kurser-popup-timer-bar {
+            animation: shrink-bar 3s linear forwards;
+        }
+
+        /* ===== HAMBURGER MENU STYLES ===== */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 25px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+            margin-right: 20px;
+        }
+
+        .mobile-menu-btn span {
+            width: 100%;
+            height: 3px;
+            background: #f86700;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .mobile-menu ul li {
+            margin: 20px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-overlay.active .mobile-menu ul li {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mobile-menu ul li:nth-child(1) { transition-delay: 0.1s; }
+        .mobile-menu ul li:nth-child(2) { transition-delay: 0.2s; }
+        .mobile-menu ul li:nth-child(3) { transition-delay: 0.3s; }
+        .mobile-menu ul li:nth-child(4) { transition-delay: 0.4s; }
+        .mobile-menu ul li:nth-child(5) { transition-delay: 0.5s; }
+        .mobile-menu ul li:nth-child(6) { transition-delay: 0.6s; }
+
+        .mobile-menu ul li a {
+            display: block;
+            padding: 15px 20px;
+            color: #e0e0e0;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            font-size: 1.1rem;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu ul li a:hover {
+            color: #f86700;
+            border-color: rgba(248, 103, 0, 0.3);
+            background: rgba(248, 103, 0, 0.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .floating-header .header-nav {
+                display: none !important;
+            }
+
+            .mobile-menu-btn {
+                display: flex !important;
+            }
+
+            .beta-tag {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="floating-header">
+        <div class="container">
+            <a href="index.html" class="logo-link">
+                <img src="assets/Images/logowhite.png" alt="FutureArc Logo" class="logo">
+            </a>
+    
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="index.html#our-processes">Tjänster</a></li>
+                    <li><a href="#" onclick="showKurserPopup(); return false;">Kurser</a></li>
+                    <li><a href="news.html">Nyheter</a></li> 
+                    <li><a href="about.html">Om Oss</a></li>
+                    <li><a href="index.html#faq-sektion">FAQ</a></li>
+                    <li><a href="contactus.html">Kontakt</a></li>
+                </ul>
+            </nav>
+    
+            <div class="header-placeholder">
+                <span class="beta-tag">BETA V2</span>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <nav class="mobile-menu">
+            <ul>
+                <li><a href="index.html#our-processes">Tjänster</a></li>
+                <li><a href="#" onclick="showKurserPopup(); return false;">Kurser</a></li>
+                <li><a href="news.html">Nyheter</a></li> 
+                <li><a href="about.html">Om Oss</a></li>
+                <li><a href="index.html#faq-sektion">FAQ</a></li>
+                <li><a href="contactus.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="news-popup">
+        <div class="tech-popup">
+            <h2><i class="fas fa-broadcast-tower"></i> Nyheter lanseras snart...</h2>
+            <div class="popup-timer-bar"></div>
+        </div>
+    </div>
+
+    <div id="kurser-popup" onclick="hideKurserPopup()">
+        <div class="kurser-popup">
+            <h2><i class="fas fa-rocket"></i> Lanseras snart</h2>
+            <div class="kurser-popup-timer-bar"></div>
+        </div>
+    </div>
+
+</body>
+</html>

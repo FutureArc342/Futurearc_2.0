@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="pageTitle">Artikel - FutureArc</title>
+  <link rel="icon" type="image/png" href="assets/Images/favoicon.png" class="favicon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Iceland&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #f86700;
+      --primary-dark: #e05e00;
+      --accent: #ff8c42;
+    }
+
+    body {
+      font-family: 'Inter', 'Poppins', sans-serif;
+      background: #000000;
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    /* Animated Background */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(248, 103, 0, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 140, 66, 0.08) 0%, transparent 50%);
+      animation: backgroundFloat 20s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    @keyframes backgroundFloat {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      25% { transform: translate(-10px, -10px) rotate(1deg); }
+      50% { transform: translate(10px, -5px) rotate(-1deg); }
+      75% { transform: translate(-5px, 10px) rotate(0.5deg); }
+    }
+
+    /* Floating Particles */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: var(--primary);
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0; }
+      50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
+    }
+
+    /* Glassmorphism */
+    .glass {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Navigation */
+    .nav-link {
+      font-family: 'Iceland', serif;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.9rem;
+      position: relative;
+      transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .nav-link .underline-animate {
+      display: block;
+      height: 2px;
+      width: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      border-radius: 2px;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .nav-link:hover .underline-animate {
+      transform: scaleX(1);
+    }
+
+    /* Article Container */
+    .article-container {
+      max-width: 100%;
+      margin: 0 auto;
+      background: transparent;
+      overflow: hidden;
+      margin-bottom: 0;
+      position: relative;
+    }
+
+    /* Hero Image Section */
+    .hero-image-section {
+      position: relative;
+      height: 70vh;
+      min-height: 500px;
+      overflow: hidden;
+    }
+
+    .article-image-full {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.7);
+      transition: filter 0.5s ease;
+    }
+
+    .hero-image-section:hover .article-image-full {
+      filter: brightness(0.9);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0.6) 50%,
+        rgba(0, 0, 0, 0.8) 100%
+      );
+      display: flex;
+      align-items: flex-end;
+      padding: 4rem 2rem;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .article-title {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 1.1;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 2rem;
+    }
+
+    .news-category-custom {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 0.5rem 1.5rem;
+      border-radius: 25px;
+      font-size: 0.875rem;
+      box-shadow: 0 4px 15px rgba(248, 103, 0, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .news-category-custom::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .news-category-custom:hover::before {
+      left: 100%;
+    }
+
+    .article-timestamp {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+    }
+
+    /* Article Content */
+    .article-content-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      box-sizing: border-box;
+      background: transparent;
+      position: relative;
+      z-index: 10;
+    }
+
+    .article-excerpt {
+      font-size: 1.25rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 3rem;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-weight: 500;
+      font-style: italic;
+    }
+
+    .article-body-text {
+      font-size: 1.125rem;
+      line-height: 1.85;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 2rem;
+      text-align: justify;
+    }
+
+    /* Back Button */
+    .back-button-container {
+      display: flex;
+      justify-content: flex-start;
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .back-button {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #fff;
+      font-weight: 600;
+      padding: 1.25rem 2.5rem;
+      border-radius: 50px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 8px 25px rgba(248, 103, 0, 0.3);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      font-size: 0.95rem;
+    }
+
+    .back-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .back-button:hover::before {
+      left: 100%;
+    }
+
+    .back-button:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 15px 35px rgba(248, 103, 0, 0.4);
+    }
+
+    .back-button i {
+      margin-right: 12px;
+      font-size: 1.1em;
+      transition: transform 0.3s ease;
+    }
+
+    .back-button:hover i {
+      transform: translateX(-3px);
+    }
+
+    /* Reading Progress Bar */
+    .reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      z-index: 1000;
+      transition: width 0.1s ease;
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+
+    /* Mobile Responsive */
+    @media (max-width: 900px) {
+      
+      .hero-image-section {
+        height: 50vh;
+        min-height: 400px;
+      }
+      
+      .hero-overlay {
+        padding: 2rem 1rem;
+      }
+      
+      .article-title {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        margin-bottom: 1rem;
+      }
+      
+      .article-content-wrapper {
+        padding: 2rem 1rem;
+      }
+      
+      .back-button-container {
+        justify-content: center;
+      }
+      
+      .back-button {
+        padding: 1rem 2rem;
+        font-size: 0.9rem;
+      }
+      
+      .article-excerpt {
+        padding: 1.5rem;
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .hero-image-section {
+        height: 40vh;
+        min-height: 300px;
+      }
+      
+      .article-title {
+        font-size: clamp(1.5rem, 3.5vw, 2rem);
+        margin-bottom: 0.8rem;
+      }
+      
+      .article-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      
+      .article-excerpt {
+        padding: 1rem;
+        font-size: 1rem;
+      }
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress" id="readingProgress"></div>
+
+  <!-- Floating Particles -->
+  <div class="particles" id="particles"></div>
+
+  <div include-html="components/header.html"></div> 
+  <div class="section-divider-hero"></div>  
+  
+  <main class="relative z-10">
+    <div class="article-container">
+      <!-- Hero Image Section -->
+      <div class="hero-image-section">
+        <img id="articleImage" src="" alt="Artikelbild" class="article-image-full" />
+        <div class="hero-overlay">
+          <div class="hero-content">
+            <h1 id="articleTitle" class="article-title fade-in"></h1>
+            <div class="article-meta fade-in">
+              <span id="articleCategory" class="news-category-custom"></span>
+              <span id="articleTimestamp" class="article-timestamp">
+                <i class="far fa-clock"></i>
+                <span></span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Article Content -->
+      <div class="article-content-wrapper">
+        <p id="articleExcerpt" class="article-excerpt fade-in"></p>
+        <div id="articleBody" class="fade-in"></div>
+
+        <div class="back-button-container">
+          <a href="news.html" class="back-button">
+            <i class="fas fa-arrow-left"></i> 
+            Tillbaka till Nyheter
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="section-divider-hero"></div>
+  <footer>
+    <div include-html="components/footer.html"></div>
+  </footer>
+
+  <script>
+    // Create floating particles
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const particleCount = 30;
+
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 6 + 's';
+        particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+        particlesContainer.appendChild(particle);
+      }
+    }
+
+    // Reading progress bar
+    function updateReadingProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.body.offsetHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      document.getElementById('readingProgress').style.width = scrollPercent + '%';
+    }
+
+    // Animate elements on scroll
+    function animateOnScroll() {
+      const elements = document.querySelectorAll('.fade-in');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      elements.forEach(el => observer.observe(el));
+    }
+
+    // Funktion för att inkludera HTML-komponenter
+    function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        file = elmnt.getAttribute("include-html");
+        if (file) {
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4) {
+              if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+              if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+              elmnt.removeAttribute("include-html");
+              includeHTML();
+            }
+          }
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          return;
+        }
+      }
+    }
+
+    // Time ago function
+    function timeAgo(dateString) {
+      const now = new Date();
+      const date = new Date(dateString);
+      const diffMs = now - date;
+      const diffH = Math.floor(diffMs / (1000 * 60 * 60));
+      
+      if (diffH < 1) return 'Mindre än en timme sedan';
+      if (diffH < 24) return `${diffH} timmar sedan`;
+      
+      const diffD = Math.floor(diffH / 24);
+      if (diffD === 1) return 'Igår';
+      if (diffD < 7) return `${diffD} dagar sedan`;
+      
+      return date.toLocaleDateString('sv-SE', { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      createParticles();
+      includeHTML();
+      animateOnScroll();
+
+      // Update year in footer
+      var yearEl = document.getElementById('currentYear');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      // Get URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const title = urlParams.get('title');
+      const category = urlParams.get('category');
+      const timestamp = urlParams.get('timestamp');
+      const image = urlParams.get('image');
+      const excerpt = urlParams.get('excerpt');
+
+      function safeDecode(param) {
+        try {
+          return decodeURIComponent(param);
+        } catch (e) {
+          return param;
+        }
+      }
+
+      // Set article content
+      document.getElementById('pageTitle').textContent = safeDecode(title) + ' - FutureArc';
+      document.getElementById('articleTitle').textContent = safeDecode(title);
+      document.getElementById('articleCategory').textContent = safeDecode(category);
+      document.getElementById('articleImage').src = safeDecode(image);
+      document.getElementById('articleImage').alt = safeDecode(title);
+      document.getElementById('articleExcerpt').textContent = safeDecode(excerpt);
+
+      // Fetch full article content
+      fetch('nyheter.json')
+        .then(res => res.json())
+        .then(data => {
+          const urlTitle = decodeURIComponent(title).trim().toLowerCase();
+          const article = data.find(item => item.title.trim().toLowerCase() === urlTitle);
+          
+          if (article && article.body) {
+            const container = document.getElementById('articleBody');
+            container.innerHTML = "";
+            
+            article.body.split('\n').forEach(para => {
+              if (para.trim()) {
+                const p = document.createElement('p');
+                p.textContent = para.trim();
+                p.className = 'article-body-text';
+                container.appendChild(p);
+              }
+            });
+          }
+          
+          // Set timestamp
+          if (article && article.timestamp) {
+            const timestampElement = document.querySelector('#articleTimestamp span');
+            if (timestampElement) {
+              timestampElement.textContent = timeAgo(article.timestamp);
+            }
+          }
+        })
+        .catch(error => {
+          console.error('Error loading article content:', error);
+        });
+
+
+
+      // Add scroll event listener for reading progress
+      window.addEventListener('scroll', updateReadingProgress);
+      
+      // Lägg till scroll-to-top knapp
+      const scrollButton = document.createElement('button');
+      scrollButton.className = 'scroll-to-top';
+      scrollButton.onclick = scrollToTop;
+      scrollButton.innerHTML = '<i class="fas fa-arrow-up"></i><span>Ta mig upp</span>';
+      document.body.appendChild(scrollButton);
+    });
+  </script>
+  <script src="assets/js/include.js"></script>
+  <script src="assets/js/owl-animation.js"></script>
+</body>
+</html>
